@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="">
+<head>
+    <meta content="webkit" name="renderer" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>嘉福企业自助服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body class="overview chat">
+<nav class="navbar navbar-default navbar-fixed-top nav-menubar nav-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#collapse-mobile-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+                <i class="icon-class icon-class-logo"></i>
+            </a>
+            <div class="logo-text">
+                <span class="glyphicon"><i class="icon-class icon-class-line1"></i></span><span>&nbsp;&nbsp;&nbsp;嘉福弹性福利平台&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse-mobile-menu">
+            <ul class="nav navbar-nav navbar-right main-menu">
+                <li id="jf_company_name">
+                    <a>
+                        <span>上海嘉付宝信息技术有限公司</span>
+                    </a>
+                </li>
+                <li style="display: none">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-help"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;帮助</span>
+                    </a>
+                </li>
+                <li onclick="jfCustomerService.click()">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-service"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;客服</span>
+                    </a>
+                </li>
+                <li data-toggle="modal" data-target="#myJfModal">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-exit"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid wrapper">
+    <div class="row">
+        <button class="material-design-hamburger__icon sidebar-trigger overview-sidebar-trigger docs"
+                id="overviewSidebarTrigger">
+            <span class="material-design-hamburger__layer"></span>
+        </button>
+        <section class="container-fluid guide-wrap">
+            <div class="sidebar-wrap" id="overviewSidebar">
+                <div id="breads" class="breadcrumb-wrap fixed-breadcrumb"></div>
+                <div class="sidebar container-fluid">
+                    <div class="links-wrap">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="docs-menu">
+                                <div class="panel-group" id="accordion1">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">企业信息</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <div class="panel-body panel-select" TabUrl="html/Home_page/home_page.html">首页</div>
+                                            <div class="panel-body" TabUrl="html/Company_info_basic/basic_information.html">基本信息</div>
+                                            <div class="panel-body" TabUrl="html/Company_info_Account_security/Account_info.html">账户安全管理</div>
+                                            <div class="panel-body" TabUrl="html/Company_info_Bank_account/Bank_account_info.html">银行账户管理</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">员工管理</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <div class="panel-body" TabUrl="html/Staff_lookup/lookup.html">员工查询</div>
+                                            <div class="panel-body" TabUrl="html/Staff_import/Staff_import.html">员工导入</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">福利管理</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body" TabUrl="html/Welfare_release/welfare_release.html">福利发放</div>
+                                            <div class="panel-body" TabUrl="html/Welfare_release_record/release_record.html">福利发放查询</div>
+
+                                            <div class="panel-body" TabUrl="html/VIP_Card_Recyle/vip_info_import.html">VIP卡回收</div>
+                                            <div class="panel-body" TabUrl="html/VIP_Card_Recyle/vip_card_record.html">VIP卡回收查询</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">福利金融</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFour" class="panel-collapse collapse">
+                                            <div class="panel-body" TabUrl="html/financing_process/financing_main.html">福利增值</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">数据报表</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFive" class="panel-collapse collapse">
+                                            <div class="panel-body" TabUrl="html/Company_Recharge_data/Company_recharge_data.html">企业充值明细</div>
+                                            <div class="panel-body" TabUrl="html/Company_Expense_data/Company_expense_data.html">企业消费明细</div>
+                                            <div class="panel-body" TabUrl="html/Staff_Expense_data/Staff_expense_data.html">员工消费明细</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">企业账户管理</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseSix" class="panel-collapse collapse">
+                                            <div class="panel-body" TabUrl="html/Company_account_management/open_accounts.html">额度转让</div>
+                                            <div class="panel-body" TabUrl="html/Company_account_management/transfer_out_lookup.html">额度转让查询</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-overview">
+
+                <div class="nav_iframe" id="iframeNav">
+                    <span class="left_raw other_raw" id="turnLeft">
+                        <i class="icon-class icon-class-left"></i>
+                    </span>
+
+                    <span class="right_raw other_raw" id="closs_all_tabs">关闭所有页面</span>
+                    <span class="right_raw other_raw" id="turnRight">
+                        <i class="icon-class icon-class-right"></i>
+                   </span>
+                    <div id="iframeNavFather">
+                        <div id="iframeNavdiv"><span class="sp_display" title="首页">首页</span></div>
+                    </div>
+                </div>
+                <div id="iframeTt">
+                    <div title="首页">
+                        <iframe scrolling="auto" frameborder="0" src="html/Home_page/home_page.html"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="bg-overview"></div>
+
+        </section>
+    </div>
+</div>
+<footer class="footer-links">
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="site-links col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <li>
+                    <a href="mailto:answer@tao-lue.com">邮件：answer@tao-lue.com</a>
+                </li>
+                <li>
+                    <a href="tel:021-64280689">电话：021-64280689</a>
+                </li>
+            </ul>
+            <ul class="site-links-terms col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <li>Copyright 2014-2016 www.jia-fu.cn</li><li> All Rights Reserved. 沪ICP备14041032</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!--摸态框-->
+<div class="modal fade" id="myJfModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel">提示</h5>
+            </div>
+            <div class="modal-body"><h4>您是否确认退出？</h4></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">退出</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
+<script>
+    jfCustomerService.init({//用户信息
+        name: '阿陈',// 名字
+        address: '西伯利亚',// 地址
+        email: '1313@qq.com',// 邮箱
+        age: '16',// 年龄
+        tel: '110',// 电话
+        comment: '很帅',// 备注
+        gender: '男',// 性别
+        qq: '1234567',// QQ
+        weibo: '',// 微博
+        weixin: '',// 微信
+        '公司名称':'上海淘略数据有限公司',
+        '公司编号':'123ksuhdaf891274'
+    })
+
+
+</script>
+</body>
+</html>
