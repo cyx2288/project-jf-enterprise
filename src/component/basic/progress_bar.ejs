@@ -1,0 +1,25 @@
+
+
+<!--通用进度条（2-5个）-->
+<div class="jf_progress">
+    <div class="progress_text">
+
+        <%for(var i=0;i<options.length;i++){%>
+        <span <%if(i==j){%> class="showblue" <%}%>><%=options[i].text%></span>
+        <%}%>
+
+    </div>
+    <div class="progress_bar">
+
+        <%for(var m=0;m<options.length;m++){%>
+        <span <%if(m==j){%> class="showblue"<%}%>></span>
+        <%}%>
+    </div>
+</div>
+
+
+
+
+
+
+

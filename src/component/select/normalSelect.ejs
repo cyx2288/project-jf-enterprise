@@ -1,0 +1,18 @@
+
+<div class="smodal_content">
+    <div class=" info_content modal22">
+        <span><%=title%></span>
+        <span>
+            <div class="btn-group-11">
+                <select class="form-control  btn-md-zy11" >
+                    <option hidden="hidden"><%= placeholder %></option>
+
+                    <%for(var i=0;i<options.length;i++){%>
+                    <option value="<%=options[i].option%>"><%= options[i].option%></option>
+                    <%}%>
+                </select>
+            </div>
+
+        </span>
+    </div>
+</div>

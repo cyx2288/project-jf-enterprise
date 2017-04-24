@@ -1,0 +1,49 @@
+<div class="smodal_content">
+    <div class=" info_content modal22">
+        <span><%=title%></span>
+        <span>
+            <select class="form-control  btn-md-zy11" >
+                <option hidden="hidden"><%= placeholder %></option>
+
+                <%for(var j=0;j<optgroups.length;j++){%>
+                <optgroup label="<%=optgroups[j].onetext%>">
+                    <%for(var i=0;i<optgroups[j].options.length;i++){ %>
+                    <option value="<%=optgroups[j].options[i].option%>"><%=optgroups[j].options[i].option%></option>
+                    <%}%>
+                </optgroup>
+
+                <%}%>
+                <!--1个Select框-->
+
+                <%- include('../../component/select/optgroup.ejs',{
+                "title":"*行业类型",
+                "placeholder":"请选择行业类型",
+                "optgroups":[
+
+                {"onetext":"热门行业",
+                "options":[
+                {"option":"互联网行业"},
+                {"option":"教育行业"}]
+                },
+                {"onetext":"IT互联网行业",
+                "options":[
+                {"option":"计算机软件"},
+                {"option":"技术机硬件"},
+                {"option":"IT服务"},
+                {"option":"电子商务"},
+                {"option":"游戏"},
+                {"option":"电子通信"}]
+                },
+                {"onetext":"制造行业",
+                "options":[
+                {"option":"日用/化妆品"},
+                {"option":"食品饮料"},
+                {"option":"家电/数码"},
+                {"option":"食品饮料"}]
+                },
+                ]
+                })%>
+            </select>
+        </span>
+    </div>
+</div>

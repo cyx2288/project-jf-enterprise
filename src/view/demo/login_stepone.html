@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>重置管理员密码</h2>
+
+    <!--内容-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!--中间内容-->
+
+            <div class="smodal_content">
+                <div class=" info_content modal22">
+                    <span >&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span >
+                               <h3 class="login_company_name">上海嘉付宝信息技术有限公司</h3>
+                            </span>
+
+                </div>
+            </div>
+
+
+            <div class="smodal_content">
+                <div class=" info_content modal22">
+                    <span >新密码：</span>
+                            <span >
+                                <input type="password" class="form-control btn-md-zy11 new_password" placeholder="必须是8-20位英文字母和数字组成"/>
+                            </span>
+                </div>
+            </div>
+            <div class="smodal_content">
+                <div class=" info_content modal22">
+                    <span >确认新密码：</span>
+                            <span >
+                                <input type="password" class="form-control btn-md-zy11" placeholder="必须是8-20位英文字母和数字组成" />
+                                 <span class="login_help" style="">如有问题，请拨打嘉福热线<span>400-821-6990</span>进行修改，工作时间为（周一到周五，9:00:17:30）</span>
+                            </span>
+                </div>
+            </div>
+
+            <div class="smodal_content">
+                <div class=" info_content modal22">
+                    <span></span>
+                            <span>
+                                <a href="login_finish.html"><button class="btn btn-primary btn-md-zy11 pasd-comfirm-btn">确认</button></a>
+                            </span>
+                </div>
+            </div>
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+    //-----------------------密码验证(第一次新密码)
+    $("input.new_password").each(function () {
+
+        $(this).on({
+
+            //---------密码验证条出现以及识别当前密码强度
+            focus: function () {
+
+                jfPasdValidateshow(this);//参数表示选择的该元素
+
+                jfPasdValidate(this);//参数表示选择的该元素
+            },
+
+            //----------密码强度
+            keyup: function () {
+                jfPasdValidate(this);//参数表示选择的该元素
+            },
+
+            //--------密码强度移除
+            blur: function () {
+                PasdValidateRemove(this);//参数表示选择的该元素
+            }
+        })
+    });
+</script>
+</body>
+</html>

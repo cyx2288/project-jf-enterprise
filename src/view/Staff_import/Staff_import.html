@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>批量导入</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>员工信息导入</h2>
+    <div class="info_middlebody" style="margin-left: 0">
+            <div class="import_content" style="display: block">
+                    <div class="content_top" style="margin-top: 30px">
+                        <h4 class="text-left">员工信息导入</h4>
+                        <p class="text-left">1、下载嘉福模板，根据提示填写员工信息<button class="staff_import_downbtn">下载附件</button></p>
+                        <p class="text-left">2、上传填写后的数据文件 <a href="#" class="file"><input type="file" class="welfare_release_upbtn" >上传文件</a></p>
+                    </div>
+                    <div class="content_mid" style="margin-top: 30px">
+                        <h4 class="text-left">导入说明</h4>
+                        <p class="text-left">1、每次最多导入100位员工信息</p>
+                        <p class="text-left">2、员工姓名、邮箱、手机号为必填，其中邮箱不能重复</p>
+                        <p class="text-left">3、文件大小不能超过2M</p>
+                    </div>
+                <div class="control-title">
+                    <div>
+                         <span>
+                         <button type="button" class="btn btn-primary btn-zy" id="import_modelloading" >开始导入</button>
+                          </span>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    //loading以及success模态框弹出(（以员工导入页面为例）)
+
+    $('#import_modelloading').on('click', function () {
+
+        //-----------success模态框（）
+        jfModelFrame.successModelShow('加载完成', '数据导入成功','申请成功笔数：3笔（企业账户扣款500.00元）');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+
+    });
+</script>
+</body>
+</html>

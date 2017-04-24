@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业账户明细报表</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业充值明细</h2>
+
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+        <div class="control-title">
+            <div style="width: 100%">
+                <span>充值时间：</span>
+                <span>
+                     <input size="16" type="text" value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                    至
+                    <input size="16" type="text" value="2016-06-18" readonly class="form_datetime form-control form-control-zy1"  >
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span>
+                        <a href="../error/500.html"><button type="submit" class="btn btn-primary btn-zyone btn-modeltwo">查询</button></a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>充值订单号</th>
+                <th>充值金额（元）</th>
+                <th>服务费（元）</th>
+                <th>订单总金额（元）</th>
+                <th>状态</th>
+                <th>充值时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已退款</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>未支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>19625865056</td>
+                <td>10,000</td>
+                <td>10</td>
+                <td>10,100</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li class="go"><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li class="active"><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">30</a></li>
+            <li class="go"><a href="#">»</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script type="text/javascript">
+
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+
+</script>
+
+
+</body>
+</html>

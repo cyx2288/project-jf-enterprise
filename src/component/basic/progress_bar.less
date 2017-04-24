@@ -1,0 +1,180 @@
+@firstColor:#86dcff;
+@lastColor:#059fde;
+@changeColor:(@lastColor - @firstColor)/2;
+
+
+.jf_progress{
+  width: 80%;
+  margin: 30px auto 50px;
+  .progress_bar{
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #DDDDDD;
+    height: 25px;
+    border-radius: 35px;
+    display: none\9; /* IE6, IE7, IE8, IE9, IE10 */;
+
+
+    span{
+      width: 100%;
+      width:20%\9; /* IE6, IE7, IE8, IE9, IE10 */
+      height: 25px;
+      position: relative;
+      display: inline-block;
+      display: none\9; /* IE6, IE7, IE8, IE9, IE10 */;
+
+      &:first-child{
+        background: linear-gradient(to right, @firstColor+@changeColor*0,@firstColor+@changeColor*1); /*径向渐变*/
+        border-radius: 35px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:last-child{
+        border-radius: 35px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:first-child.showblue{
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: -5px;
+          width: 40px;
+          height: 40px;
+          border: 8px solid @firstColor+@changeColor*1;
+          border-radius: 50%;
+          background: white;
+        }
+      }
+
+      &:nth-child(2){
+        background: linear-gradient(to right, @firstColor+@changeColor*1,@firstColor+@changeColor*2); /*径向渐变*/
+      }
+      &:nth-child(2).showblue{
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: -5px;
+          width: 40px;
+          height: 40px;
+          background: white;
+          border: 8px solid @firstColor+@changeColor*2;
+          border-radius: 50%;
+        }
+      }
+
+      &:nth-child(3){
+        background: linear-gradient(to right, @firstColor+@changeColor*2,@firstColor+@changeColor*3); /*径向渐变*/
+      }
+      &:nth-child(3).showblue{
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: -5px;
+          width: 40px;
+          height: 40px;
+          background: white;
+          border: 8px solid @firstColor+@changeColor*3;
+          border-radius: 50%;
+        }
+      }
+
+      &:nth-child(4){
+        background: linear-gradient(to right, @firstColor+@changeColor*3,@firstColor+@changeColor*4); /*径向渐变*/
+      }
+      &:nth-child(4).showblue{
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: -5px;
+          width: 40px;
+          height: 40px;
+          background: white;
+          border: 8px solid @firstColor+@changeColor*4;
+          border-radius: 50%;
+        }
+      }
+      &:nth-child(5){
+        background: linear-gradient(to right, @firstColor+@changeColor*4,@firstColor+@changeColor*5); /*径向渐变*/
+      }
+      &:nth-child(5).showblue{
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: -5px;
+          width: 40px;
+          height: 40px;
+          background: white;
+          border: 8px solid @firstColor+@changeColor*5;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    span.showblue~span{
+      background: none!important;
+    }
+
+
+  }
+  .progress_text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+    span{
+      display: inline-block;
+      width: 100%;
+      width:20%\9; /* IE6, IE7, IE8, IE9, IE10 */
+      text-align: center;
+      color: @lastColor;
+      font-size: 16px;
+    }
+
+    span.showblue~span{
+      color: grey!important;
+    }
+
+
+  }
+}
+
+
+/*嘉福平台使用协议*/
+
+.register_agreement_page{
+  background: white;
+  padding: 0;
+
+  .jf_service_agreement{
+    width: 85%;
+    margin: 0 auto;
+
+    h2{
+      text-align: center;
+      border-bottom: none;
+      margin: 30px 0 40px 0;
+    }
+  }
+}
+
+
+@media screen and(max-width: 480px) {
+  .jf_progress {
+    width: 100%;
+    margin: 30px auto 50px;
+  }
+
+}

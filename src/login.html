@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="">
+<head>
+    <meta content="webkit" name="renderer" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>嘉福企业自助服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/main.min.css" rel="stylesheet">
+</head>
+<body class="overview chat">
+<nav class="navbar navbar-default navbar-fixed-top nav-menubar nav-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-mobile-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+                <i class="icon-class icon-class-logo"></i>
+            </a>
+            <div class="logo-text">
+                <span class="glyphicon"><i class="icon-class icon-class-line1"></i></span><span>&nbsp;&nbsp;&nbsp;嘉福弹性福利平台&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse-mobile-menu">
+            <ul class="nav navbar-nav navbar-right main-menu">
+                <li style="display: none">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-help"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;帮助</span>
+                    </a>
+                </li>
+                <li onclick="jfCustomerService.click()">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-service"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;客服</span>
+                    </a>
+                </li>
+                <li data-toggle="modal" data-target="#myJfModal">
+                    <a>
+                        <span class="glyphicon">
+                            <i class="icon-class icon-class-exit"></i>
+                        </span>
+                        <span>&nbsp;&nbsp;&nbsp;退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid wrapper" style="margin-bottom: 0;padding-bottom: 0;min-height:0">
+    <div class="row">
+        <section class="container-fluid guide-wrap">
+
+            <div class="guide-overview" style="margin-left: 0">
+                <div id="iframeTt">
+                    <div title="首页">
+                        <iframe scrolling="auto" frameborder="0" src="html/demo/login_stepone.html"></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <div id="bg-overview"></div>
+        </section>
+    </div>
+</div>
+<footer class="footer-links">
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="site-links col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <li>
+                    <a href="mailto:answer@tao-lue.com">邮件：answer@tao-lue.com</a>
+                </li>
+                <li>
+                    <a href="tel:021-64280689">电话：021-64280689</a>
+                </li>
+            </ul>
+            <ul class="site-links-terms col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <li>Copyright 2014-2016 www.jia-fu.cn</li><li> All Rights Reserved. 沪ICP备14041032</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!--摸态框-->
+<div class="modal fade" id="myJfModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 class="modal-title" id="myModalLabel">提示</h5>
+            </div>
+            <div class="modal-body"><h4>您是否确认退出？</h4></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">退出</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/BusinessService.js"></script>
+<script>
+    jfCustomerService.init({//用户信息
+        name: '阿陈',// 名字
+        address: '西伯利亚',// 地址
+        email: '1313@qq.com',// 邮箱
+        age: '16',// 年龄
+        tel: '110',// 电话
+        comment: '很帅',// 备注
+        gender: '男',// 性别
+        qq: '1234567',// QQ
+        weibo: '',// 微博
+        weixin: '',// 微信
+        '公司名称':'上海淘略数据有限公司',
+        '公司编号':'123ksuhdaf891274'
+    })
+
+</script>
+
+
+</body>
+</html>

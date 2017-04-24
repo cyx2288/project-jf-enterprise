@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业额度转让</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业间额度转让 <small id="agreement_subtitle">让额度管理更方便</small></h2>
+    <div class="info_middlebody" style="margin-left: 0">
+        <div class="import_content" style="display: block">
+            <div class="content_top" style="margin-top: 30px">
+                <h4 class="text-left">重要提醒</h4>
+                <p class="text-left">转让前请确认好对方企业的企业识别号以及企业全称</p>
+            </div>
+            <div class="content_mid" style="margin-top: 30px">
+                <h4 class="text-left">重要告知</h4>
+                <p class="text-left">转让交易实时入账，一旦提交无法撤回</p>
+            </div>
+            <div class="content_mid" style="margin-top: 30px; font-size: 12px;">
+                <input type="checkbox" value="同意" checked="checked" id="survice_agreement">已阅读并同意<span class="transfer_agreement">《企业余额转让服务协议》</span>
+            </div>
+            <div class="control-title">
+                <div>
+                         <span>
+                         <a href="application_transfer.html "><button type="button" class="btn btn-primary btn-zy">申请开通</button></a>
+                          </span>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--模态框-->
+    <div class="modal fade"  id="transfer_agreement_model" tabindex="-1" aria-labelledby="transfer_agreementLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel" style="text-align: center;font-size: 20px">企业余额转让服务协议</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body agreement">
+                    <!--前言部分-->
+                    <div class="agreement_tips">余额转让服务协议（以下简称“本协议”）是上海淘略数据处理有限公司（以下简称“本公司”）下的嘉福平台（以下简称“嘉福平台”）与嘉福用户（以下简称“您”）就嘉福平台上您的账户余额转让服务相关事项所订立的有效合约。<span class="agreement_important">您通过网络页面点击确认或以其他方式选择接受本协议，即表示您与嘉福平台已达成协议并同意接受本年协议的全部约定内容以及与本协议有关的已经发布的或将来可能发布的各项规则、页面提示、操作流程、公告和通知（以下统称“本协议”）。</span></div>
+
+                    <div class="agreement_tips">在接受本协议之前，<span class="agreement_important">请您仔细阅读本协议的全部内容（特别是以粗体下划线标注的内容）。</span>若您不同意本协议的任意内容，或者无法准确理解本公司对条款的解释，请勿进行后续操作。
+                    </div>
+                    <!--协议具体内容-->
+                    <div class="agreement_content">
+                        <p class="agreement_content_tilte">一、定义</p>
+                        <span>除本协议另有约定外，下列用语具有如下含义：</span>
+                        <p>1.嘉福用户：指经过本公司认可的并拥有嘉福账户的企业。</p>
+                        <p>2.福利模式：指本公司为您提供的在嘉福平台上所享有的福利服务。</p>
+                        <p>3.身份认证要素：指在交易中本公司用于识别您身份的信息要素，包括但不限于您的嘉福账户、密码、数字证书、短信校验服务、预留的电话号码、手机号码、企业识别号等及本公司认可的其他要素。</p>
+
+                        <p class="agreement_content_tilte">二、特别提示</p>
+                        <p class="agreement_important">1.身份认证要素是本公司识别您的依据，您必须妥善保管，不得将身份认证要素提供给任何第三方或交于任何第三方使用。使用上述身份要素所发出的一切指令均视为您本人所为，您应对此产生的后果负责。对非本公司原因造成的账户、密码等信息被冒用、盗用或非法使用，由此引起的一切风险、责任、损失、费用等应由您自行承担。</p>
+                        <p class="agreement_important">2.您知晓并同意，有且仅有双方企业的福利模式相同方可实施其账户余额的互转。若双方的福利模式不一致，则无法实施该转让行为。</p>
+                        <p class="agreement_important">3.您知晓并同意，双方发生余额转让时的依据为对方企业在嘉福平台的企业识别号和企业全称。若依据的信息填写有误，资金无法追回，造成的后果自行承担。</p>
+                        <p class="agreement_important">4.您知晓并同意，只有您同意以上条款方可享受该服务。</p>
+
+                        <p class="agreement_content_tilte">三、服务对象范围</p>
+                        <p>1.余额转让服务仅向嘉福企业认证用户提供。您必须按照嘉福平台的注册要求提供您真实、准确及完整的信息，并负责对您信息及时更新。本公司视本网站所有用户已就上述各项条件与要求作出承诺，保证其身份的合法性，以及所提供信息的真实性、准确性、完整性和非过时性。</p>
+                        <p>2.若您提供任何不真实、不准确、不完整或者过时的身份信息，或者本公司有合理理由怀疑您所提供的信息为不真实、不准确、不完整或者过时的，则本公司有权中止或终止向您提供服务，并拒绝您现在或未来使用本服务之各项服务之全部或部分功能，对此本公司不承担任何责任。同时，因此所产生的任何直接或间接的支出、损失、费用、处罚将由您来承担。若由于您未及时更新您信息而导致本服务无法提供或本服务的有关流程及操作发生任何错误，您不得以此为由取消交易或采取其他不当行为，并将独立承担因此产生的所有责任和后果。</p>
+
+                        <p class="agreement_content_tilte">四、免责条款</p>
+                        <p class="agreement_important">因下列原因导致本公司无法正常提供服务，使您无法使用或无法正常使用各项服务时，本公司不承担任何损害赔偿责任，该状况包括但不限于：</p>
+                        <p class="agreement_important">（一）本公司系统停机维护或升级期间。</p>
+                        <p class="agreement_important">（二）因台风、地震、海啸、洪水、战争、雷电或恐怖袭击等不可抗力之因素，造成本公司系统不能正常执行业务的。</p>
+                        <p class="agreement_important">（三）您的电脑软硬件和通信线路、供电线路出现故障的；</p>
+                        <p class="agreement_important">（四）您操作不当或通过非本公司授权或认可的方式使用本公司服务的；</p>
+                        <p class="agreement_important">（五）因病毒、木马、恶意程序攻击、网络拥堵、系统不稳定、系统或设备故障、通讯故障、电力故障、银行原因 、第三方服务瑕疵或政府行为等原因，造成本服务中断或者延迟;</p>
+                        <p class="agreement_important">（六）其他不可归因于本公司的原因。 </p>
+                        <br>
+                        <p>尽管有前款约定，本公司将采取合理行动积极促使服务恢复正常。</p>
+
+                        <p class="agreement_content_tilte">五、通知</p>
+                        <p>关于本协议条款和其他协议、告示或其他有关您使用嘉福理财服务的通知，本公司将以电子形式或纸张形式通知您，包括但不限于依据您向本公司提供的电子邮件地址发送电子邮件的方式、依据您提供的联系地址寄送挂号信的方式、于本网站或合作网站上公布或发送手机短信和电话通知等方式。</p>
+                        <p class="agreement_content_tilte">六、一般规定</p>
+                        <p>1.本协议与本网站上其他条款和规则的名词解释、意思理解，可互相引用参照，如有不同理解，应以本协议为准。本协议未做规定的，以本公司网站上不时更新的公告为准。</p>
+                        <p>2.若本协议条款中的部分条款被有管辖权的法院认定为违法，则不影响其他条款的有效性。</p>
+                        <p>3.本公司保有制定和修改包括但不限于上述规则的各项规则。所有规则均构成本协议的有效组成部分。新制定和经修改的规则将在嘉福平台上进行公布，不做逐一通知。新制定和经修改的规则一经公布立即生效。</p>
+                        <p>4.若您就嘉福账户余额转让所涉及的相关事宜有任何疑问的，您可登陆本公司网站或拨打客服热线咨询。</p>
+                        <p class="agreement_content_tilte">七、法律适用</p>
+                        <p>1.因本协议引起的或与本协议有关的所有争议，均适用中华人民共和国法律。</p>
+                        <p>2.因本协议引起的或与本协议有关的所有争议，本公司可与您协商解决；协商不成的，任何一方均有权向被告所在地人民法院提起诉讼。</p>
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    //企业转账协议模态框
+    $(".transfer_agreement").on('click',function(){
+
+        modelInfo('#transfer_agreement_model'); //参数：模态框id选择器
+    })
+</script>
+</body>
+</html>

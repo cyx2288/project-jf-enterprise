@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>额度转让到其他企业</h2>
+
+    <!--内容-->
+    <div class="info_middlebody" style="margin-left: 0;padding-top: 0">
+        <!--中间内容-->
+
+        <div class="smodal_content" style="margin-top: 0">
+            <div class=" info_content modal22">
+                <span><h4>请填写以下信息</h4></span>
+                <span></span>
+            </div>
+        </div>
+
+
+        <div class="smodal_content" style="margin-top: 0">
+            <div class=" info_content modal22 transfer_page">
+                <span>对方企业识别号：</span>
+                            <span style="position: relative;">
+                                <input type="text" class="form-control btn-md-zy11 company_ID" id="company_ID" placeholder="请写出对方企业识别号"/>
+                                 <span class="login_help_right" style="">企业识别号以及全称？</span>
+                            </span>
+            </div>
+        </div>
+        <div class="smodal_content">
+            <div class=" info_content modal22 transfer_page">
+                <span>对方企业全称：</span>
+                            <span>
+                                <input type="text" class="form-control btn-md-zy11" placeholder="请填写对方企业全称" id="company_name"/>
+
+                            </span>
+            </div>
+        </div>
+        <div class="smodal_content">
+            <div class=" info_content modal22 transfer_page">
+                <span>转让额度：</span>
+                            <span>
+                                <input type="text" maxlength="30" class="form-control btn-md-zy11" id="money_num" placeholder="请填写转让额度"/>
+                            </span>
+            </div>
+        </div>
+        <div class="smodal_content" style="margin-bottom: 0">
+            <div class=" info_content modal22 transfer_page">
+                <span>转让说明：</span>
+                            <span>
+                                 <textarea rows="3" cols="20" maxlength="60"class="form-control btn-md-zy11" placeholder="选填"></textarea>
+               <p>账户余额：<span>5990.00元</span></p>
+                            </span>
+            </div>
+        </div>
+
+        <div class="smodal_content" style="margin-top: 0">
+            <div class=" info_content modal22 transfer_page">
+                <span></span>
+                            <span>
+                                <a>
+                                    <button class="btn btn-primary btn-md-zy11 pasd-comfirm-btn" onclick="location='transfer_check.html'">提交申请</button>
+                                </a>
+                            </span>
+            </div>
+        </div>
+
+    </div>
+    <!--底部按钮-->
+
+    <!--模态框-->
+    <div class="modal fade"  id="pay_info_model" tabindex="-1" aria-labelledby="pay_info_modelLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel">怎样查看对方企业的企业识别号以及全称</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body lookup_help">
+
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content info_content_help">
+                            <p class="pay_model_pp">
+                               1、让对方登录企业自助平台
+                            </p>
+                            <img src="../../icon/step_one.png" class="step_one">
+                        </div>
+                    </div>
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content info_content_help">
+                            <p class="pay_model_pp">
+                                2、查看对方企业的企业识别号以及企业全称
+                            </p>
+                            <img src="../../icon/step_two.png" class="step_two">
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    //查询企业识别号以及企业名称的模态框
+    $(".login_help_right").on('click',function(){
+
+            modelInfo('#pay_info_model'); //参数：模态框id选择器
+    })
+    $("#company_ID").on({
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    })
+
+    $("#company_name").on({
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput. validateRight(this, '输入正确');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    })
+
+/*输入金额判断*/
+    document.getElementById('money_num').onkeyup=function(){
+        MoneyInputNum(this);//参数为选择的当前input元素
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

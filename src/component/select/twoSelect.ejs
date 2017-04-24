@@ -1,0 +1,29 @@
+<!--下拉框（2）-->
+
+<div class="smodal_content">
+    <div class="info_content modal22">
+        <span style="vertical-align: top"><%=title%></span>
+            <span>
+                <div class="btn-group btn-group-22">
+                    <select class="form-control">
+                        <option hidden="hidden"><%= placeholderone %></option>
+
+                        <%for(var i=0;i<optionone.length;i++){%>
+                        <option value="<%=optionone[i].option%>"><%= optionone[i].option%></option>
+                        <%}%>
+
+                    </select>
+                </div>
+                <!--下拉框2-->
+                <div class="btn-group btn-group-22">
+                    <select class="form-control">
+                        <option hidden="hidden"><%= placeholdertwo %></option>
+
+                        <%for(var i=0;i<optiontwo.length;i++){%>
+                        <option value="<%=optiontwo[i].option%>"><%= optiontwo[i].option%></option>
+                        <%}%>
+                    </select>
+                </div>
+            </span>
+    </div>
+</div>

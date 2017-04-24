@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>&#x5609;&#x798F;&#x4F01;&#x4E1A;&#x6CE8;&#x518C;</title>
+    
+    
+    <!--IE8只能支持jQuery1.9-->
+    <!--[if lte IE 8]>
+    <script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <![endif]-->
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+ <link rel="stylesheet" href="../../css/component.min.css">
+<link rel="stylesheet" href="../../css/newcomponent.css">
+</head>
+<body class="register_page">
+<!--注册登录页面通用导航-->
+<div class="navbar navbar-default navbar-static-top jf_topnav">
+    <div class="nav_container">
+        <div class="left_logo">
+            <div><img src="../../icon/jiafu_logo.png"></div>
+            <div>&#x5609;&#x798F;&#x4F01;&#x4E1A;&#x6CE8;&#x518C;</div>
+        </div>
+
+        <div class="right_service">
+            <div><img src="../../icon/icon_customer_service.png"></div>
+            <div>&#x5BA2;&#x670D;</div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+
+    <div class="register_box">
+
+        <!--进度条-->
+        
+
+<!--通用进度条（2-5个）-->
+<div class="jf_progress">
+    <div class="progress_text">
+
+        
+        <span class="showblue">1.&#x586B;&#x5199;&#x624B;&#x673A;&#x53F7;</span>
+        
+        <span>2.&#x5B8C;&#x5584;&#x4FE1;&#x606F;</span>
+        
+        <span>3.&#x6CE8;&#x518C;&#x6210;&#x529F;</span>
+        
+
+    </div>
+    <div class="progress_bar">
+
+        
+        <span class="showblue"></span>
+        
+        <span></span>
+        
+        <span></span>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+        <!--手机号码-->
+        <div class="smodal_content">
+    <div class=" info_content modal22">
+        <span>*&#x624B;&#x673A;&#x53F7;&#x7801;</span>
+         <span><input type="text" class="form-control btn-md-zy11 input_valiate" placeholder="&#x8BF7;&#x586B;&#x5199;&#x624B;&#x673A;&#x53F7;&#x7801;"></span>
+    </div>
+</div>
+
+        <!--短信验证码-->
+        <div class="smodal_content">
+    <div class="info_content modal22">
+        <span>*&#x77ED;&#x4FE1;&#x9A8C;&#x8BC1;&#x7801;</span>
+        <span>
+            <input type="text" class="form-control btn-md-zy">
+            <button type="button" class="btn btn-primary input-group-addon getmessage">&#x70B9;&#x51FB;&#x83B7;&#x53D6;</button>
+        </span>
+    </div>
+</div>
+
+        <!--一个按钮-->
+        <div class="smodal_content">
+    <div class="info_content modal22">
+        <span></span>
+        <span><a class="btn btn-primary btn-md-zy11 pasd-comfirm-btn" href="steptwo.html">&#x4E0B;&#x4E00;&#x6B65;</a></span>
+    </div>
+</div>
+
+
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    //倒计时效果
+    document.getElementsByClassName('input-group-addon')[0].addEventListener('click',function(){
+        getmessage(this,"60")
+    },false)
+
+
+
+    //输入提示信息验证
+    $(".input_valiate").on({
+
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput.validateRight(this, '输入正确');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+</script>
+</body>
+</html>

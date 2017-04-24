@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>员工账户明细报表</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>订单明细报表</h2>
+
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+        <div class="control-title">
+            <div>
+                <span>嘉福订单号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy" >
+                </span>
+            </div>
+            <div>
+                <span class="account_jiaoyi" >订单类型：</span>
+                <span>
+                    <select class="form-control  form-control-zy" style="text-align: center;font-size: 12px">
+                        <option value="请选择" hidden="">请选择</option>
+                        <option value="待处理">VIP订单</option>
+                        <option value="待处理">手机端</option>
+                        <option value="待处理">电子卡</option>
+                    </select>
+                    </span>
+            </div>
+
+        </div>
+        <div class="control-title">
+            <div>
+                <span class="account_jiaoyi order_btn22">支付状态：</span>
+                <span>
+                    <select class="form-control  form-control-zy" style="text-align: center;font-size: 12px">
+                        <option value="请选择" hidden="">请选择</option>
+                        <option value="待处理">已支付</option>
+                        <option value="待处理">已退款</option>
+                        <option value="待处理">未支付</option>
+                    </select>
+                    </span>
+            </div>
+            <div>
+                <span >订单时间：</span>
+                <span>
+                     <input size="16" type="text" value="2016-06-15" readonly class="form_datetime form-control form-control-zy1">
+                    至
+                    <input size="16" type="text" value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                </span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span class="order_btn22">邮箱：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy" >
+                </span>
+            </div>
+
+            <div>
+                <span>员工姓名：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy" >
+                </span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span style=" margin-right: 1em"></span>
+                <span >
+                        <button type="button" class="btn btn-primary btn-zy btn-modeltwo">导出明细</button>
+                </span>
+            </div>
+
+            <div>
+                <span></span>
+                <span>
+                        <button type="button" class="btn btn-primary btn-zy btn-modeltwo">查询</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>嘉福订单号</th>
+                <th>员工姓名</th>
+                <th>邮箱</th>
+                <th>订单类型</th>
+                <th>订单金额（元）</th>
+                <th>支付状态</th>
+                <th>订单时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td>4623196845615</td>
+                <td>小明</td>
+                <td>123@126.com</td>
+                <td>手机订单</td>
+                <td>300</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>4623196845615</td>
+                <td>小明</td>
+                <td>123@126.com</td>
+                <td>手机订单</td>
+                <td>300</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>4623196845615</td>
+                <td>小明</td>
+                <td>123@126.com</td>
+                <td>手机订单</td>
+                <td>300</td>
+                <td>已支付</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+
+</script>
+</body>
+</html>

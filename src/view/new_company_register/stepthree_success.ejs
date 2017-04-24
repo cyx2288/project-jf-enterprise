@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>嘉福企业注册</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <!--IE8只能支持jQuery1.9-->
+    <!--[if lte IE 8]>
+    <script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <![endif]-->
+</head>
+<body class="register_page">
+<!--注册登录页面通用导航-->
+<%- include('../../component/basic/topnav.ejs')%>
+<div class="container">
+
+    <div class="register_box">
+
+
+
+        <div class="register_finish">
+            <!--成功-->
+            <%- include('../../component/basic/success.ejs',{
+            "title":"恭喜您，新企业注册成功！"
+            })%>
+
+            <div class="register_finish_bottom">
+                <!--一个按钮-->
+                <%- include('../../component/button/oneSmallBtn.ejs',{
+                "thisurl":"#",
+                "btntext":"完成"
+                })%>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+</body>
+</html>

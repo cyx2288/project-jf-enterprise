@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>嘉福企业端组件</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>基本信息</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+        <!--用户名-->
+        <div class="info_content">
+            <span>企业全称：</span>
+            <span>上海XXX有限公司</span>
+        </div>
+
+        <!--服务费-->
+        <div class="info_content">
+            <span>服务费：</span>
+            <span >0&nbsp;&nbsp;元</span>
+        </div>
+
+        <!-- 单选框-->
+        <div class="info_content">
+            <span>是否开票：</span>
+            <span class="choose-boxs">
+                <input type="radio" checked="checked" name="fapiao" value="needs"/>开具发票
+                <input type="radio" name="fapiao" value="needless"/>无需发票
+            </span>
+        </div>
+        <!-- 复选框-->
+        <div class="info_content">
+            <span>付款方式：</span>
+            <span class="choose-boxs">
+                <input type="checkbox" />网络支付
+                <input type="checkbox" />现金支付
+            </span>
+        </div>
+        <!--文本框---名称带*-->
+        <div class="info_content" >
+            <span><span class="starstar">*</span>员工工号：</span>
+            <span>
+                <input type="text" class="form-control btn-md-zy11"  placeholder="输入员工工号" />
+            </span>
+        </div>
+        <!--纯文本---名称带*-->
+        <div class="info_content" >
+            <span>员工姓名：</span>
+            <span>
+                <input type="text" class="form-control btn-md-zy11"  placeholder="输入员工姓名" />
+               <p style="margin-top: 5px;font-size: 12px">支持模糊查询</p>
+            </span>
+        </div>
+
+        <!--input文本框--带单位-->
+        <div class="info_content">
+            <span>注册资金：</span>
+            <span>
+                <input type="text" class="form-control btn-md-zy"   placeholder="输入注册资金" />
+                <span class="input-group-addon" style="color: darkgray;font-size: 12px;text-align: center">元</span>
+            </span>
+        </div>
+        <!--input文本框--带按钮-->
+        <div class="info_content">
+            <span>营业执照：</span>
+            <span>
+                <input type="text" class="form-control btn-md-zy"  placeholder="输入注册资金" />
+                <button type="button" class="btn btn-primary input-group-addon" style="text-align: center; font-size: 12px">选择图片</button>
+            </span>
+        </div>
+
+        <div class="info_content">
+            <span>手机验证码：</span>
+            <span>
+                <input type="text" id="message" class="form-control btn-md-zy"  placeholder="输入短信验证码" />
+                <buttton type="button"  class="btn btn-primary input-group-addon" id="getmesssge" style="text-align: center; font-size: 12px" >点击获取</buttton>
+            </span>
+        </div>
+        <!--下拉框（3）-->
+        <div class="info_content">
+            <span style="vertical-align: top">企业地址：</span>
+            <span>
+                <span class="btn-group btn-group-33">
+                    <select class="form-control" style="font-size: 12px">
+                        <option hidden="" >地区选择</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                    </select>
+                </span>
+                <!--下拉框2-->
+                <span class="btn-group btn-group-33">
+                    <select class="form-control" style="font-size: 12px">
+                        <option hidden="">地区选择</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                    </select>
+                </span>
+                <!--下拉框3-->
+                <span class="btn-group btn-group-33">
+                    <select class="form-control" style="font-size: 12px">
+                        <option hidden="">地区选择</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                    </select>
+                </span>
+                 <p style="margin-top:15px;">
+                     <input type="text" class="form-control btn-lg-zy btn-md-zy11" placeholder="输入企业地址"  style="font-size: 12px">
+                 </p>
+            </span>
+        </div>
+        <!--下拉框（2）-->
+        <div class="info_content">
+            <span style="vertical-align: top">企业地址：</span>
+            <span>
+                <div class="btn-group btn-group-22">
+                    <select class="form-control" style="font-size: 12px" >
+                        <option hidden="">地区选择</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                    </select>
+                </div>
+                <!--下拉框2-->
+                <div class="btn-group btn-group-22">
+                    <select class="form-control" style="font-size: 12px">
+                        <option hidden="">地区选择</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                        <option>黄浦区</option>
+                    </select>
+                </div>
+            </span>
+        </div>
+
+        <!--下拉框（1）-->
+        <div class="info_content">
+            <span style="vertical-align: top">交易类型：</span>
+            <span>
+                <div class="btn-group btn-group-11">
+                    <select class="form-control" style="font-size: 12px" >
+                        <option hidden="">地区选择</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                        <option>上海市</option>
+                    </select>
+                </div>
+            </span>
+        </div>
+        <!--下拉框+带按钮-->
+        <div class="info_content">
+            <span>付款账户：</span>
+            <span>
+                <select class="form-control btn-md-zy" style="font-size: 12px">
+                    <option>上海XXX有限公司</option>
+                    <option>上海XXX有限公司</option>
+                    <option>上海XXX有限公司</option>
+                </select>
+                 <button type="button" class="btn btn-primary input-group-addon" style="text-align: center;font-size: 12px"> + </button>
+            </span>
+        </div>
+
+        <!-- 时间选择-->
+        <div class="info_content">
+            <span>交易时间：</span>
+            <span>
+                <input size="16" type="text" value="2012-06-15" readonly class="form-datetime form-control form-control-zy11">
+                    至
+                 <input size="16" type="text" value="2012-06-15" readonly class="form-datetime form-control form-control-zy11">
+            </span>
+        </div>
+
+        <!-- 一个按钮-->
+        <div class="info_content">
+            <span></span>
+            <span>
+                 <button type="button" class="btn btn-primary btn-zy11 btn-modelone" >导入</button>
+            </span>
+        </div>
+        <!-- 两个按钮-->
+        <div class="info_content">
+            <span></span>
+            <span>
+                 <button type="button" class="btn btn-primary btn-zy22">查询一</button>
+                 <button type="button" class="btn btn-primary btn-zy22">查询一</button>
+            </span>
+        </div>
+
+
+        <!-- 一排多个组件-->
+        <div class="control-title">
+            <div>
+                <span class="account_jiaoyi" >交易类型：</span>
+                <span>
+                    <select class="form-control  form-control-zy" style="text-align: center;font-size: 12px">
+                        <option value="地区选择" hidden="">请选择</option>
+                        <option value="待处理">消费</option>
+                        <option value="待处理">充值</option>
+                    </select>
+                    </span>
+            </div>
+            <div>
+                <span>交易时间：</span>
+                <span>
+                     <input size="16" type="text" value="2012-06-15" readonly class="form-datetime form-control form-control-zy1">
+                    至
+                    <input size="16" type="text" value="2012-06-15" readonly class="form-datetime form-control form-control-zy1" >
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zy btn-modeltwo">员工导入</button>
+                </span>
+            </div>
+        </div>
+        <!-- 一排3个组件-->
+        <div class="control-title">
+            <div>
+                <span class="account_jiaoyi" >交易类型：</span>
+                <span>
+                    <select class="form-control  form-control-zy" style="text-align: center;font-size: 12px">
+                        <option value="地区选择" hidden="">请选择</option>
+                        <option value="待处理">消费</option>
+                        <option value="待处理">充值</option>
+                    </select>
+                    </span>
+            </div>
+            <div>
+                <span>邮箱：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入邮箱地址" >
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zy btn-1">保存修改</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内容222-->
+    <div class="line-qd"></div>
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>员工姓名</th>
+                <th>邮箱</th>
+                <th>手机号</th>
+                <th>交易类型</th>
+                <th>交易金额（元）</th>
+                <th>余额（元）</th>
+                <th>交易时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td>小明</td>
+                <td>123@163.com</td>
+                <td>13761629225</td>
+                <td>消费</td>
+                <td>-500</td>
+                <td>300</td>
+                <td>2016.12.12 12:32：23</td>
+            </tr>
+            <tr align="center">
+                <td>小明</td>
+                <td>123@163.com</td>
+                <td>13761629225</td>
+                <td>消费</td>
+                <td>-200</td>
+                <td>800</td>
+                <td>2016.12.12 12:32：22</td>
+            </tr>
+            <tr align="center">
+                <td>小明</td>
+                <td>123@163.com</td>
+                <td>13761629225</td>
+                <td>充值</td>
+                <td>+1,000</td>
+                <td>1,000</td>
+                <td>2016.12.12 12:32：21</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </div>
+    <!--底部按钮-->
+    <div class="info_bottom">
+        <div class="info_mod">
+            <a href="#"><button  type="button" class="btn btn-primary btn-primary-mod" data-loading-text="保存中...">下一步</button></a>
+        </div>
+    </div>
+    <!--模态框1-->
+    <div class="modal fade"  id="info_modal" tabindex="-1" aria-labelledby="info_modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="info_modalLabel"> 请您完善以下信息，激活企业自助服务 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!-- 纯文本-->
+                    <div class="smodal_content">
+                        <div class="model_pp">修改成功</div>
+                    </div>
+                    <div class="smodal_content">
+                        <p>支付成功，支付成功，支付成功，支付成功，支付成功，支付成功，支付成功</p>
+                    </div>
+
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span ><span>*</span>企业工商注册名：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span >企业工商注册名：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11" />
+                                <span style="font-size: 12px">注册名不能为空</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class="info_content modal22">
+                            <span >注册资金：</span>
+                            <span>
+                                <input type="text" class="form-control btn-md-zy "/>
+                                <span class="input-group-addon" style="color: darkgray;text-align: center;font-size: 12px" >万元</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class="info_content modal22">
+                            <span >营业执照上传：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy" />
+                                <button type="button" class="btn btn-primary input-group-addon" style="text-align: center;font-size: 12px">选择图片</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class="info_content modal22">
+                            <span>付款账户：</span>
+                            <span>
+                                <select class="form-control btn-md-zy" style="font-size: 12px">
+                                    <option>上海XXX有限公司</option>
+                                    <option>上海XXX有限公司</option>
+                                    <option>上海XXX有限公司</option>
+                                </select>
+                                <button type="button" class="btn btn-primary input-group-addon"> + </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span></span>
+                            <span>
+                                <button  class="btn btn-primary btn-zy11" >确认</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="smodal_content">
+                        <div class="control-title control-titlemany">
+                            <div>
+                                <span class="account_jiaoyi">交易类型：</span>
+                                <span>
+                                <select class="form-control  form-control-zy" style="font-size: 12px">
+                                    <option value="地区选择" hidden="">请选择</option>
+                                    <option value="待处理">消费</option>
+                                    <option value="待处理">充值</option>
+                                </select>
+                                    </span>
+                            </div>
+                            <div>
+                                <span>邮箱：</span>
+                                <span>
+                                    <input type="text" class="form-control form-control-zy"placeholder="输入邮箱地址" >
+                                </span>
+                            </div>
+                            <div>
+                                <span></span>
+                                <span>
+                                    <button type="submit" class="btn btn-primary btn-zy ">搜索</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 模态框中的表格-->
+                    <div class="table-responsive info_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="tr-zy">
+                                <th>员工姓名</th>
+                                <th>邮箱</th>
+                                <th>手机号</th>
+                                <th>交易类型</th>
+                                <th>交易金额（元）</th>
+                                <th>余额（元）</th>
+                                <th>交易时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr align="center">
+                                <td>小明</td>
+                                <td>123@163.com</td>
+                                <td>13761629225</td>
+                                <td>消费</td>
+                                <td>-500</td>
+                                <td>300</td>
+                                <td>2016.12.12 12:32：23</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小明</td>
+                                <td>123@163.com</td>
+                                <td>13761629225</td>
+                                <td>消费</td>
+                                <td>-200</td>
+                                <td>800</td>
+                                <td>2016.12.12 12:32：22</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小明</td>
+                                <td>123@163.com</td>
+                                <td>13761629225</td>
+                                <td>充值</td>
+                                <td>+1,000</td>
+                                <td>1,000</td>
+                                <td>2016.12.12 12:32：21</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info_page">
+                        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+                        <ul class="pagination" style="margin-top:0px; float:right;">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-target="#Zzzdl2">下一步</button>
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">退出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框2---点击调用-->
+    <div class="modal fade" id="modal_success" tabindex="-1" aria-labelledby="modal_successLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modal_successLabel">密码修改</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body" >
+                    <div class="title-success">
+                        <div class="swal2-icon swal2-success animate">
+                            <span class="line tip animate-success-tip"></span>
+                            <span class="line long animate-success-long"></span>
+                            <div class="placeholder"></div>
+                            <div class="fix"></div>
+                        </div>
+                        <div class="wenan-zy">修改成功！</div>
+                    </div>
+                    <p style="text-align:center;">提交成功，可以去查询新订单</p>
+                    <!-- footer -->
+                    <div class="modal-footer" style="text-align:center;">
+                        <button type="button" class="btn btn-primary btn-primary-zy  model-change1" data-dismiss="modal">确认</button>
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框3---点击调用-->
+    <div class="modal fade"  id="modal_fail" tabindex="-1" aria-labelledby="modal_failLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> <span></span> </button>
+                    <h4 class="modal-title" id="modal_failLabel"> 员工管理</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body" >
+                    <div class="title-success">
+                        <div class="swal2-icon swal2-error animate-error-icon" style="display: block;">
+                            <span class="x-mark animate-x-mark">
+                            <span class="line left"></span>
+                            <span class="line right"></span>
+                            </span>
+                        </div>
+                        <div class="wenan-zy">导入失败！</div>
+                    </div>
+                    <p style="text-align:center;">系统异常，请稍后重试</p>
+                    <!-- footer -->
+                    <div class="modal-footer" style="text-align:center;">
+                        <button type="button" class="btn btn-primary btn-primary-zy  model-change1" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框4---点击调用-->
+    <div class="modal fade"  id="modal_loading" tabindex="-1" aria-labelledby="modal_loadingLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> <span></span> </button>
+                    <h4 class="modal-title" id="modal_loadingLabel"> 员工管理</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body" >
+                    <div class="title-success">
+                        <div class="loadEffect">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="wenan-zy">请稍后，加载中...</div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer" style="text-align:center;">
+                        <button type="button" class="btn btn-primary btn-primary-zy  model-change1" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+</body>
+</html>

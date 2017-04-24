@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>VIP回收确认</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>福利发放确认</h2>
+    <!--内容111-->
+    <div class="info_middlebody">
+        <!--用户名-->
+        <div class="info_content">
+            <span>本次福利发放总人数：</span>
+            <span>300</span>
+        </div>
+
+        <!--服务费-->
+        <div class="info_content">
+            <span>发放总金额：</span>
+            <span >4000</span>
+        </div>
+
+        <!--发放明细-->
+        <div class="info_content">
+            <span>发放明细：</span>
+            <span ><button class="btn btn-primary look_details">查看详情</button></span>
+        </div>
+        <!--纯文本---名称带*-->
+        <div class="info_content" >
+            <span style="vertical-align: top">备注信息：</span>
+            <span>
+               <textarea rows="3" cols="20" maxlength="50" class="form-control btn-md-zy11"></textarea>
+               <p style="margin-top: 5px;font-size: 12px">最多输入50个字符</p>
+            </span>
+        </div>
+        <div class="info_content">
+            <span></span>
+            <span>
+                  <a href="../pay_info_success/pay_details.html"><button type="button" class="btn btn-primary release_confirm_btn">确认发放</button></a>
+                 <a href="welfare_release.html"><button type="button" class="btn btn-primary release_confirm_btn">取消</button></a>
+            </span>
+        </div>
+    </div>
+
+
+    <!--模态框1-->
+    <div class="modal fade"  id="look_details_model" tabindex="-1" aria-labelledby="info_modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="info_modalLabel"> 发放详情 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!-- 模态框中的表格-->
+                    <div class="table-responsive info_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="tr-zy">
+                                <th>收款人账号</th>
+                                <th>收款人姓名</th>
+                                <th>转账金额（元）</th>
+                                <th>转账说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            <tr align="center">
+                                <td>123@163.com</td>
+                                <td>小明</td>
+                                <td>300</td>
+                                <td>9月福利</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('.look_details').on('click', function () {
+
+        modelInfo('#look_details_model'); //参数一：模态框id选择器
+    });
+</script>
+</body>
+</html>
