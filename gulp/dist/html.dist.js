@@ -69,6 +69,12 @@ function htmlDist() {
 
                     }
 
+                    if ($(this).attr('href').indexOf('newcomponent') > -1) {
+
+
+                        $(this).remove()
+
+                    }
                 }
 
             })
@@ -78,6 +84,10 @@ function htmlDist() {
         .pipe(htmlmin(options))
 
         .pipe(gulp.dest('dist/html'));
+
+    gulp.src("build/*.html")
+
+        .pipe(gulp.dest('dist'));
 
 }
 

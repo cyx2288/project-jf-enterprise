@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 
 function cssDist() {
 
-    gulp.src(['build/css/*.css','!build/css/*.min.css'])
+    gulp.src(['build/css/*.css','!build/css/*.min.css','!build/css/main.css'])
 
         .pipe(concat('component.css'))
 
@@ -23,7 +23,7 @@ function cssDist() {
 
         .pipe(gulp.dest('dist/css'));
 
-    gulp.src(['build/css/*.min.css'])
+    gulp.src(['build/css/*.min.css','build/css/main.css'])
 
         .pipe(clean())
 

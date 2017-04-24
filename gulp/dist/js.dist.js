@@ -22,6 +22,10 @@ function jsDist() {
 
         .pipe(gulp.dest('dist/js'));
 
+    gulp.src(['build/json/*']) //该任务针对的文件7
+
+        .pipe(gulp.dest('dist/json'))
+
 }
 
 module.exports = jsDist;
