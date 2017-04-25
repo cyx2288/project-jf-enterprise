@@ -18,7 +18,7 @@
             <div>&#x5609;&#x798F;&#x4F01;&#x4E1A;&#x6CE8;&#x518C;</div>
         </div>
 
-        <div class="right_service">
+        <div class="right_service" onclick="jfCustomerService.click()">
             <div><img src="../../icon/icon_customer_service.png"></div>
             <div>&#x5BA2;&#x670D;</div>
         </div>
@@ -197,10 +197,29 @@
 
 
 
+
 <script src="../../js/jquery-3.0.0.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/BusinessService.min.js"></script>
 <script>
+
+    jfCustomerService.init({//用户信息
+        name: '阿陈',// 名字
+        address: '西伯利亚',// 地址
+        email: '1313@qq.com',// 邮箱
+        age: '16',// 年龄
+        tel: '110',// 电话
+        comment: '很帅',// 备注
+        gender: '男',// 性别
+        qq: '1234567',// QQ
+        weibo: '',// 微博
+        weixin: '',// 微信
+        '公司名称':'上海淘略数据有限公司',
+        '公司编号':'123ksuhdaf891274',
+        '员工编号':'1234567890123456'
+    })
+
+
 
 </script>
 </body>
