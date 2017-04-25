@@ -1,3 +1,38 @@
+/*网络客服模块*/
+#MEIQIA-PANEL-HOLDER.show {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkti-transform: translateY(0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkti-transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  -webkti-transition: transform .3s;
+}
+#MEIQIA-PANEL-HOLDER.hide {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkti-transform: translateY(100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+  -webkti-transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  -webkti-transition: transform .3s;
+}
+#MEIQIA-PANEL-HOLDER {
+  box-shadow: 0 0 10px #000;
+  -webkti-box-shadow: 0 0 10px #000;
+}
+/*网络客服模块结束*/
+
 .jf_progress {
   width: 80%;
   margin: 30px auto 50px;
