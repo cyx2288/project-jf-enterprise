@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/jf_business.css" rel="stylesheet">
+    <title>嘉福企业端登录</title>
+
+</head>
+
+
+<body class="jf_business_logon">
+
+<nav class="init_nav">
+    <div class="nav_container">
+        <div class="nav_left">
+            <div>
+                <img src="../images/hm-logo.png"/>
+            </div>
+            <div>
+                <p>嘉福平台</p>
+                <p>一站式福利薪酬管理平台</p>
+            </div>
+        </div>
+        <div class="nav_right">
+            <a onclick="jfCustomerService.click()">
+                <img src="../icon/business_answer.png"/><span>在线咨询</span>
+            </a>
+            <a href="tel:4008216990">
+                <img src="../icon/business_tel.png"/><span>咨询电话：400-821-6990</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="scetion_top_rope">
+        <img src="../images/business_rope.png">
+    </div>
+
+    <div class="section_middle">
+        <div class="section_middle_title">
+            <div><img src="../images/business_logo.png"/></div>
+            <div class="section_title_name">企业管理员</div>
+            <div class="section_title_name_vice"><span>&nbsp;&nbsp;&nbsp;&nbsp;一站式为您解决企业福利、薪酬、费用问题&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <div class="section_middle_input">
+            <form>
+                <div>
+                    <label>
+                        <input type="text" placeholder="手机号" maxlength="11" autocomplete="off"/>
+                        <img class="section_middle_image1 blue" src="../icon/business_user.png"/>
+                        <img class="section_middle_image2 blue" src="../images/business_line.png"/>
+                        <img class="section_middle_image1 red" src="../icon/business_user_red.png"/>
+                        <img class="section_middle_image2 red" src="../images/business_line_red.png"/>
+                        <div class="section_input_bg"></div>
+                        <button type="button" class="button_code">获取验证码</button>
+                        <div class="input_text_switch special_error">*格式错误</div>
+                    </label>
+
+                </div>
+                <div>
+                    <label>
+                        <input type="text" placeholder="输入短信验证码" maxlength="6" autocomplete="off"/>
+                        <img class="section_middle_image1 blue" src="../icon/business_key.png"/>
+                        <img class="section_middle_image2 blue" src="../images/business_line.png"/>
+                        <img class="section_middle_image1 red " src="../icon/business_key_red.png"/>
+                        <img class="section_middle_image2 red " src="../images/business_line_red.png"/>
+                        <div class="section_input_bg"></div>
+                        <div class="input_text_switch">验证码</div>
+                        <div class="input_text_switch red">*输入错误</div>
+                    </label>
+                </div>
+                <!--                <div class="section_middle_input_cert">
+                                    <label>
+                                        <input type="text" placeholder="输入图形验证码" autocomplete="off"/>
+                                        <img class="section_middle_image1 blue" src="../icon/business_define.png"/>
+                                        <img class="section_middle_image2 blue" src="../images/business_line.png"/>
+                                        <img class="section_middle_image1 red " src="../icon/business_define_red.png"/>
+                                        <img class="section_middle_image2 red " src="../images/business_line_red.png"/>
+                                        <div class="section_input_bg"></div>
+                                        <div class="input_text_switch">
+                                            <img class="cert_pic_re" src="../icon/business_re.png"/>
+                                            <img class="cert_pic_jpg" src="../images/makeCertPic.jpg"/>
+                                        </div>
+                                        <div class="input_text_switch red">*输入错误</div>
+                                    </label>
+                                </div>-->
+                <div class="section_middle_input_check">
+                    <label class="section_middle_check">
+                        <input type="button" value="登录" class="login_button" disabled onclick="window.location.href='business_log_on_confirm.html'">
+                    </label>
+                    <span><!--<img src="../images/business_button_bg.png"/>--></span>
+                </div>
+            </form>
+        </div>
+        <div class="section_middle_button">
+            <span><a href="javascript:" target="_blank"><< 注册新企业</a></span>
+            <!--   <span>|</span>
+               <span><a href="javascript:" target="_blank">忘记密码？</a></span>-->
+        </div>
+    </div>
+</section>
+
+<footer class="init_footer">
+    <div class="footer_container">
+        <div class="footer_left">
+            <span><a href="#" target="_blank">嘉福官网</a></span>
+            <span><a href="#" target="_blank">常见问题</a></span>
+            <span><a href="#" target="_blank">联系我们</a></span>
+        </div>
+
+        <div class="footer_right">
+            <span>Copyright 2014-2017 www.jia-fu.cn All Rights Reserved. 沪ICP备14041032</span>
+        </div>
+    </div>
+
+</footer>
+<div id="background_blur">
+    <img class="background_position" src="../images/business_logon_bg.jpg"/>
+    <div style="background-image:url('../images/business_logon_bg_f.jpg') ">
+
+    </div>
+
+</div>
+<div id="background_init" class="init_loading">
+    <div>
+        <div>
+            <div class="loading_model"></div>
+            <p>加载中</p>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jf_business.min.js"></script>
+
+
+<script>
+    //-------------------美洽
+    jfCustomerService.init({//用户信息
+        name: '阿陈',// 名字
+        address: '西伯利亚',// 地址
+        email: '1313@qq.com',// 邮箱
+        age: '16',// 年龄
+        tel: '110',// 电话
+        comment: '很帅',// 备注
+        gender: '男',// 性别
+        qq: '1234567',// QQ
+        weibo: '',// 微博
+        weixin: '',// 微信
+        '公司名称': '上海淘略数据有限公司',
+        '公司编号': '123ksuhdaf891274'
+    });
+
+    //-------------------报错
+    /*！！！！报错方法演示！！！！！*/
+/*         document.getElementsByTagName('section')[0].getElementsByTagName('input')[2].addEventListener('click', function () {
+
+     //此为报错方法，第一个参数是错误的input控件，第二个参数是显示的错误信息
+     logonInputHasError(
+     document.getElementsByTagName('section')[0].getElementsByTagName('input')[1]                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
+     ,
+     '*错误显示测试'                                                                                             //报错提示的文案
+     );
+     //报错方法结束
+     }, false);*/
+
+    //-------------------倒计时
+    document.getElementsByClassName('button_code')[0].addEventListener('click',function(){
+        getMessage(this, '60','#4a4a4a','0')
+    },false);
+
+    //-------------------input无值状态登录按钮为disabled
+    logonInputDisabled ();
+
+
+</script>
+
+</body>
+</html>
