@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业认证</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+
+
+        <%- include('../../component/input/upload_file.ejs',{
+        "title":"营业执照*：",
+        "thisSrc":"../../icon/jiafu_logo.png",
+         "textone":"上传：营业执照图片；",
+        })%>
+
+
+        <%- include('../../component/input/bottomtextInput.ejs',{
+        "title":"统一社会信用代码*：",
+        "placeholder":"",
+        "text":"请输入18位的统一社会信用代码"
+
+        })%>
+
+        <%- include('../../component/input/bottomtextInput.ejs',{
+        "title":"企业名称*：",
+        "placeholder":"",
+        "text":"请填写营业执照上的名称"
+
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"法人代表*：",
+        "placeholder":"",
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"法人代表身份证号*：",
+        "placeholder":"",
+        })%>
+
+        <!--2个Select选择框-->
+        <%- include('../../component/select/twoSelect.ejs',{
+        "title":"所在地",
+        "placeholderone":"请选择",
+        "optionone":[
+        {"option":"上海市"},
+        {"option":"北京市"},
+        {"option":"江苏省"},
+        {"option":"浙江省"},
+        {"option":"重庆市"},
+        {"option":"天津市"},
+        ],
+        "placeholdertwo":"请选择",
+        "optiontwo":[
+        {"option":"徐汇区"},
+        {"option":"浦东区"},
+        {"option":"闵行区"},
+        {"option":"浦东新区"},
+        {"option":"宝山区"},
+        {"option":"嘉定区"},
+        ],
+        })%>
+
+        <%- include('../../component/input/bottomtextInput.ejs',{
+        "title":"详细地址*：",
+        "placeholder":"",
+        "text":"请检查与证件上地址保持一致"
+
+        })%>
+
+
+        <%- include('../../component/input/upload_file.ejs',{
+        "title":"认证授权书*：",
+        "thisSrc":"../../icon/jiafu_logo.png",
+        "textone":"请下载认证授权书；",
+        })%>
+
+
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+
+</body>
+</html>

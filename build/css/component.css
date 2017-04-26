@@ -171,12 +171,12 @@ h2>div>button>span{
 .info_middlebody{
     padding: 15px 0 5px 0;
     margin-top: 0;
-    margin-left: 20%
 }
 
 .info_content{
+    width: 90%;
+    margin: 0 auto 15px;
     display: block;
-    margin-bottom: 15px;
 }
 .lookup_help{
     height: 400px;
@@ -204,17 +204,17 @@ h2>div>button>span{
     padding-left: 30px;
 }
 .info_content>span:last-child{
-    padding-left:30px;
-    width:72%;
+    padding-left: 30px;
+    width: 55%;
     text-align: left;
-    position: relative;
+    position: relative;;
 }
 
 .info_content>span:last-child:hover .img_verifycode{
     opacity: 1;
 }
 .info_content>span:first-child{
-    width:26%;
+    width: 37%;
     text-align: right;
     margin-bottom: 0;
     min-height: 1px;
@@ -627,13 +627,11 @@ input[type=password]{
     margin:0 auto;
 }
 .line-qd {
-   /* width: 70%;*/
-    width: 60%;
-    margin: 0 auto;
+    width: 45%;
+    margin: 10px auto;
+    /* margin: 0 auto; */
     border-top: 1px solid #DDDDDD;
     padding-top: 20px;
-    margin-top: 20px;
-    margin-left: 30px;
 }
 .smodal_content>p{
     width:65%;
