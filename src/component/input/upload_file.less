@@ -1,7 +1,7 @@
 .info_content.modal22{
 
   @media screen and(max-width: 460px) {
-       width: 95%;
+       width: 100%;
       margin: 0 auto;
       text-align: center;
   }
@@ -47,9 +47,10 @@
     line-height: 22px;
     max-width: 80%;
     font-size: 12px;
+    margin-top: -5px;
 
     @media screen and(min-width: 1300px) {
-      max-width: 50%;
+      max-width: 70%;
     }
     @media screen and(max-width: 991px) {
       margin-top: 5px;
@@ -63,13 +64,21 @@
 
     @media screen and(max-width: 460px){
       width: calc(~"100% - 80px");
+      margin-top: -5px;
+      line-height: 20px;
     }
 
 
     p{
       margin: 0;
-      width: 100%;
+      width: 110%;
       color: grey;
+
+      span{
+        color:#4a4a4a;
+        font-weight:bold;
+        display: block;
+      }
 
       @media screen and(max-width: 460px){
 
@@ -97,7 +106,7 @@
 
       @media screen and (max-width: 460px){
         position: absolute;
-        top: -5px;
+        top: -15px;
         right: -5px;
         width: 65px;
         line-height: 24px;
@@ -113,5 +122,20 @@
     content: "";
     display: block;
     clear: both;
+  }
+}
+
+
+/*营业执照模态框样式*/
+.modal .business_license{
+  text-align: center;
+  img{
+    width: 100%;
+  }
+
+  &+.modal-footer{
+    border: none;
+    text-align: center;
+    margin-top: 10px;
   }
 }

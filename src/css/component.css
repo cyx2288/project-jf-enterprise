@@ -174,7 +174,7 @@ h2>div>button>span{
 }
 
 .info_content{
-    width: 90%;
+    width: 60%;
     margin: 0 auto 15px;
     display: block;
 }
@@ -230,6 +230,8 @@ select{
 }
 input[type=text]{
     font-size: 12px;
+    box-shadow: none;
+
 }
 input[type=checkbox]{
     vertical-align: middle;
@@ -240,6 +242,7 @@ input[type=password]{
 }
 .form-control{
     font-size: 12px;
+    box-shadow: none;
 }
 .starstar {
     color:#ff4646;
@@ -248,9 +251,6 @@ input[type=password]{
 .choose-boxs input{
     display: inline-block;
     margin-right:15px;
-}
-.choose-boxs input:last-child{
-    margin-left:40px;
 }
 
 .basic_info .btn-md-zy{
@@ -2841,6 +2841,7 @@ input[type=file]{
         width: 100%;
         padding-right: 5px;
         padding-left: 0;
+        line-height: 20px;
     }
 
     .btn-md-zy {
@@ -2849,6 +2850,7 @@ input[type=file]{
         border-bottom-right-radius: 0;
         width: 78%;
     }
+
    .btn-group-33 {
         width: 32%
     }
@@ -3046,6 +3048,12 @@ input[type=file]{
         padding:5px;
         background: #fff;
     }
+
+    .info_content{
+        width: 95%;
+        margin: 0 auto 15px;
+        display: block;
+    }
 }
 
 @media (max-width: 330px) {
@@ -3061,6 +3069,9 @@ input[type=file]{
         display: inline-block;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        width: 70%;
+    }
+    .basic_info .btn-md-zy{
         width: 70%;
     }
     .btn-group-33 {
