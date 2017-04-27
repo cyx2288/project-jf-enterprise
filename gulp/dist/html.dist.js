@@ -14,7 +14,7 @@ function htmlDist() {
 
     var options = {
 
-        removeComments: true,//清除HTML注释
+        removeComments: false,//清除HTML注释
 
         collapseWhitespace: false,//压缩HTML
 
@@ -35,53 +35,62 @@ function htmlDist() {
 
     gulp.src(['build/html/**/*'])
 
-        .pipe(cheerio(function ($) {
+        .pipe(cheerio(
+            {
+                run:function ($) {
 
-            $('script').each(function (index, ele) {
+                    $('script').each(function (index, ele) {
 
-                if ($(this).attr('src')) {
+                        if ($(this).attr('src')) {
 
-                    if ($(this).attr('src').indexOf('.min.js') <= -1) {
+                            if ($(this).attr('src').indexOf('.min.js') <= -1) {
 
-                        var htmlSrc = $(this).attr('src');
+                                var htmlSrc = $(this).attr('src');
 
-                        htmlSrc = htmlSrc.replace('.js', '.min.js');
+                                htmlSrc = htmlSrc.replace('.js', '.min.js');
 
-                        $(this).attr('src', htmlSrc);
+                                $(this).attr('src', htmlSrc);
 
-                    }
+                            }
 
+                        }
+
+                    });
+
+                    $('link').each(function (index, ele) {
+
+                        if ($(this).attr('rel')) {
+
+                            if ($(this).attr('href').indexOf('.min.css') <= -1) {
+
+                                var htmlSrc = $(this).attr('href');
+
+                                htmlSrc = htmlSrc.replace('.css', '.min.css');
+
+                                $(this).attr('href', htmlSrc);
+
+                            }
+
+                            if ($(this).attr('href').indexOf('newcomponent') > -1) {
+
+
+                                $(this).remove()
+
+                            }
+                        }
+
+                    })
+
+                },
+
+                parserOptions: {
+                    // Options here
+                    decodeEntities: false
                 }
+            }
+        ))
 
-            });
-
-            $('link').each(function (index, ele) {
-
-                if ($(this).attr('rel')) {
-
-                    if ($(this).attr('href').indexOf('.min.css') <= -1) {
-
-                        var htmlSrc = $(this).attr('href');
-
-                        htmlSrc = htmlSrc.replace('.css', '.min.css');
-
-                        $(this).attr('href', htmlSrc);
-
-                    }
-
-                    if ($(this).attr('href').indexOf('newcomponent') > -1) {
-
-
-                        $(this).remove()
-
-                    }
-                }
-
-            })
-
-        }))
-
-        .pipe(htmlmin(options))
+        //.pipe(htmlmin(options))
 
         .pipe(gulp.dest('dist/html'));
 
