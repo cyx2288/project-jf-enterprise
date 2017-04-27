@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业基本信息</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+        <!--用户名-->
+
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业识别号：",
+        "basicinfo":"AY2368554"
+        })%>
+
+        <%- include('../../component/basic/certificate.ejs',{
+        "title":"企业全称：",
+        "basicinfo":"上海嘉付宝信息技术有限公司",
+        "certificate":false,
+        "onesrc":"../../icon/v.png",
+        "textinfo":"未认证",
+        "twosrc":"../../icon/v2.png",
+        "thishref":"no_certification.html"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"销售顾问：",
+        "basicinfo":"李明"
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"企业全称：",
+        "btntext":"修改"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"销售顾问电话：",
+        "basicinfo":"15665456952"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业地址：",
+        "basicinfo":"上海市徐汇区虹桥路"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"统一社会编码：",
+        "basicinfo":"4623596523629656269536"
+        })%>
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+</body>
+</html>
