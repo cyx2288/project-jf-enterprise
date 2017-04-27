@@ -1,0 +1,23 @@
+
+<div class="control-title">
+    <div>
+        <span><%=titleone%></span>
+        <span>
+                    <input type="text" class="form-control form-control-zy" placeholder="<%=placeholderone%>" >
+                </span>
+    </div>
+    <div>
+        <span class="account_jiaoyi" ><%=titletwo%></span>
+        <span>
+                    <select class="form-control  form-control-zy" >
+                        <option selected="selected">请选择交易类型</option>
+                        <!--select按钮选项-->
+                        <%for(var i=0;i<options.length;i++){%>
+                        <option value="<%=options[i].option%>"><%=options[i].option%></option>
+                        <%}%>
+
+                    </select>
+                    </span>
+    </div>
+
+</div>
