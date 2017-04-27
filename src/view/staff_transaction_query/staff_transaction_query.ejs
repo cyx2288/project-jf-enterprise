@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>员工交易查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>员工交易查询</h2>
+
+    <div class="info_middlebody">
+        <%-include("../../component/table/formDatetime.ejs")%>
+
+        <%-include("../../component/table/inputSelect.ejs",{
+        "titleone":"账号：",
+        "placeholderone":"请输入账号",
+        "titletwo":"交易类型：",
+        "options":[
+        {"option":"嘉福账户"},
+        {"option":"银行卡"},
+        ]
+        })%>
+
+        <%-include("../../component/table/twoButton.ejs",{
+        "titleone":"查询",
+        })%>
+
+
+
+
+
+    </div>
+    <!--表格-->
+    <%-include("../../component/table/normalTable.ejs",{
+    "tablehead":[
+    {"name":"账号"},
+    {"name":"交易时间"},
+    {"name":"交易金额"},
+    {"name":"手续费（元）"},
+    {"name":"账户类型"},
+    {"name":"业务类型"},
+    {"name":"交易类型"},
+    ],
+    "tabletd":[
+    {"name":"112566233"},
+    {"name":"2017-9-12"},
+    {"name":"500,000.00"},
+    {"name":"50.00"},
+    {"name":"企业"},
+    {"name":"信用卡还款"},
+    {"name":"银行卡"},
+    ]
+    })%>
+    <!--分页-->
+    <%-include("../../component/table/infoPage.ejs")%>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+
+
+
+</script>

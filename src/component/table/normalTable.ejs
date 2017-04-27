@@ -1,0 +1,21 @@
+<!-- 表格-->
+<div class="table-responsive info_table">
+    <table class="table table-striped">
+        <thead>
+        <tr class="tr-zy">
+            <%for(var i=0;i<tablehead.length;i++){%>
+            <th><%=tablehead[i].name%></th>
+            <%}%>
+        </tr>
+        </thead>
+        <tbody>
+        <%for(var j=0;j<10;j++){%>
+        <tr align="center">
+            <%for(var m=0;m<tabletd.length;m++){%>
+            <td><%=tabletd[m].name%></td>
+            <%}%>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+</div>
