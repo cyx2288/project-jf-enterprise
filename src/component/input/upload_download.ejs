@@ -1,0 +1,31 @@
+<div class="smodal_content">
+    <div class="info_content modal22">
+        <span><%=title%></span>
+        <span>
+            <div class="left_img">
+                <img src="<%=thisSrc%>">
+                <p>点击查看模板</p>
+            </div>
+            <div class="right_text">
+                <p>
+                    <span><%=textone%><a href="#" download="">点击下载</a></span>
+                    <span><%=texttwo%></span>
+                </p>
+                <p>照片所有信息需要清晰可见，内容真实有效。
+                    <br/>
+                    照片支持.jpg .jpeg .bmp .gif .png格式，大小不超过8M。
+                </p>
+                <a href="#" class="choose_file">
+                    <input type="file">选择文件
+                </a>
+            </div>
+        </span>
+    </div>
+</div>
+
+<script>
+    $('.left_img').click(function(){
+        modelInfo('#company_photo'); //参数：模态框id选择器
+    })
+
+</script>

@@ -11,6 +11,8 @@ var gulp = require('gulp'),
 
     rename = require("gulp-rename");//重命名
 
+var bom = require('gulp-bom');//解决UTF-8文件是采用无BOM
+
 
 function devEjs() {
 
@@ -19,72 +21,89 @@ function devEjs() {
         .pipe(ejs())
 
         //增加媒体查询，通用样式文件
-        .pipe(cheerio(function ($) {
+        .pipe(cheerio({
 
-            if ($('head').children('link')) {
+            run: function ($) {
 
-                $('head').children('link').remove();//重新引入全新css
+                if ($('head').children('link')) {
 
-                $('head').append(addHtml);
+                    $('head').children('link').remove();//重新引入全新css
 
+                    $('head').append(addHtml);
+
+                }
+
+                var addHtml = "";
+
+                addHtml += "<link rel='stylesheet'  href='../../css/bootstrap.min.css'/>\n ";//框架
+
+                addHtml += "<link rel='stylesheet'  href='../../css/component.css'/>\n";//第一版样式
+
+                addHtml += "<link rel='stylesheet'  href='../../css/newcomponent.css'/>\n";//第二版开发样式
+
+                $('head').prepend(addHtml);
+
+            },
+
+            parserOptions: {
+                // Options here
+                decodeEntities: false
             }
-
-            var addHtml = "";
-
-            addHtml += "<link rel='stylesheet'  href='../../css/bootstrap.min.css'/>\n ";//框架
-
-            addHtml += "<link rel='stylesheet'  href='../../css/component.css'/>\n";//第一版样式
-
-            addHtml += "<link rel='stylesheet'  href='../../css/newcomponent.css'/>\n";//第二版开发样式
-
-            $('head').prepend(addHtml);
 
         }))
 
         //顺序增加脚本文件
-        .pipe(cheerio(function ($) {
+        .pipe(cheerio({
 
-            var addJSHtml = '';//保存引用的业务脚本
+            run: function ($) {
 
-            var addJsRun = "<script>\n";//运行的脚本
+                var addJSHtml = '';//保存引用的业务脚本
 
-            var addJsHtmlHead = "<script src='";
+                var addJsRun = "<script>\n";//运行的脚本
 
-            var addJSHtmlBottom = "'></script>\n";
+                var addJsHtmlHead = "<script src='";
 
-            $('script').each(function (index, ele) {
+                var addJSHtmlBottom = "'></script>\n";
 
-                if ($(this).attr('src')) {
+                $('script').each(function (index, ele) {
 
-                    var thisAttr=$(this).attr('src');
+                    if ($(this).attr('src')) {
 
-                    if(thisAttr.indexOf('BusinessService.min.js')>-1){
+                        var thisAttr = $(this).attr('src');
 
-                        thisAttr=thisAttr.replace('BusinessService.min.js','BusinessService.js')
+                        if (thisAttr.indexOf('BusinessService.min.js') > -1) {
+
+                            thisAttr = thisAttr.replace('BusinessService.min.js', 'BusinessService.js')
+
+                        }
+
+                        addJSHtml += addJsHtmlHead + thisAttr + addJSHtmlBottom;
 
                     }
 
-                    addJSHtml += addJsHtmlHead + thisAttr + addJSHtmlBottom;
+                    else {
 
-                }
+                        addJsRun += $(this).html() + '\n';
 
-                else {
+                    }
 
-                    addJsRun += $(this).html() + '\n';
+                });
 
-                }
+                addJsRun += "\n</script>\n";
 
-            });
+                $('script').remove();
 
-            addJsRun += "\n</script>\n";
+                $('body').append(addJSHtml);
 
-            $('script').remove();
+                $('body').append(addJsRun);
 
-            $('body').append(addJSHtml);
-
-            $('body').append(addJsRun);
-
+            },
+            parserOptions: {
+                // Options here
+                decodeEntities: false
+            }
         }))
+
 
         .pipe(rename({
 
@@ -93,6 +112,8 @@ function devEjs() {
         }))
 
         .pipe(gulp.dest('build/html'))//输出为html
+
+        .pipe(bom())
 
         //.pipe(notify({message: 'html task complete'}));
 
