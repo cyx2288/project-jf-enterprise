@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业基本信息</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+        <!--用户名-->
+
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业识别号：",
+        "basicinfo":"AY2368554"
+        })%>
+
+        <%- include('../../component/basic/certificate.ejs',{
+        "title":"企业名称：",
+        "basicinfo":"上海嘉付宝信息技术有限公司",
+        "certificate":true,
+        "onesrc":"../../icon/v.png",
+        "textoneinfo":"企业已认证",
+        "texttwoinfo":"未认证",
+        "twosrc":"../../icon/v2.png",
+        "thishref":"certificate_stepone.html",
+        "textthree":"立刻认证"
+
+        })%>
+
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"企业昵称：",
+        "thisValue":"上海淘略",
+        "btntext":"修改",
+        "thisIdname":"modifynackname",
+        "modelshow":false
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"所在地区：",
+        "basicinfo":"上海市，徐汇区"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业联系人：",
+        "basicinfo":"李小明"
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"管理员手机号：",
+        "thisValue":"152****8955",
+        "btntext":"修改",
+        "thisIdname":"modifyphone",
+        "modelshow":true
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"管理密码：",
+        "thisValue":"********",
+        "btntext":"修改",
+        "thisIdname":"modifypasd",
+        "modelshow":true
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"咨询顾问：",
+        "basicinfo":"李经理（123789564562）"
+        })%>
+
+        <%- include('../../component/basic/uplogo.ejs')%>
+
+
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+    $('#modifynackname').on("click",function(){
+
+        modifyNickName('修改','完成','#modifynackname','.changeinput','您还没有输入信息')//参数一是按钮初始文本，参数二是文本变化文本，参数三为点击的按钮ID选择器，参数四为变化的input的class选择器，参数五是报错的文本
+    })
+
+    });
+</script>
+</body>
+</html>

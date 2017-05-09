@@ -1,0 +1,30 @@
+
+<div class="control-title">
+    <div>
+        <span><%=titleone%></span>
+        <span>
+               <select class="form-control  form-control-zy" >
+                   <option selected="selected"><%=defaulttitleone%></option>
+                   <!--select按钮选项-->
+                   <%for(var i=0;i<optionone.length;i++){%>
+                   <option value="<%=optionone[i].option%>"><%=optionone[i].option%></option>
+                   <%}%>
+
+               </select>
+        </span>
+    </div>
+    <div>
+        <span><%=titletwo%></span>
+        <span>
+             <select class="form-control  form-control-zy" >
+                 <option selected="selected"><%=defaulttitletwo%></option>
+                 <!--select按钮选项-->
+                 <%for(var i=0;i<optiontwo.length;i++){%>
+                 <option value="<%=optiontwo[i].option%>"><%=optiontwo[i].option%></option>
+                 <%}%>
+
+             </select>
+        </span>
+    </div>
+
+</div>

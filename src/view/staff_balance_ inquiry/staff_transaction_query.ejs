@@ -13,7 +13,9 @@
     <h2>员工交易查询</h2>
 
     <div class="info_middlebody">
-        <%-include("../../component/table/formDatetime.ejs")%>
+        <%-include("../../component/table/formDatetime.ejs",{
+        "title":"交易日期"
+        })%>
 
         <%-include("../../component/table/inputSelect.ejs",{
         "titleone":"账号：",
@@ -22,10 +24,11 @@
         "options":[
         {"option":"嘉福账户"},
         {"option":"银行卡"},
-        ]
+        ],
+            "defaulttitleone":"请选择交易类型"
         })%>
 
-        <%-include("../../component/table/twoButton.ejs",{
+        <%-include("../../component/table/oneleftBtn.ejs",{
         "titleone":"查询",
         })%>
 

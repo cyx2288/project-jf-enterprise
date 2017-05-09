@@ -2,15 +2,7 @@
 
     <div class="info_content basic_info">
         <span><%=title%></span>
-        <span><input value="小李" class="form-control btn-md-zy changeinput" readonly="readonly"><button class="btn btn-primary input-group-addon" id="modifynackname"><%=btntext%></button></span>
+        <span><input value="<%=thisValue%>"
+         <%if(modelshow){%> class="form-control btn-md-zy"<%}else{%>class="form-control btn-md-zy changeinput"<%}%>readonly="readonly">
+            <button class="btn btn-primary input-group-addon" id="<%=thisIdname%>"><%=btntext%></button></span>
     </div>
-<script>
-
-    $('#modifynackname').click(function(){
-
-        modifyNickName('修改','完成','#modifynackname','input.changeinput','您还没有输入信息')
-
-    });
-
-
-</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业认证</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.基本信息认证"},
+        {"text":"2.企业资料提交"},
+        {"text":"3.认证完成"},
+        ],
+        "j":"0"
+        })%>
+        <%- include('../../component/input/input_btn_e.ejs',{
+        "title":"企业名称：",
+        "thisValue":"上海淘略数据处理有限公司",
+        "btntext":"修改",
+        "thisIdname":"modify_companyname",
+        "modelshow":false
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*统一社会信用代码：",
+        "placeholder":"请输入"
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*法人代表姓名：",
+        "placeholder":"请输入"
+        })%>
+        <div style="margin-top: -20px">
+            <%- include('../../component/input/input_info.ejs',{
+            "title":"",
+            "basicinfo":"企业认证每天只能提交3次,当前已经提交3次"
+            })%>
+        </div>
+
+
+        <%- include('../../component/button/oneButton.ejs',{
+        "buttontext":"下一步",
+        "thisurl":"certificate_steptwo.html"
+        })%>
+
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+    //修改公司名称
+    $('#modify_companyname').on("click",function(){
+
+        modifyNickName('修改','完成','#modify_companyname','.changeinput','您还没有输入信息')//参数一是按钮初始文本，参数二是文本变化文本，参数三为点击的按钮ID选择器，参数四为变化的input的class选择器，参数五是报错的文本
+
+    });
+
+</script>
+</body>
+</html>
