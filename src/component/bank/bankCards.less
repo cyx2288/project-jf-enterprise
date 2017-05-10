@@ -1,0 +1,465 @@
+.info_middlebody{
+
+  .cards{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    @media screen and (max-width: 460px){
+      display: block;
+      width: auto;
+
+    }
+
+    &:last-child{
+      margin-top: 30px;
+      @media screen and (max-width: 460px){
+        margin:0;
+      }
+    }
+
+    .bank{
+      width:31%;
+      box-shadow:1px 0 10px #dfdfdf;
+      border-radius: 10px;
+      border:#dddddd solid 2px;
+      background: #f8f8f8;
+      @media screen and (max-width: 460px){
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      &:nth-child(2){
+        margin:  0 30px;
+        @media screen and (max-width: 460px){
+          margin: 0 0 10px 0;
+        }
+      }
+      .bank_title{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &:after{
+          content: " ";
+          display: block;
+          width: 100%;
+          transform: scale(0.93);
+          margin: 0 auto;
+          height: 1px;
+          border-bottom: 2px solid #dddddd;
+          top: 61px;
+
+          position: absolute;
+        }
+
+        .text{
+          font-size:30px;
+          padding: 8px 20px;
+          color: #757575;
+        }
+        .delete{
+
+          border:#bdbdbd solid 2px;
+          font-size: 16px;
+          background: #dcdcdc;
+          padding: 2px 5px;
+          text-align: center;
+          margin: 15px 20px;
+          color: #757575;
+        }
+        @media screen and (max-width: 1300px){
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            &:after{
+              content: " ";
+              display: block;
+              width: 100%;
+              transform: scale(0.93);
+              margin: 0 auto;
+              height: 1px;
+              border-bottom: 2px solid #dddddd;
+              top: 61px;
+              position: absolute;
+            }
+
+            .text{
+              font-size:26px;
+              padding: 10px 20px;
+              color: #757575;
+            }
+            .delete{
+
+              border:#bdbdbd solid 2px;
+              font-size: 12px;
+              background: #dcdcdc;
+              padding: 2px 5px;
+              text-align: center;
+              margin: 17px 20px;
+              color: #757575;
+            }
+
+
+        }
+        @media screen and (max-width: 1070px){
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          &:after{
+            content: " ";
+            display: block;
+            width: 100%;
+            transform: scale(0.93);
+            margin: 0 auto;
+            height: 1px;
+            border-bottom: 2px solid #dddddd;
+            top: 61px;
+            position: absolute;
+          }
+
+          .text{
+            font-size:20px;
+            padding: 16px 20px;
+            color: #757575;
+          }
+          .delete{
+
+            border:#bdbdbd solid 2px;
+            font-size: 12px;
+            background: #dcdcdc;
+            padding: 2px 5px;
+            text-align: center;
+            margin: 17px 20px;
+            color: #757575;
+          }
+
+
+        }
+        @media screen and (max-width: 992px){
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          &:after{
+            content: " ";
+            display: block;
+            width: 100%;
+            transform: scale(0.93);
+            margin: 0 auto;
+            height: 1px;
+            border-bottom: 2px solid #dddddd;
+            top: 61px;
+            position: absolute;
+          }
+
+          .text{
+            font-size:12px;
+            padding: 16px 20px;
+            color: #757575;
+          }
+          .delete{
+
+            border:#bdbdbd solid 2px;
+            font-size: 12px;
+            background: #dcdcdc;
+            padding: 2px 5px;
+            text-align: center;
+            margin: 17px 20px;
+            color: #757575;
+          }
+
+
+        }
+        @media screen and (max-width: 800px){
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          &:after{
+            content: " ";
+            display: block;
+            width: 100%;
+            transform: scale(0.93);
+            margin: 0 auto;
+            height: 1px;
+            border-bottom: 2px solid #dddddd;
+            top: 40px;
+            position: absolute;
+          }
+
+          .text{
+            font-size:16px;
+            padding: 10px 4px;
+            color: #757575;
+          }
+          .delete{
+
+            border:#bdbdbd solid 2px;
+            font-size: 14px;
+            background: #dcdcdc;
+            text-align: center;
+            margin: 10px 4px;
+            color: #757575;
+            padding: 0;
+          }
+
+
+        }
+        @media screen and (max-width: 460px){
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          &:after{
+            content: " ";
+            display: block;
+            width: 100%;
+            transform: scale(0.93);
+            margin: 0 auto;
+            height: 1px;
+            border-bottom: 2px solid #dddddd;
+            top: 48px;
+            left:-1px;
+            position: absolute;
+          }
+
+          .text{
+            font-size:20px;
+            padding: 10px 14px;
+            color: #757575;
+          }
+          .delete{
+
+            border:#bdbdbd solid 1px;
+            font-size: 12px;
+            background: #dcdcdc;
+            padding: 2px 5px;
+            text-align: center;
+            margin: 13px 14px;
+            color: #757575;
+          }
+        }
+
+      }
+
+      .bank_value{
+        padding-left: 10px;
+
+        .number{
+          font-size:30px;
+          font-weight: bolder;
+          color: #757575;
+          text-align:left;
+          padding-top:40px;
+        }
+        .account_number{
+          font-size:20px;
+          color: #757575;
+          font-weight: lighter;
+          text-align: left;
+          padding: 5px 0 60px;
+
+        }
+
+        @media screen and (max-width: 1300px){
+            padding-left: 10px;
+            .number{
+              font-size:25px;
+              padding-top:40px;
+            }
+            .account_number{
+              font-size:18px;
+              padding: 5px 0 60px;
+
+            }
+        }
+        @media screen and (max-width: 1070px){
+          padding-left: 10px;
+          .number{
+            font-size:22px;
+            padding-top:40px;
+
+          }
+          .account_number{
+            font-size:16px;
+            padding: 5px 0 60px;
+
+          }
+        }
+        @media screen and (max-width: 992px){
+          padding-left: 10px;
+          .number{
+            font-size:16px;
+            padding-top:30px;
+
+          }
+          .account_number{
+            font-size:12px;
+            padding: 5px 0 50px;
+
+          }
+        }
+        @media screen and (max-width: 800px){
+          padding-left: 10px;
+          .number{
+            font-size:14px;
+            padding-top:15px;
+
+          }
+          .account_number{
+            font-size:12px;
+            padding: 5px 0 20px;
+
+          }
+        }
+        @media screen and (max-width: 460px){
+          padding-left: 10px;
+          .number{
+            font-size:24px;
+            font-weight: bolder;
+            color: #757575;
+            text-align:left;
+            padding-top:10px;
+
+          }
+          .account_number{
+            font-size:16px;
+            font-weight: inherit;
+            padding: 5px 0 40px;
+           /* color: #ababab;*/
+
+          }
+        }
+        @media screen and (max-width: 350px){
+          .number{
+            font-size:20px;
+            font-weight: bolder;
+            color: #757575;
+            text-align:left;
+            padding-top:10px;
+          }
+        }
+      }
+    }
+    .bank_add{
+      width:31%;
+      box-shadow:1px 0 10px #dfdfdf;
+      border-radius: 10px;
+      border:#dddddd dashed 2px;
+      background: #f8f8f8;
+      text-align: center;
+
+      font-size: 30px;
+      color: #ababab;
+      font-weight: lighter;
+      .add_text>span{
+        font-size: 40px;
+      }
+      .add_text{
+        padding: 89px 0;
+      }
+    }
+    @media screen and (max-width: 1300px){
+    .bank_add{
+      width:31%;
+      box-shadow:1px 0 10px #dfdfdf;
+      border-radius: 10px;
+      border:#dddddd dashed 2px;
+      background: #f8f8f8;
+      text-align: center;
+
+      font-size: 24px;
+      color: #ababab;
+      font-weight: lighter;
+      .add_text>span{
+        font-size: 30px;
+      }
+      .add_text{
+        padding: 92px 0;
+      }
+    }
+
+  }
+    @media screen and (max-width: 1070px){
+      .bank_add{
+        width:31%;
+        box-shadow:1px 0 10px #dfdfdf;
+        border-radius: 10px;
+        border:#dddddd dashed 2px;
+        background: #f8f8f8;
+        text-align: center;
+
+        font-size: 22px;
+        color: #ababab;
+        font-weight: lighter;
+        .add_text>span{
+          font-size:28px;
+        }
+        .add_text{
+          padding: 89px 0;
+        }
+      }
+
+    }
+    @media screen and (max-width: 992px){
+      .bank_add{
+        width:31%;
+        box-shadow:1px 0 10px #dfdfdf;
+        border-radius: 10px;
+        border:#dddddd dashed 2px;
+        background: #f8f8f8;
+        text-align: center;
+
+        font-size: 18px;
+        color: #ababab;
+        font-weight: lighter;
+        .add_text>span{
+          font-size:24px;
+        }
+        .add_text{
+          padding: 76px 0;
+        }
+      }
+
+    }
+    @media screen and (max-width: 800px){
+      .bank_add{
+        width:31%;
+        box-shadow:1px 0 10px #dfdfdf;
+        border-radius: 10px;
+        border:#dddddd dashed 2px;
+        background: #f8f8f8;
+        text-align: center;
+
+        font-size: 16px;
+        color: #ababab;
+        font-weight: lighter;
+        .add_text>span{
+          font-size:18px;
+        }
+        .add_text{
+          padding: 47px 0;
+        }
+      }
+
+    }
+    @media screen and (max-width: 460px){
+      .bank_add{
+        width:100%;
+        font-size: 18px;
+        font-weight: inherit;
+        color: #ababab;
+        .add_text>span{
+          font-size:22px;
+        }
+        .add_text{
+          padding: 25px 0;
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+}
