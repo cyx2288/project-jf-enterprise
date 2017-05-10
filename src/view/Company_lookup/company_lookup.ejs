@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>员工查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业实名认证审批</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <%- include('../../component/table/inputSelect.ejs',{
+        "titleone":"企业名称：",
+        "placeholderone":"请输入企业名称",
+        "titletwo":"企业来源：",
+         "defaulttitleone":"全部",
+            "options":[
+        {"option":"线下"},
+        {"option":"乐班班"}]
+
+        })%>
+
+        <%- include('../../component/table/formDatetime.ejs',{
+        "title":"创建日期："
+        })%>
+
+
+
+        <%- include('../../component/table/twoNormalInput.ejs',{
+        "titleone":"销售代表：",
+        "placeholderone":"",
+        "titletwo":"运营主体名称：",
+        "placeholdertwo":""
+        })%>
+
+        <%- include('../../component/table/twoNormalInput.ejs',{
+        "titleone":"银行卡账号：",
+        "placeholderone":"",
+        "titletwo":"企业识别码： ",
+        "placeholdertwo":""
+        })%>
+
+
+
+        <%-include("../../component/table/selectBtn.ejs",{
+        "titleone":"认证状态：",
+            "defaultoption":"全部",
+            "titletwo":"导出数据",
+            "optionone":[
+        {"option":"已认证"},
+        {"option":"未认证"}
+        ]
+        })%>
+
+
+
+
+        <%-include("../../component/table/onerightBtn.ejs",{
+        "titleone":"查询"
+        })%>
+
+
+
+    </div>
+
+
+    <%- include('../../component/table/normalTable.ejs',{
+        "tablehead":[
+    {"name":"企业编号"},
+    {"name":"企业名称"},
+    {"name":"销售代表"},
+    {"name":"认证状态"},
+    {"name":"所在城市"},
+    {"name":"企业来源"},
+    {"name":"运营主体编号"},
+    {"name":"运营主体名称"},
+    {"name":"实收余额（元）"},
+    {"name":"企业创建时间"},],
+        "tabletd":[
+    {"name":"45695465626"},
+    {"name":"上海淘略数据处理有限公司"},
+    {"name":"汤洪俊"},
+    {"name":"已认证"},
+    {"name":"上海"},
+    {"name":"线下"},
+    {"name":"1000000000003225"},
+    {"name":"淘略（上海）"},
+    {"name":"0.00"},
+    {"name":"2017-01-01 10:00：00"},
+    ]
+    })%>
+
+
+
+
+
+
+    <!--审批模态框-->
+    <div class="modal fade"  id="company_details_modal" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">审批</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <div class="company_modal_text">
+                        <div>
+                            <span>企业名称：</span>
+                            <span>深圳市手机行业协会</span>
+                        </div>
+                        <div>
+                            <span>企业编号：</span>
+                            <span>7415255251125</span>
+                        </div>
+                        <div>
+                            <span>企业昵称：</span>
+                            <span>深圳市手机行业协会</span>
+                        </div>
+                    </div>
+
+
+                    <div class="company_modal_text">
+                        <div>
+                            <span>所在城市：</span>
+                            <span>深圳</span>
+                        </div>
+                        <div>
+                            <span>企业管理员电话：</span>
+                            <span>15223999658</span>
+                        </div>
+                        <div>
+                            <span>企业区域*：</span>
+                            <span>深圳</span>
+                        </div>
+                    </div>
+
+
+                    <div class="company_modal_text">
+                        <div>
+                            <span>所在省市：</span>
+                            <span>深圳市</span>
+                        </div>
+                        <div>
+                            <span>组织机构号：</span>
+                            <span>1000234985</span>
+                        </div>
+                        <div>
+                            <span>集团编号：</span>
+                            <span>7595261242622</span>
+                        </div>
+                    </div>
+
+
+                    <div class="company_modal_text">
+                        <div>
+                            <span>企业敏感级别：</span>
+                            <span>1级</span>
+                        </div>
+                        <div>
+                            <span>默认账户类型*：</span>
+                            <span>深圳</span>
+                        </div>
+                        <div>
+                            <span>联系人：</span>
+                            <span>小王</span>
+                        </div>
+                    </div>
+
+
+                    <div class="company_modal_text">
+                        <div>
+                            <span>联系电话：</span>
+                            <span>152237989898</span>
+                        </div>
+                        <div>
+                            <span>销售代表：</span>
+                            <span>王宝国</span>
+                        </div>
+                        <div>
+                            <span>客户负责人电话：</span>
+                            <span>13563248596</span>
+                        </div>
+                    </div>
+                    <div class="company_modal_text">
+                        <div>
+                            <span>企业类型*：</span>
+                            <span>代购企业</span>
+                        </div>
+                        <div>
+                            <span>自定义地址标记：</span>
+                            <span>不启用</span>
+                        </div>
+                        <div>
+                            <span>运费（元）：</span>
+                            <span>0.00</span>
+                        </div>
+                    </div>
+                    <div class="company_modal_text">
+                        <div>
+                            <span>企业描述：</span>
+                            <span>152237989898</span>
+                        </div>
+                        <div>
+                            <span>认证状态：</span>
+                            <span>已认证</span>
+                        </div>
+                        <div>
+                            <span>签约文件：</span>
+                            <span><img src="../../icon/jiafu_logo.png"></span>
+                        </div>
+                    </div>
+                    <div class="company_modal_text">
+                        <div>
+                            <span>实收金额（元）：</span>
+                            <span>0.00</span>
+                        </div>
+                        <div>
+                            <span>企业识别码：</span>
+                            <span>XD451548458</span>
+                        </div>
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy ">确认</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+
+    $('.lookup_btn2').on("click",function(){
+        modelInfo('#company_details_modal'); //参数：模态框id选择器
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

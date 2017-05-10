@@ -47,9 +47,9 @@ $(document).ready(function(){
         }
     }
 
-//分页点击事件
 
-function jfpagechange(obj){//参数为选择的当前元素
+   //分页点击事件
+   function jfpagechange(obj){//参数为选择的当前元素
 
     var thispagenum=$(obj).text();
 
@@ -76,27 +76,25 @@ function jfpagechange(obj){//参数为选择的当前元素
 
 
 
+//密码强度验证事件---新版
+var jfPasdShow={
 
-
-
-//---------------------------密码强度验证事件
-
-//----------------------------focus事件，添加验证条
-    function jfPasdValidateshow(obj) {//--------------------参数为当前元素
-
+    //focus事件,验证条元素出现
+    jfPasdValidateshow:function(obj){//参数为当前元素
         var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
         $(obj).parent().append(pasdinput);
 
-    }
+    },
 
-//-----------------------------keyup事件验证密码强度
-    function jfPasdValidate(obj) {//--------------------参数为当前元素
+    //keyup事件验证密码强度
+    jfPasdValidate:function (obj){//参数为当前元素
 
         var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
-        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
-        var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+
+        var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
 
 
         var farEle = $('span.pasdbar00');
@@ -104,35 +102,90 @@ function jfpagechange(obj){//参数为选择的当前元素
         var thisInputPassword = $(obj);
 
         if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20) {
-            textEle.text('密码长度需6-20位英文字母和数字');
+            textEle.text('密码长度需6-20位大小写英文字母和数字');
             farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
         }
-        else if (strongRegex.test(thisInputPassword.val())) {//密码为8位及以上并且字母数字特殊字符三项都包括,强度最强
+        else if (strongRegex.test(thisInputPassword.val())) {//密码为12位及以上并且大小写字母数字三项都包括,强度最强
             textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
             farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
         }
-        else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且字母、数字、特殊字符三项中有两项，强度是中等
+        else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且大小写字母数字三项都包括，强度是中等
             textEle.addClass('textmid').text('密码强度：中');
             farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
         }
-        else {  //如果密码为8位，就算字母、数字、特殊字符三项都包括，强度也是弱的
+        else if(enoughRegex.test(thisInputPassword.val())){  //如果密码为6位，并且大小写字母数字三项都包括，强度是弱的
             textEle.addClass('textweak').text('密码强度：弱');
             farEle.addClass('barweak').removeClass('barmid');
         }
 
         return true;
-
-    }
-
-//---------------------------------------失焦事件移除密码验证条
-    function PasdValidateRemove(obj) {//--------------------参数为当前元素
-
+    },
+    //失焦事件移除密码验证条
+    PasdValidateRemove:function(obj){//参数为当前元素
         var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
         $(obj).siblings(".validatepasd").remove()
-
     }
 
-//--------------------------------------文本框输入验证事件
+
+
+};
+
+
+
+//密码强度验证事件
+//focus事件，添加验证条
+function jfPasdValidateshow(obj) {//参数为当前元素
+
+    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+
+    $(obj).parent().append(pasdinput);
+
+}
+
+//keyup事件验证密码强度
+function jfPasdValidate(obj) {//参数为当前元素
+
+    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+
+    var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+    var enoughRegex = new RegExp("(?=.{6,}).(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+
+
+    var farEle = $('span.pasdbar00');
+    var textEle = $('span.pasdtext00');
+    var thisInputPassword = $(obj);
+
+    if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20) {
+        textEle.text('密码长度需6-20位大小写英文字母和数字');
+        farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+    }
+    else if (strongRegex.test(thisInputPassword.val())) {//密码为12位及以上并且大小写字母数字三项都包括,强度最强
+        textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
+        farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
+    }
+    else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且大小写字母数字三项都包括，强度是中等
+        textEle.addClass('textmid').text('密码强度：中');
+        farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
+    }
+    else if(enoughRegex.test(thisInputPassword.val())){  //如果密码为6位，并且大小写字母数字三项都包括，强度是弱的
+        textEle.addClass('textweak').text('密码强度：弱');
+        farEle.addClass('barweak').removeClass('barmid');
+    }
+
+    return true;
+
+}
+
+//失焦事件移除密码验证条
+function PasdValidateRemove(obj) {//参数为当前元素
+
+    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+    $(obj).siblings(".validatepasd").remove()
+
+}
+
+//文本框输入验证事件
     var jfValidateInput = {
 
 //----------------------------------------change事件输入报错提示
@@ -156,7 +209,7 @@ function jfpagechange(obj){//参数为选择的当前元素
         }
     };
 
-//-------------------------------------loading，success,fail的模态框调用
+//loading，success,fail的模态框调用
     var jfModelFrame = {
 
         //-----------------------------loanding的模态框
@@ -243,7 +296,7 @@ function jfpagechange(obj){//参数为选择的当前元素
         }
 
     };
-//-------------------------------------------绑定浏览器事件以及解除
+//绑定浏览器事件以及解除
     var windowBanEvent = {
 
         bundling: function () {
@@ -272,32 +325,13 @@ function jfpagechange(obj){//参数为选择的当前元素
     };
 
 
-//--------------------管理员信息页面手机号修改模态框(2个表格模态框)
 
-    function admininfoModel(modeloneid, modeloneclose, modeltwoid, modeltwoclose) {//参数一第一个模态框ID选择器，参数二第一个模态框关闭按钮选择器，参数三第二个模态框ID选择器，参数二第二个模态框关闭按钮选择器
+//管理员信息页面手机号修改模态框(2个表格模态框)
 
-        setTimeout(function () {
-            $(modeloneid).modal('show')
-        }, 100);
-
-        $(modeloneid).find(modeloneclose).click(function () {
-
-            $(modeloneid).modal('hide');
-
-            setTimeout(function () {
-                $(modeltwoid).modal('show')
-            }, 500)
-
-        });
-
-        $(modeltwoid).find("modeltwoclose").click(function () {
-
-            $(modeltwoid).modal('hide');
-
-        });
+    function twoinfoModel(modeloneid, modeloneclose, modeltwoid, modeltwoclose) {//参数一第一个模态框ID选择器，参数二第一个模态框关闭按钮选择器，参数三第二个模态框ID选择器，参数二第二个模态框关闭按钮选择器
     }
 
-//-------------------通用文本1个模态框弹出（每个模态框内容不一样，不包括跳转结果）
+//通用文本1个模态框弹出（每个模态框内容不一样，不包括跳转结果）
 
     function modelInfo(modelid) {//参数一：模态框id选择器
 
@@ -313,35 +347,37 @@ function jfpagechange(obj){//参数为选择的当前元素
 
 
 //公司基本信息页面，input输入变化的方法
-function modifyNickName(buttontextone,buttontexttwo,clickbutton,changInput,showwrongtext){//参数一是按钮初始文本，参数二是文本变化文本，参数三为点击的按钮class选择器，参数四为变化的input的class选择器，参数五是报错的文本
+function modifyNickName(buttontextone,buttontexttwo,clickbutton,changInput,showwrongtext){//参数一是按钮初始文本，参数二是文本变化文本，参数三为点击的按钮ID选择器，参数四为变化的input的class选择器，参数五是报错的文本
 
-    var thisButton=$(clickbutton);
+    var thisButton=$(clickbutton);//点击按钮
+
+    var thisChangeInput=$(clickbutton).prev(changInput);//变化的input元素
 
     if(thisButton.text()==buttontextone){//如果当前文本是最初显示文本
 
         thisButton.css({"color": "white", "background": "#3498db"});//当前样式改变
 
-        $(changInput).addClass('modifyname').removeAttr('readonly').focus();//当前input框自动处于焦点状态
+        thisChangeInput.addClass('modifyname').removeAttr('readonly').focus();//当前input框自动处于焦点状态
 
-        $(changInput)[0].select();
+        thisChangeInput[0].select();
 
         thisButton.text(buttontexttwo);//修改此时的文本
 
     }else{
-        if( $(changInput).val()==""){//如果当前输入款为空值
+        if( thisChangeInput.val()==""){//如果当前输入款为空值
 
             jfValidateInput.validateRemove(changInput);//如果联系点击完成，会先移除一次，
 
             jfValidateInput.validateWrong(changInput,showwrongtext);//调用报错方法
 
-            $(changInput).focus(function(){//当input框处于焦点状态，报错消失
+            thisChangeInput.focus(function(){//当input框处于焦点状态，报错消失
 
                 jfValidateInput.validateRemove(changInput)
             })
 
         }else {
 
-            $(changInput).removeClass('modifyname').attr('readonly','true');//移除边框，只读状态
+            thisChangeInput.removeClass('modifyname').attr('readonly','true');//移除边框，只读状态
 
             thisButton.css({"color": "#555", "background-color": "#eee"});//变回原来的样式
 
@@ -379,7 +415,6 @@ function modifyNickName(buttontextone,buttontexttwo,clickbutton,changInput,showw
         }
 
     };
-
 
 
 
