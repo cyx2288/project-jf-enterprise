@@ -39,27 +39,99 @@
     </div>
 
 </div>
+<!--模态框1-添加银行账户-->
+<div class="modal fade" id="addbankcard_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="account_pasdxiugaiLabel">添加银行账户</h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+                <!--模态框组件-->
+                <%- include('../../component/input/input_info.ejs',{
+                "title":"账户名：",
+                "basicinfo":"小丁农场",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/input/normalOneInput.ejs',{
+                "title":"银行账号：",
+                "placeholder":"请输入银行账号",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/input/normalOneInput.ejs',{
+                "title":"银行名称：",
+                "placeholder":"请输入银行名称",
+                })%>
+
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards" data-dismiss="modal">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--模态框2-删除银行账户-->
+<div class="modal fade" id="deletebankcard_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="account_pasdxiugaiLabel">删除银行账户</h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+                <!--模态框组件-->
+                <%- include('../../component/modal/modal_info.ejs',{
+                "title":"账户名：",
+                "basicinfo":"小丁农场",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/modal/modal_info.ejs',{
+                "title":"银行账号：",
+                "basicinfo":"13462565626562646",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/modal/modal_info.ejs',{
+                "title":"银行名称：",
+                "basicinfo":"中国工商银行",
+                })%>
+
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards" data-dismiss="modal">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
 <script>
+    //删除银行模态框
+    $('.delete_bankcard').on("click",function () {
+        modelInfo('#deletebankcard_modal')//模态框的ID值
+    })
 
-    //银行信息页面模态框------修改
-    $('button.bankaccount_xiugai').on('click', function () {
-        modelInfo('#bank_infoxiugai', 'button.bank_infosave');  //参数一：模态框选择器 参数二：关闭按钮选择器
+    //添加银行卡模态框
 
-    });
-    //----------------------删除
-    $('button.bankaccount_del').on('click', function () {
-        modelInfo('#bank_infodel', 'button.info_delcom');//参数一：模态框选择器 参数二：关闭按钮选择器
-    });
-
-    //----------------------添加账户
-    $('button.bankaccount_add').on('click', function () {
-        modelInfo('#bank_infoadd', 'button.infoadd_comf');//参数一：模态框选择器 参数二：关闭按钮选择器
-    });
-
-
+    $('.bank_add').on("click",function () {
+        modelInfo('#addbankcard_modal')//模态框的ID值
+    })
 </script>
+
 </body>
-</html><!DOCTYPE html>
+
+</html>
