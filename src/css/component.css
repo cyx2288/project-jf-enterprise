@@ -217,10 +217,6 @@ h2>div>button>span{
 .modal .info_content>span:first-child{
     width: 28%;
 }
-
-.modal .info_content.modal_text>span:first-child{
-    width: 38%;
-}
 .info_content>span:first-child{
     width: 35%;
     text-align: right;
