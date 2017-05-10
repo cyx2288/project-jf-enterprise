@@ -1,0 +1,20 @@
+<div class="control-title">
+    <div>
+        <span><%=titleone%></span>
+                <span>
+                    <select class="form-control  form-control-zy" >
+                        <option selected="selected"><%=defaultoption%></option>
+
+                        <!--select按钮选项-->
+                        <%for(var i=0;i<optionone.length;i++){%>
+                        <option value="<%=optionone[i].option%>"><%=optionone[i].option%></option>
+                        <%}%>
+
+                    </select>
+                </span>
+    </div>
+    <div>
+        <span></span>
+        <span> <button type="submit" class="btn btn-primary lookup_btn2"><%=titletwo%></button></span>
+    </div>
+</div>

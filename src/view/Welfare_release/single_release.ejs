@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>VIP回收确认</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>发放单笔福利</h2>
+    <!--内容111-->
+    <div class="info_middlebody">
+
+
+
+        <%- include('../../component/select/normalSelect.ejs',{
+            "title":"员工：",
+            "placeholder":"请选择",
+            "options":[
+         {"option":"张飞-zhangfei@163.com"},
+         {"option":"关羽-guanyu@163.com"},
+         {"option":"刘备-liubei@126.com"}
+        ]
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"金额：",
+        "placeholder":"请输入金额",
+        })%>
+
+
+        <%- include('../../component/input/twoRaidoBox.ejs',{
+        "title":"账户类型：",
+        "textone":"福利账户",
+        "texttwo":"积分账户"
+        })%>
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"费率：",
+        "content":"3%",
+        })%>
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"手续费：",
+        "content":"3.00",
+        })%>
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"企业账户扣款金额：",
+        "content":"103.00",
+        })%>
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"员工到账金额：",
+        "content":"100.00",
+        })%>
+
+        <%- include('../../component/button/twocenterBtn.ejs',{
+        "btntextone":"确认",
+         "hrefone":"../pay_info_success/pay_details.html",
+          "hreftwo":"../Welfare_release/single_release.html",
+          "btntexttwo":"取消"
+
+        })%>
+
+
+
+
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+</body>
+</html>

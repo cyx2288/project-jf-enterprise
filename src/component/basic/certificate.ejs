@@ -7,12 +7,12 @@
 
         <% if(certificate){ %>
 
-        <span><img src="<%=onesrc%>"></span>
+        <span><img src="<%=onesrc%>"><%=textoneinfo%></span>
 
 
         <% } else { %>
 
-        <a href="<%=thishref%>"><%=textinfo%><img src="<%=twosrc%>"></a>
+        <a href="<%=thishref%>"><img src="<%=twosrc%>"><%=texttwoinfo%><span class="gocertificate"><%=textthree%></span></a>
         <% } %>
 
     </span>

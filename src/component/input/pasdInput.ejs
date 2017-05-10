@@ -9,3 +9,35 @@
         </span>
     </div>
 </div>
+<% if(newpasd){%>
+
+<script>
+        //-----------------------密码验证(第一次新密码)
+        $("input.new_password").each(function () {
+
+            $(this).on({
+
+                //---------密码验证条出现以及识别当前密码强度
+                focus: function () {
+
+                    jfPasdShow.jfPasdValidateshow(this);//参数表示选择的该元素
+
+                    jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
+                },
+
+                //----------密码强度
+                keyup: function () {
+                    jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
+                },
+
+                //--------密码强度移除
+                blur: function () {
+                    jfPasdShow.PasdValidateRemove(this);//参数表示选择的该元素
+                }
+            })
+        });
+
+
+</script>
+
+<%}%>

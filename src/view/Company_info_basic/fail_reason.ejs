@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业认证</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.修改企业资料"},
+        {"text":"2.认证完成"},
+        ],
+        "j":"0"
+        })%>
+
+        <%- include('../../component/input/input_info.ejs',{
+        "title":"*认证失败原因：",
+        "basicinfo":"营业执照不符合要求，企业信息有误"
+        })%>
+
+        <%- include('../../component/input/input_info.ejs',{
+        "title":"*企业名称：",
+        "basicinfo":"上海淘略数据处理有限公司"
+        })%>
+
+        <%- include('../../component/input/input_info.ejs',{
+        "title":"*统一社会信用代码：",
+        "basicinfo":"456123479251463"
+        })%>
+        <%- include('../../component/input/input_info.ejs',{
+        "title":"*法人代表姓名：",
+        "basicinfo":"钉钉"
+        })%>
+
+        <%- include('../../component/input/upload_file.ejs',{
+        "title":"营业执照*",
+        "thisSrc":"../../icon/jiafu_logo.png",
+        "textone":"上传：营业执照图片；",
+        })%>
+
+
+        <%- include('../../component/input/upload_download.ejs',{
+        "title":"认证授权书*",
+        "thisSrc":"../../icon/jiafu_logo.png",
+        "textone":"请下载认证授权书；",
+        "texttwo":"按要求填写，并手写仅用于企业认证字样，并加盖企业公章"
+        })%>
+
+
+        <%- include('../../component/input/upload_file.ejs',{
+        "title":"企业公章*",
+        "thisSrc":"../../icon/jiafu_logo.png",
+        "textone":"上传：企业公章图片；",
+        })%>
+
+        <%- include('../../component/input/checkboxinput.ejs',{
+        "text":"《嘉福福利代采购协议》",
+        "thishref":"agreement.html"
+        })%>
+
+
+        <%- include('../../component/button/oneButton.ejs',{
+        "buttontext":"提交审核",
+        "thisurl":"certificate_stepthree.html",
+        })%>
+
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+</script>
+</body>
+</html>
