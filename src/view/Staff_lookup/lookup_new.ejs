@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>员工查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>员工查询
+
+        <div class="staff_import">
+            <a href="Staff_import.html"><button type="button" class="btn btn-primary lookup_btn2">员工导入</button></a>
+        </div>
+    </h2>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+
+        <%- include('../../component/table/twoNormalInput.ejs',{
+            "titleone":"员工姓名：",
+            "placeholderone":"输入员工姓名",
+            "titletwo":"员工编号：",
+            "placeholdertwo":"输入员工编号"
+        })%>
+        <%- include('../../component/table/twoNormalInput.ejs',{
+        "titleone":"手机号：",
+        "placeholderone":"输入手机号",
+        "titletwo":"身份证：",
+        "placeholdertwo":"输入身份证号码"
+        })%>
+
+        <%- include('../../component/table/inputSelect.ejs',{
+            "titleone":"邮箱：",
+            "placeholderone":"请输入邮箱",
+            "titletwo":"激活状态：",
+            "defaulttitleone":"全部",
+        "options":[
+        {"option":"未激活"},
+        {"option":"已激活"},
+        ]
+        })%>
+        <%- include('../../component/table/oneSelect.ejs',{
+        "titleone":"注销状态",
+        "defaulttitleone":"全部",
+            "options":[
+        {"option":"未注销"},
+        {"option":"已注销"},
+        ]
+        })%>
+
+
+        <%- include('../../component/table/formDatetime.ejs',{
+            "title":"导入日期："
+        })%>
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                 <span>
+                 </span>
+            </div>
+        </div>
+        <div class="control-title">
+            <div>
+                <span></span>
+                 <span>
+                      <button type="submit" class="btn btn-primary lookup_btn2 edit">编辑员工</button>
+                 </span>
+            </div>
+            <div>
+                <span></span>
+                 <span>
+                      <button type="submit" class="btn btn-primary lookup_btn2">补发开户通知</button>
+                 </span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span>
+                    <button type="submit" class="btn btn-primary lookup_btn2 ">导出数据</button>
+                </span>
+            </div>
+            <div>
+                <span></span>
+                 <span>
+                      <button type="submit" class="btn btn-primary lookup_btn2 btn_loading">查询</button>
+                 </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 表格-->
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>请选择</th>
+                <th>员工编号</th>
+                <th>员工姓名</th>
+                <th>手机号</th>
+                <th>邮箱</th>
+                <th>身份证</th>
+                <th>激活状态</th>
+                <th>注销状态</th>
+                <th>导入日期</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="employee"></td>
+                <td>232222</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>46512665464546</td>
+                <td>已激活</td>
+                <td>-未注销</td>
+                <td>2016.12.12</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li class="go"><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li class="active"><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">30</a></li>
+            <li class="go"><a href="#">»</a></li>
+        </ul>
+    </div>
+
+    <!--编辑模态框-->
+    <div class="modal fade"  id="staff_lookup_edit" tabindex="-1" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel"> 编辑员工信息 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span >邮箱：</span>
+                            <span >
+                                dshfoisd565@163.com
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span >员工编号：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span ><span style="color: red">*</span>员工姓名：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11" />
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span ><span style="color: red">*</span>手机号码：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11 phonenum"  />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span >身份证：</span>
+                            <span >
+                                <input type="text" class="form-control btn-md-zy11" />
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span >注销状态：</span>
+                            <span>
+                               <select class="form-control  btn-md-zy11" >
+                                   <option value="全部" selected="selected">全部</option>
+                                   <option value="待处理">未注销</option>
+                                   <option value="待处理">已注销</option>
+                               </select>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close">保存</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    //员工查询页面编辑模态框
+    $("button.edit").on('click',function(){
+
+        var checkbox=$('td>input[type=radio]');
+
+        if(checkbox.is(':checked')){
+            modelInfo('#staff_lookup_edit'); //参数：模态框id选择器
+        }else {
+            alert("请选择需要编辑的具体员工")
+        }
+
+    })
+    //文本验证（以员工查询页面为例）
+    $("#email").on({
+
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    });
+
+    //加载loading
+    $('.btn_loading').on('click', function () {
+
+        //-----------success模态框（）
+        jfModelFrame.loadingModelShow('加载完成', '数据导入成功');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
+
+        setTimeout(function(){//3秒后关闭
+            jfModelFrame.loadingModelRemove()
+
+        },3000);
+
+
+        /* setTimeout(function(){//3秒后关闭loading,出现success
+         jfModelFrame.successModelShow()
+         },4000);*/
+
+    });
+
+
+</script>
+</body>
+</html>

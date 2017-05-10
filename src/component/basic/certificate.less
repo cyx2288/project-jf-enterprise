@@ -2,23 +2,39 @@
 
   span{
     &:last-child{
+
+      span{
+        &:last-child{
+            color: darkgoldenrod;
+          padding-left: 10px;
+        }
+      }
+
+
       a{
         &:last-child{
           color: grey;
-          text-decoration: underline;
           margin-left: 5px;
           cursor: pointer;
+          &:hover{
+            text-decoration: none;
+          }
 
           img{
             width: 20px;
             margin-left: 5px;
           }
         }
+        .gocertificate{
+          text-decoration: underline;
+          color: #3498db;;
+        }
       }
 
       span{
         img{
           width: 20px;
+          margin-right: 5px;
         }
       }
     }

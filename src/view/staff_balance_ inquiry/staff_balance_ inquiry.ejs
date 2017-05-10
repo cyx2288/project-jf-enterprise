@@ -27,13 +27,14 @@
         "options":[
         {"option":"薪资账户"},
         {"option":"福利账户"},
-        ]
+        ],
+            "defaulttitleone":"全部"
         })%>
 
-        <%-include("../../component/table/twoButton.ejs",{
+        <%-include("../../component/table/oneleftBtn.ejs",{
         "titleone":"查询",
         })%>
-        <%-include("../../component/table/twoButton.ejs",{
+        <%-include("../../component/table/oneleftBtn.ejs",{
         "titleone":"导出",
         })%>
 
@@ -60,6 +61,8 @@
         {"name":"300.00"},
         ]
         })%>
+
+
     <!--分页-->
     <%-include("../../component/table/infoPage.ejs")%>
 

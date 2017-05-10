@@ -152,19 +152,19 @@
             //---------密码验证条出现以及识别当前密码强度
             focus: function () {
 
-                jfPasdValidateshow(this);//参数表示选择的该元素
+                jfPasdShow.jfPasdValidateshow(this);//参数表示选择的该元素
 
-                jfPasdValidate(this);//参数表示选择的该元素
+                jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
             },
 
              //----------密码强度
             keyup: function () {
-                jfPasdValidate(this);//参数表示选择的该元素
+                jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
             },
 
              //--------密码强度移除
             blur: function () {
-                PasdValidateRemove(this);//参数表示选择的该元素
+                jfPasdShow.PasdValidateRemove(this);//参数表示选择的该元素
             }
         })
     });
