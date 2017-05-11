@@ -21,35 +21,35 @@
         <%- include('../../component/basic/progress_bar.ejs',{
 
         "options":[
-        {"text":"1.修改企业资料"},
-        {"text":"2.认证完成"},
+        {"text":"1.基本信息认证"},
+        {"text":"2.企业资料提交"},
+        {"text":"3.完成"}
         ],
-        "j":"0"
+        "j":"1"
         })%>
 
         <%- include('../../component/input/input_info.ejs',{
         "title":"*认证失败原因：",
-        "basicinfo":"营业执照不符合要求，企业信息有误"
+        "basicinfo":"企业注册地址有误，认证授权书"
         })%>
 
-        <%- include('../../component/input/input_info.ejs',{
-        "title":"*企业名称：",
-        "basicinfo":"上海淘略数据处理有限公司"
-        })%>
-
-        <%- include('../../component/input/input_info.ejs',{
-        "title":"*统一社会信用代码：",
-        "basicinfo":"456123479251463"
-        })%>
-        <%- include('../../component/input/input_info.ejs',{
-        "title":"*法人代表姓名：",
-        "basicinfo":"钉钉"
-        })%>
 
         <%- include('../../component/input/upload_file.ejs',{
         "title":"营业执照*",
         "thisSrc":"../../icon/jiafu_logo.png",
         "textone":"上传：营业执照图片；",
+        })%>
+
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*企业注册地址：",
+        "placeholder":"请填写营业执照上的公司注册地址"
+        })%>
+
+        <%- include('../../component/input/upload_file.ejs',{
+        "title":"企业公章*",
+        "thisSrc":"../../icon/jiafu_logo.png",
+        "textone":"上传：企业公章图片；仅用于签署福利协议",
         })%>
 
 
@@ -60,12 +60,6 @@
         "texttwo":"按要求填写，并手写仅用于企业认证字样，并加盖企业公章"
         })%>
 
-
-        <%- include('../../component/input/upload_file.ejs',{
-        "title":"企业公章*",
-        "thisSrc":"../../icon/jiafu_logo.png",
-        "textone":"上传：企业公章图片；",
-        })%>
 
         <%- include('../../component/input/checkboxinput.ejs',{
         "text":"《嘉福福利代采购协议》",
@@ -80,7 +74,25 @@
 
 
 
-        <!--用户名-->
+        <!--营业执照模板-->
+        <div class="modal fade" tabindex="-1" aria-labelledby="staff_lookup_editLabel" id="company_photo" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                        <h4 class="modal-title" id="staff_lookup_editLabel">营业执照模板 </h4>
+                    </div>
+                    <!-- body-->
+                    <div class="modal-body">
+                        <div class="business_license"><img src="../../icon/company_photo.jpg"></div>
+                        <!-- footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close" data-dismiss="modal">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!--底部按钮-->

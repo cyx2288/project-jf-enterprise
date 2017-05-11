@@ -329,6 +329,27 @@ function PasdValidateRemove(obj) {//参数为当前元素
 //管理员信息页面手机号修改模态框(2个表格模态框)
 
     function twoinfoModel(modeloneid, modeloneclose, modeltwoid, modeltwoclose) {//参数一第一个模态框ID选择器，参数二第一个模态框关闭按钮选择器，参数三第二个模态框ID选择器，参数二第二个模态框关闭按钮选择器
+
+
+        setTimeout(function () {
+            $(modeloneid).modal('show')
+        }, 100);
+
+        $(modeloneid).find(modeloneclose).click(function () {
+
+            $(modeloneid).modal('hide');
+
+            setTimeout(function () {
+                $(modeltwoid).modal('show')
+            }, 500)
+
+        });
+
+        $(modeltwoid).find(modeltwoclose).click(function () {
+
+            $(modeltwoid).modal('hide');
+
+        });
     }
 
 //通用文本1个模态框弹出（每个模态框内容不一样，不包括跳转结果）

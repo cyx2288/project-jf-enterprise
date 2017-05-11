@@ -243,48 +243,52 @@
                 <!-- body-->
                 <div class="modal-body">
 
-                    <%- include('../../component/input/input_info.ejs',{
+                    <div class="approve_info">
+
+                        <%- include('../../component/input/input_info.ejs',{
                         "title":"企业名称：",
                         "basicinfo":"上海淘略数据处理有限公司"
-                    })%>
-                    <%- include('../../component/input/input_info.ejs',{
-                    "title":"统一社会信用代码：",
-                    "basicinfo":"12346874259253582652"
-                    })%>
-                    <%- include('../../component/input/input_info.ejs',{
-                    "title":"法人代表：",
-                    "basicinfo":"小丁"
-                    })%>
-                    <%- include('../../component/input/input_info.ejs',{
-                    "title":"第三方认证结果：",
-                    "basicinfo":"已通过"
-                    })%>
+                        })%>
+                        <%- include('../../component/input/input_info.ejs',{
+                        "title":"统一社会信用代码：",
+                        "basicinfo":"12346874259253582652"
+                        })%>
+                        <%- include('../../component/input/input_info.ejs',{
+                        "title":"法人代表：",
+                        "basicinfo":"小丁"
+                        })%>
+                        <%- include('../../component/input/input_info.ejs',{
+                        "title":"第三方认证结果：",
+                        "basicinfo":"已通过"
+                        })%>
 
-                    <%- include('../../component/input/scale_photo.ejs',{
-                    "titleone":"营业执照："
-                    })%>
+                        <%- include('../../component/input/scale_photo.ejs',{
+                        "titleone":"营业执照："
+                        })%>
 
-                    <%- include('../../component/input/scale_photo.ejs',{
-                    "titleone":"认证授权书："
-                    })%>
-
-
-                    <%- include('../../component/input/scale_photo.ejs',{
-                    "titleone":"企业公章："
-                    })%>
+                        <%- include('../../component/input/scale_photo.ejs',{
+                        "titleone":"认证授权书："
+                        })%>
 
 
+                        <%- include('../../component/input/scale_photo.ejs',{
+                        "titleone":"企业公章："
+                        })%>
 
 
-                    <%- include('../../component/input/normalOneInput.ejs',{
+
+
+                        <%- include('../../component/input/normalOneInput.ejs',{
                         "title":"认证失败原因：",
                         "placeholder":""
-                    })%>
+                        })%>
+                    </div>
+
 
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-primary-zy ">确认</button>
-                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary btn-primary-zy ">同意</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">拒绝</button>
                     </div>
                 </div>
             </div>
