@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>嘉福企业端组件</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden">
+    <!--title-->
+    <h2 class="hometitle"><img src="../../icon/icon_homepage.png"><p>你好，上海淘略数据处理有限公司</p><p><img src="../../icon/v2.png">未认证</p></h2>
+    <div class="homepage_content">
+
+        <div class="homepage_left">
+
+            <!--员工总数-->
+            <div>
+
+                <div class="main_title">
+                    <div><img src="../../icon/icon_staff.png"></div>
+                    <div>
+                        <p>员工总数</p>
+                        <p>1266865</p>
+                    </div>
+                </div>
+
+                <div class="main_btn">
+                    <button class="btn btn-default">去管理</button>
+                </div>
+            </div>
+
+            <!--企业账户余额-->
+            <div>
+                <div class="main_title">
+                    <div><img src="../../icon/icon_balance.png"></div>
+                    <div>
+                        <p>企业账户余额（元）</p>
+                        <p>12,263,895.00</p>
+                    </div>
+                </div>
+
+                <div class="main_btn">
+                    <button class="btn btn-default">充值</button>
+                </div>
+            </div>
+            <!--理财持有总额-->
+            <div>
+                <div class="main_title">
+                    <div><img src="../../icon/icon_finlance.png"></div>
+                    <div>
+                        <p>理财持有总额（元）</p>
+                        <p>1,222,385,265.00</p>
+                    </div>
+                </div>
+
+                <div class="main_btn">
+                    <button class="btn btn-default">查询</button>
+                </div>
+            </div>
+
+            <!--累计充值余额-->
+            <div>
+                <div class="main_title">
+                    <div><img src="../../icon/icon_recharge.png"></div>
+                    <div>
+                        <p>累计充值余额（元）</p>
+                        <p>5,234,982.00</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+        </div>
+
+        <div class="homepage_right">
+            <!--员工福利-->
+            <div>
+                <div class="main_menu_title">
+                    <p>员工福利</p>
+                    <p>简单快速、成本低</p>
+                </div>
+                <div class="main_menu_content">
+                    <img src="../../icon/icon_staffwelfare.png">
+                    <ul>
+                        <li>福利发放</li>
+                        <li>福利发放查询</li>
+                        <li>VIP卡发放</li>
+                        <li>VIP卡发放查询</li>
+                    </ul>
+                </div>
+            </div>
+            <!--员工管理-->
+            <div>
+                <div class="main_menu_title">
+                    <p>员工管理</p>
+                    <p>得力助手、没问题</p>
+                </div>
+                <div class="main_menu_content">
+                    <img src="../../icon/icon_staffmanagemnent.png">
+                    <ul>
+                        <li>员工信息管理</li>
+                        <li>员工消费明细</li>
+                    </ul>
+                </div>
+            </div>
+            <!--企业账户-->
+            <div>
+                <div class="main_menu_title">
+                    <p>企业账户</p>
+                    <p>总览账户、更省力</p>
+                </div>
+                <div class="main_menu_content">
+                    <img src="../../icon/icon_company_account.png">
+                    <ul>
+                        <li>企业转账</li>
+                        <li>企业转账查询</li>
+                        <li>福利增值</li>
+                        <li>企业充值明细</li>
+                        <li>企业消费明细</li>
+                        <li>企业转账</li>
+                        <li>企业转账查询</li>
+                        <li>福利增值</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    $('.main_menu_content li ').on('click',function () {
+        var thisInnerHtml=$(this).html().replace(/\s/g,"");
+        window.parent.selectLeftTab(thisInnerHtml);
+
+    })
+
+</script>
+</body>
+</html>
