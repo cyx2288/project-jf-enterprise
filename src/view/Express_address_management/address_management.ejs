@@ -235,7 +235,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
-                    <h4 class="modal-title" id="modify_addressLabel">新增地址</h4>
+                    <h4 class="modal-title" id="modify_addressLabel">删除地址</h4>
                 </div>
                 <!-- body-->
                 <div class="modal-body">
@@ -269,9 +269,9 @@
     })
 
     //删除地址模态框
-    $('.delete_address_btn').on("click",function(){
+    $('.delete_address_btn').on("click",function(){//点击按钮cass值
 
-        var thisIndex=$(this).parents('tr')[0].rowIndex;//当前所在的行号
+        var thisEle=$(this)
 
         modelInfo('#delete_address_modal'); //参数：模态框id选择器
 
@@ -279,7 +279,7 @@
 
             $(this).parents('.modal').modal('hide');//模态框隐藏
 
-            $('table')[0].deleteRow(thisIndex)//删除当前选中的地址信息
+            thisEle.parents('tr').remove()//删除表格
 
         })
     })
