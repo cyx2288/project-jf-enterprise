@@ -8,7 +8,10 @@
 </head>
 <body class="ovfHiden">
     <!--title-->
-    <h2 class="hometitle"><img src="../../icon/icon_homepage.png"><p>你好，上海淘略数据处理有限公司</p><p><img src="../../icon/v2.png">未认证</p></h2>
+    <h2 class="hometitle">
+        <img src="../../icon/icon_homepage.png">
+        <p>你好，上海淘略数据处理有限公司</p>
+        <a onclick="window.parent.selectLeftTab('基本信息')"><img src="../../icon/v2.png">未认证<span class="go_certificate">立刻认证</span></a></h2>
     <div class="homepage_content">
 
         <div class="homepage_left">
@@ -25,7 +28,7 @@
                 </div>
 
                 <div class="main_btn">
-                    <button class="btn btn-default">去管理</button>
+                    <button class="btn btn-default" onclick="window.parent.selectLeftTab('员工信息管理')">管理</button>
                 </div>
             </div>
 
@@ -40,7 +43,7 @@
                 </div>
 
                 <div class="main_btn">
-                    <button class="btn btn-default">充值</button>
+                    <button class="btn btn-default" onclick="window.parent.selectLeftTab('企业充值明细')">充值</button>
                 </div>
             </div>
             <!--理财持有总额-->
@@ -52,10 +55,11 @@
                         <p>1,222,385,265.00</p>
                     </div>
                 </div>
-
+                <!--
                 <div class="main_btn">
-                    <button class="btn btn-default">查询</button>
+                    <button class="btn btn-default" onclick="window.parent.selectLeftTab('福利增值')">查询</button>
                 </div>
+                -->
             </div>
 
             <!--累计充值余额-->
@@ -81,13 +85,42 @@
                     <p>简单快速、成本低</p>
                 </div>
                 <div class="main_menu_content">
-                    <img src="../../icon/icon_staffwelfare.png">
+                    <div>
+                        <img src="../../icon/icon_staffwelfare.png">
+                    </div>
+
+                        <ul>
+                            <li>福利发放</li>
+                            <li>福利发放查询</li>
+                            <li>VIP卡回收</li>
+                            <li>VIP卡回收查询</li>
+                        </ul>
+
+
+                </div>
+            </div>
+
+            <!--企业账户-->
+            <div>
+                <div class="main_menu_title">
+                    <p>企业账户</p>
+                    <p>总览账户、更省力</p>
+                </div>
+                <div class="main_menu_content">
+                    <div>
+                        <img src="../../icon/icon_company_account.png">
+                    </div>
+
+
                     <ul>
-                        <li>福利发放</li>
-                        <li>福利发放查询</li>
-                        <li>VIP卡发放</li>
-                        <li>VIP卡发放查询</li>
+                        <li>企业转账</li>
+                        <li>企业转账查询</li>
+                        <li>福利增值</li>
+                        <li>企业充值明细</li>
+                        <li>企业消费明细</li>
                     </ul>
+
+
                 </div>
             </div>
             <!--员工管理-->
@@ -97,33 +130,19 @@
                     <p>得力助手、没问题</p>
                 </div>
                 <div class="main_menu_content">
-                    <img src="../../icon/icon_staffmanagemnent.png">
-                    <ul>
-                        <li>员工信息管理</li>
-                        <li>员工消费明细</li>
-                    </ul>
+                    <div>
+                        <img src="../../icon/icon_staffmanagemnent.png">
+                    </div>
+
+                        <ul>
+                            <li>员工信息管理</li>
+                            <li>员工消费明细</li>
+                        </ul>
+
+
                 </div>
             </div>
-            <!--企业账户-->
-            <div>
-                <div class="main_menu_title">
-                    <p>企业账户</p>
-                    <p>总览账户、更省力</p>
-                </div>
-                <div class="main_menu_content">
-                    <img src="../../icon/icon_company_account.png">
-                    <ul>
-                        <li>企业转账</li>
-                        <li>企业转账查询</li>
-                        <li>福利增值</li>
-                        <li>企业充值明细</li>
-                        <li>企业消费明细</li>
-                        <li>企业转账</li>
-                        <li>企业转账查询</li>
-                        <li>福利增值</li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
 
     </div>
@@ -134,8 +153,10 @@
 <script>
 
     $('.main_menu_content li ').on('click',function () {
+
         var thisInnerHtml=$(this).html().replace(/\s/g,"");
-        window.parent.selectLeftTab(thisInnerHtml);
+
+        window.parent.selectLeftTab(thisInnerHtml);//选中左边对应目录的方法
 
     })
 

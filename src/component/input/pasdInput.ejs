@@ -20,18 +20,22 @@
                 //---------密码验证条出现以及识别当前密码强度
                 focus: function () {
 
+                    //密码提示信息出现的方法（第一次没有的输入的情况）
                     jfPasdShow.jfPasdValidateshow(this);//参数表示选择的该元素
 
+                    //出现密码强度的方法
                     jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
                 },
 
-                //----------密码强度
+                //----------密码强度验证
                 keyup: function () {
+                    //出现密码强度的方法
                     jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
                 },
 
                 //--------密码强度移除
                 blur: function () {
+                    //移除密码强度的方法
                     jfPasdShow.PasdValidateRemove(this);//参数表示选择的该元素
                 }
             })

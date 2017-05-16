@@ -37,6 +37,13 @@
       float: left;
       margin-bottom: 30px;
 
+
+      &:after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+
       @media screen and (max-width: 800px){
         width: 30%;
       }
@@ -76,7 +83,9 @@
         display: flex;
         justify-content: space-between;
         position: relative;
-        &:after{
+
+
+        &:before{
           content: " ";
           display: block;
           width: 100%;
@@ -87,20 +96,39 @@
           top: 60px;
           position: absolute;
         }
+        &:after{
+          content: " ";
+          display: block;
+          clear: both;
+        }
 
         .text{
           font-size:30px;
           padding: 8px 15px;
           color: #757575;
+          float: left;
+          width: 85%;
+
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
         }
         .delete_bankcard{
           width:30px;
           height:30px;
           border-radius: 50%;
           background: #ff4646;
+          float: right;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
 
           font-size: 18px;
-          padding: 1px 5px;
+          padding: 3px 5px;
           text-align: center;
           margin: 14px 15px;
           color: #FFFFFF;
@@ -117,7 +145,7 @@
         @media screen and (max-width: 1350px){
 
 
-            &:after{
+            &:before{
               content: " ";
               display: block;
               width: 100%;
@@ -133,6 +161,7 @@
               font-size:24px;
               padding: 10px 14px;
               color: #757575;
+              width: 80%;
             }
             .delete_bankcard{
               width:28px;
@@ -151,7 +180,7 @@
         }
         @media screen and (max-width: 1070px){
 
-          &:after{
+          &:before{
             content: " ";
             display: block;
             width: 100%;
@@ -186,7 +215,7 @@
         }
         @media screen and (max-width: 992px){
 
-          &:after{
+          &:before{
             content: " ";
             display: block;
             width: 100%;
@@ -219,7 +248,7 @@
         }
         @media screen and (max-width: 800px){
 
-          &:after{
+          &:before{
             content: " ";
             display: block;
             width: 100%;
@@ -254,7 +283,7 @@
         }
         @media screen and (max-width: 460px){
 
-          &:after{
+          &:before{
             content: " ";
             display: block;
             width: 100%;

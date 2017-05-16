@@ -12,7 +12,7 @@
 <body class="ovfHiden qiao">
 <div class="panel-body panel-body-shodow">
     <!--title-->
-    <h2>企业基本信息</h2>
+    <h2>基本信息</h2>
 
     <!--内容111-->
     <div class="info_middlebody">
@@ -199,7 +199,7 @@
             </div>
             <!-- footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savepasd" data-dismiss="modal">&#x4FDD;&#x5B58;</button>
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savepasd">&#x4FDD;&#x5B58;</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
             </div>
         </div>
@@ -210,22 +210,78 @@
 <script type="text/javascript" src="../../js/BusinessService.js"></script>
 <script>
 
+
     //修改企业昵称，无需模态框
+
     $('#modifynackname').on("click",function(){
-        modifyNickName('修改','完成','#modifynackname','.changeinput','您还没有输入信息')//参数一是按钮初始文本，参数二是文本变化文本，参数三为点击的按钮ID选择器，参数四为变化的input的class选择器，参数五是报错的文本
+
+
+        if($(this).text()=="修改"){
+
+            //点击修改的方法
+            jfModifyName.modifyNameFirst(this);//参数为当前元素
+
+        }
+        else {
+
+            //修改完成后，先判断当前内容
+            if( $('input.changeinput').val()==""){
+
+                //如果联系点击完成，会先移除一次报错方法
+                jfValidateInput.validateRemove('input.changeinput');//当前input元素选择器，
+
+                //调用报错方法
+                jfValidateInput.validateWrong('input.changeinput','输入错误');//参数一当前input元素选择器，参数二为报错文本
+
+                $('input.changeinput').focus(function(){//当input框处于焦点状态，报错消失
+
+                    //移除报错方法
+                    jfValidateInput.validateRemove('input.changeinput');//当前input元素选择器，
+                })
+
+            }else {
+
+                //点击修改完成的方法
+                jfModifyName.finishModify(this)//参数为当前元素
+            }
+        }
+
+
     })
 
 
     //修改手机号码，连续跳转两个模态框
     $('#modifyphone').on("click",function(){
-        twoinfoModel('#modifyphoneone','.phone_nextbtn', '#modifyphonetwo','.savephone')//参数一第一个模态框ID选择器，参数二第一个模态框关闭按钮选择器，参数三第二个模态框ID选择器，参数二第二个模态框关闭按钮class选择器
+        //模态框出现的方法
+        modelInfo('#modifyphoneone'); //参数一：模态框id选择器,
+
     })
 
 
-    //保存手机号码成功模态框
+    $('.phone_nextbtn').on("click",function(){
+
+        //模态框隐藏的方法
+        hideOneModal(this);//参数为当前元素
+
+        setTimeout(function(){
+            //模态框出现的方法
+            modelInfo('#modifyphonetwo'); //参数一：模态框id选择器,
+        },300)
+    })
+
+
+    //保存手机号码失败模态框
     $('.savephone').on("click",function(){
 
-        jfModelFrame.successModelShow('手机修改成功','管理员手机号修改成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        //模态框隐藏的方法
+        hideOneModal(this);
+
+        setTimeout(function(){
+            //fail模态框出现的方法
+            jfModelFrame.failModelShow('手机修改失败','管理员手机号修改失败','')//参数一是fail模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+
+
     })
 
     //修改登录管理密码，一个模态框
@@ -237,7 +293,14 @@
     //保存新密码成功模态框
     $('.savepasd').on("click",function(){
 
-        jfModelFrame.successModelShow('管理密码修改','管理密码修改成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        //模态框隐藏的方法
+        hideOneModal(this);//参数为当前元素
+
+        setTimeout(function(){
+            //success模态框出现的方法
+            jfModelFrame.successModelShow('管理密码修改','管理密码修改成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+
     })
 
 

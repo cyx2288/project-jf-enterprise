@@ -13,7 +13,7 @@
 
 <div class="panel-body panel-body-shodow">
     <!--title-->
-    <h2>银行账户管理</h2>
+    <h2>银行账户</h2>
 
 
 
@@ -67,7 +67,7 @@
             </div>
             <!-- footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards" data-dismiss="modal">保存</button>
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div>
@@ -91,7 +91,7 @@
 
             <!-- footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-primary-zy delete_address">确认</button>
+                <button type="button" class="btn btn-primary btn-primary-zy delete_address" onclick="window.location.href='../Company_info_basic/certificate_stepone.html'">确认</button>
                 <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
             </div>
         </div>
@@ -129,7 +129,7 @@
             </div>
             <!-- footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-primary-zy model-change1 delete_card_btn" data-dismiss="modal">确认</button>
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 delete_card_btn">确认</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div>
@@ -142,23 +142,40 @@
 <script>
     //删除银行模态框
     $('.delete_bankcard').on("click",function () {
+
+        //删除银行模态框出现的方法
         modelInfo('#deletebankcard_modal')//模态框的ID值
 
         var thisCard=$(this)
 
-        $('.delete_card_btn').on("click",function () {
+        $('.delete_card_btn').on("click",function () {//点击确认删除按钮
 
-            thisCard.parents('.bank').remove();//删除当前银行卡
+
+            //模态框隐藏的方法
+            hideOneModal(this);
+
+            setTimeout(function(){
+                thisCard.parents('.bank').remove();//删除当前银行卡
+            },300)
+
+
 
 
         })
     })
 
-    //添加银行卡模态框
+
+
+    //添加银行卡模态框以及企业认证模态框
 
     $('.bank_add').on("click",function () {
-       /* modelInfo('#addbankcard_modal')*///模态框的ID值
-        modelInfo('#companyAuthentication')///模态框的ID值
+
+        //企业认证模态框出现的方法
+      //  modelInfo('#companyAuthentication')///模态框的ID值
+
+
+        //添加银行卡模态框出现的方法
+        modelInfo('#addbankcard_modal')///模态框的ID值
 
     })
 

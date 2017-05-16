@@ -54,7 +54,7 @@
 <script>
     //倒计时效果
     document.getElementsByClassName('input-group-addon')[0].addEventListener('click',function(){
-        getmessage(this,"60")
+        getmessage(this,"60")//倒计时方法，参数一是点击的该元素，参数二是时间
     },false)
 
 
@@ -62,14 +62,17 @@
     //输入提示信息验证
     $(".input_valiate").on({
 
-        //-----------change事件出现提示信息
-        change: function () {
 
+        //-----------change事件出现提示信息，出现文本提示正确的方法
+        change: function () {
+            //出现文本提示正确的方法
             jfValidateInput.validateRight(this, '输入正确');//参数一为选取的该元素，参数二为出现的提示信息
         },
 
-        //-----------再次焦点事件提示信息删除
+        //-----------再次焦点事件提示信息删除，移除文本提示信息方法
         focus: function () {
+
+            //移除文本提示信息方法
             jfValidateInput.validateRemove(this);//参数为选取的该元素
         }
     });

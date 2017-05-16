@@ -123,17 +123,20 @@
 <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
 <script>
 
-    //输入报错验证
+    //输入报错验证方法
     $(".input_valiate").on({
 
-        //-----------change事件出现提示信息
+        //-----------change事件出现提示信息，出现文本提示错误的方法
         change: function () {
 
+            //文本提示错误的方法
             jfValidateInput.validateWrong(this, '该企业已注册，若有问题请联系客服');//参数一为选取的该元素，参数二为出现的提示信息
         },
 
-        //-----------再次焦点事件提示信息删除
+        //-----------再次焦点事件提示信息删除，移除文本提示信息方法
         focus: function () {
+
+            //移除文本的方法
             jfValidateInput.validateRemove(this);//参数为选取的该元素
         }
     });

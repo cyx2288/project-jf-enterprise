@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>银行账户管理</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+
+
+<!--银行账户信息修改-金俊菲-2017-5.8-->
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>银行账户</h2>
+
+
+
+
+    <div class="info_middlebody">
+        <!--<%- include("../../component/bank/companyAauthentication.ejs",{
+        "authenticated":true
+        })%>-->
+
+
+        <div class="cards">
+            <%- include("../../component/bank/bankAdd.ejs")%>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!--模态框3-企业认证模态框-->
+<div class="modal fade"  id="companyAuthentication" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="modify_addressLabel">企业认证</h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+
+                <div class="authentication_title">您的企业还没有认证</div>
+                <a class="authentication_sub" href="../Company_info_basic/certificate_stepone.html">立刻去认证</a>
+            </div>
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-zy delete_address" onclick="window.location.href='../Company_info_basic/certificate_stepone.html'">确认</button>
+                <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+<script>
+    //删除银行模态框
+    $('.delete_bankcard').on("click",function () {
+
+        //删除银行模态框出现的方法
+        modelInfo('#deletebankcard_modal')//模态框的ID值
+
+        var thisCard=$(this)
+
+        $('.delete_card_btn').on("click",function () {//点击确认删除按钮
+
+            //模态框隐藏的方法
+            hideOneModal(this);
+
+            setTimeout(function(){
+                thisCard.parents('.bank').remove();//删除当前银行卡
+            },300)
+
+
+        })
+    })
+
+
+
+    //添加银行卡模态框以及企业认证模态框
+
+    $('.bank_add').on("click",function () {
+
+        //企业认证模态框出现的方法
+        modelInfo('#companyAuthentication')///模态框的ID值
+
+
+        //企业认证模态框出现的方法
+        // modelInfo('#addbankcard_modal')///模态框的ID值
+
+    })
+
+</script>
+
+</body>
+
+</html>
