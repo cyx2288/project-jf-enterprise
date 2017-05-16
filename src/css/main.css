@@ -2882,3 +2882,10 @@ section.container-fluid .nav_iframe span.right_raw:before {
 #myJfModal{
     top:100px;
 }
+
+
+/*新增企业logo*/
+.homepage_jflogo>img{
+    width: 27px;
+    height: 27px;
+}

@@ -76,14 +76,16 @@
         });
     });
 
-    //分页点击
+
+    //分页点击选择页面事件
     $('ul.pagination').find('li:not(.go)').each(function(){
 
-        $(this).click(function(){
-
+        $(this).on("click",function(){
+            //页面选择
             jfpagechange(this);//参数为选择的当前元素
         })
-    })
+
+    });
 
 
 

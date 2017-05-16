@@ -14,7 +14,7 @@
 
 <div class="panel-body panel-body-shodow">
     <!--title-->
-    <h2>员工查询
+    <h2>员工信息管理
 
         <div class="staff_import">
             <a href="Staff_import.html"><button type="button" class="btn btn-primary lookup_btn2">员工导入</button></a>
@@ -360,29 +360,65 @@
 
         var checkbox=$('td>input[type=radio]');
 
-        if(checkbox.is(':checked')){
+        if(checkbox.is(':checked')){//判断当前是否选中员工
+            //弹出员工编辑模态框
             modelInfo('#staff_lookup_edit'); //参数：模态框id选择器
         }else {
             alert("请选择需要编辑的具体员工")
         }
-
     })
-    //文本验证（以员工查询页面为例）
+
+
+
+    //文本提示信息（以员工查询页面为例）
     $("#email").on({
 
-        //-----------change事件出现提示信息
+        //-----------change事件出现提示信息，出现文本报错的方法
         change: function () {
-
             jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
         },
 
-        //-----------再次焦点事件提示信息删除
+        //-----------再次焦点事件提示信息删除，移除文本报错的方法，
         focus: function () {
             jfValidateInput.validateRemove(this);//参数为选取的该元素
         }
     });
 
-    $('input.form_datetime').each(function(){//------------------日历插件
+
+
+
+    //分页点击选择页面事件
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).on("click",function(){
+            //页面选择
+            jfpagechange(this);//参数为选择的当前元素
+        })
+
+    });
+
+
+
+
+    //加载loading模态框，以及自动移除
+    $('.btn_loading').on('click', function () {
+
+        //-----------loading模态框出现
+        jfModelFrame.loadingModelShow('加载完成', '数据导入成功');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
+
+
+        setTimeout(function(){//3秒后关闭
+
+            //loading模态框自动移除的方法
+            jfModelFrame.loadingModelRemove()
+        },3000);
+
+    });
+
+
+
+    //------------------日历插件
+    $('input.form_datetime').each(function(){
         $(this).datepicker({
             format: "yyyy-mm-dd",
             autoclose :true,
@@ -392,33 +428,12 @@
             linked :true
         });
     });
-    //分页点击
-    $('ul.pagination').find('li:not(.go)').each(function(){
-
-        $(this).click(function(){
-
-            jfpagechange(this);//参数为选择的当前元素
-        })
-    });
-
-    //加载loading
-    $('.btn_loading').on('click', function () {
-
-        //-----------success模态框（）
-        jfModelFrame.loadingModelShow('加载完成', '数据导入成功');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
-
-        setTimeout(function(){//3秒后关闭
-            jfModelFrame.loadingModelRemove()
-
-        },3000);
 
 
-        /* setTimeout(function(){//3秒后关闭loading,出现success
-         jfModelFrame.successModelShow()
-         },4000);*/
-
-    });
-
+    $('.edit_close').on("click",function(){
+        //模态框隐藏的方法
+        hideOneModal(this);
+    })
 
 </script>
 </body>

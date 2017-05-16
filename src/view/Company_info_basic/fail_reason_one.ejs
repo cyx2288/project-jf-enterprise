@@ -76,6 +76,45 @@
 <script type="text/javascript" src="../../js/BusinessService.js"></script>
 <script>
 
+    //修改企业名称
+    $('#modify_companyname').on("click",function(){
+
+
+        if($(this).text()=="修改"){
+
+            //点击修改的方法
+            jfModifyName.modifyNameFirst(this);//参数为当前元素
+
+        }
+        else {
+
+            //修改完成后，先判断当前内容
+            if( $('input.changeinput').val()==""){
+
+                //如果联系点击完成，会先移除一次报错方法
+                jfValidateInput.validateRemove('input.changeinput');//当前input元素选择器，
+
+                //调用报错方法
+                jfValidateInput.validateWrong('input.changeinput','输入错误');//参数一当前input元素选择器，参数二为报错文本
+
+                $('input.changeinput').focus(function(){//当input框处于焦点状态，报错消失
+
+                    //移除报错方法
+                    jfValidateInput.validateRemove('input.changeinput')
+                })
+
+            }else {
+
+                //点击修改完成的方法
+                jfModifyName.finishModify(this)
+            }
+        }
+
+
+    })
+
+
+
 </script>
 </body>
 </html>

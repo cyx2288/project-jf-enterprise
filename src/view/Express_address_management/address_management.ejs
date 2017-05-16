@@ -14,7 +14,7 @@
 
 <div class="panel-body panel-body-shodow">
     <!--title-->
-    <h2>快递地址管理
+    <h2>企业地址
         <div>
             <button class="btn btn-primary lookup_btn2">新增地址</button>
         </div>
@@ -77,7 +77,7 @@
             </tbody>
         </table>
     </div>
-    <p class="address_tips">最多添加6个企业地址</p>
+    <p class="address_tips">最多添加8个企业地址</p>
 
 
 
@@ -143,7 +143,7 @@
 
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close">保存</button>
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 modify_address_close">保存</button>
                         <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
                     </div>
                 </div>
@@ -209,6 +209,7 @@
                         })%>
                     </div>
 
+                    <!--
                     <div style="margin-top: -25px;">
                         <div class="smodal_content">
                             <div class="info_content modal22">
@@ -217,10 +218,10 @@
                             </div>
                         </div>
                     </div>
-
+                    -->
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close">保存</button>
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 add_address_close">保存</button>
                         <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
                     </div>
                 </div>
@@ -260,12 +261,38 @@
 
     //修改地址模态框
     $('.modify_address_btn').on("click",function(){
+        //一个模态框出现的方法
         modelInfo('#modify_address_modal'); //参数：模态框id选择器
     })
 
     //新增地址模态框
     $('.lookup_btn2').on("click",function(){
+        //一个模态框出现的方法
         modelInfo('#add_address_modal'); //参数：模态框id选择器
+    })
+
+
+    //修改地址模态框失败
+    $('.modify_address_close').on("click",function(){
+        //模态框隐藏的方法
+        hideOneModal(this);
+
+        setTimeout(function(){
+            //fail模态框出现的方法
+            jfModelFrame.failModelShow('企业地址修改','企业地址修改失败','')//参数一是fail模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+    })
+
+
+    //新增地址模态框成功
+    $('.add_address_close').on("click",function(){
+        //模态框隐藏的方法
+        hideOneModal(this);
+
+        setTimeout(function(){
+            //success模态框出现的方法
+            jfModelFrame.successModelShow('新增企业地址','企业地址新增成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
     })
 
     //删除地址模态框
@@ -273,9 +300,10 @@
 
         var thisEle=$(this)
 
+        //一个模态框出现的方法
         modelInfo('#delete_address_modal'); //参数：模态框id选择器
 
-        $('.delete_address').on("click",function(){
+        $('.delete_address').on("click",function(){//点击删除按钮，模态框隐藏，并且表格行删除
 
             $(this).parents('.modal').modal('hide');//模态框隐藏
 

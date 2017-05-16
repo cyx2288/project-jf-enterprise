@@ -21,6 +21,20 @@ $(document).ready(function(){
     selectEle.parent().append(selectchoose);
 
     selectEle.addClass('form-control-selectinput');
+
+    var thisSelect=document.getElementsByTagName('select');
+
+    for(var i=0;i<thisSelect.length;i++){
+
+        var thisElectWidth=$(thisSelect[i]).width()
+
+        if(thisElectWidth=="299"){
+
+            $(thisSelect[i]).next('span').addClass('move_triangle')
+        }
+    }
+
+
 })
 
     //-----------点击时获取短信验证码
@@ -92,8 +106,8 @@ var jfPasdShow={
 
         var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
-        var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
-        var mediumRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+        var strongRegex = new RegExp("^(?=.{15,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
         var enoughRegex = new RegExp("(?=.{6,}).(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
 
 
@@ -147,8 +161,8 @@ function jfPasdValidate(obj) {//参数为当前元素
 
     var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
-    var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
-    var mediumRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+    var strongRegex = new RegExp("^(?=.{15,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
     var enoughRegex = new RegExp("(?=.{6,}).(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
 
 
@@ -352,6 +366,15 @@ function PasdValidateRemove(obj) {//参数为当前元素
         });
     }
 
+
+
+//手动关闭模态框的方法
+function hideOneModal(hideBtn){
+
+    $(hideBtn).parents('.modal').modal('hide')
+
+}
+
 //通用文本1个模态框弹出（每个模态框内容不一样，不包括跳转结果）
 
     function modelInfo(modelid) {//参数一：模态框id选择器
@@ -385,15 +408,16 @@ function modifyNickName(buttontextone,buttontexttwo,clickbutton,changInput,showw
         thisButton.text(buttontexttwo);//修改此时的文本
 
     }else{
-        if( thisChangeInput.val()==""){//如果当前输入款为空值
 
-            jfValidateInput.validateRemove(changInput);//如果联系点击完成，会先移除一次，
+        if(thisChangeInput.val()==""){//如果当前输入款为空值
 
-            jfValidateInput.validateWrong(changInput,showwrongtext);//调用报错方法
+            jfValidateInput.validateRemove(thisChangeInput);//如果联系点击完成，会先移除一次，
 
-            thisChangeInput.focus(function(){//当input框处于焦点状态，报错消失
+            jfValidateInput.validateWrong(thisChangeInput,showwrongtext);//调用报错方法
 
-                jfValidateInput.validateRemove(changInput)
+            $('input.changeinput').focus(function(){//当input框处于焦点状态，报错消失
+
+                jfValidateInput.validateRemove(thisChangeInput)
             })
 
         }else {
@@ -407,6 +431,46 @@ function modifyNickName(buttontextone,buttontexttwo,clickbutton,changInput,showw
 
     }
 }
+
+
+//新版修改企业名称方法
+var jfModifyName={
+
+    //点击修改
+    modifyNameFirst:function(thisEle){
+
+        var thisButton=$(thisEle);//点击按钮
+
+        var thisChangeInput=$(thisEle).prev('input');//变化的input元素
+
+            thisButton.css({"color": "white", "background": "#3498db"});//当前样式改变
+
+            thisChangeInput.addClass('modifyname').removeAttr('readonly').focus();//当前input框自动处于焦点状态
+
+            thisChangeInput[0].select();
+
+            thisButton.text("完成");//修改此时的文本
+
+    },
+
+    //完成修改
+    finishModify:function(thisEle){
+        var thisButton=$(thisEle);//点击按钮
+
+        var thisChangeInput=$(thisEle).prev('input');//变化的input元素
+
+            thisChangeInput.removeClass('modifyname').attr('readonly','true');//移除边框，只读状态
+
+            thisButton.css({"color": "#555", "background-color": "#eee"});//变回原来的样式
+
+            thisButton.text("修改");//文本变成最初显示文本
+
+    }
+
+
+}
+
+
 
 //---------------------------
 

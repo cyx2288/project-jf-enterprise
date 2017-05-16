@@ -205,7 +205,7 @@ h2>div>button>span{
 }
 .info_content>span:last-child{
     padding-left: 20px;
-    width: 60%;
+    width: 65%;
     text-align: left;
     position: relative;;
 }
@@ -219,7 +219,7 @@ h2>div>button>span{
 }
 
 .modal .info_content.modal_text>span:first-child{
-    width: 38%;
+    width: 35%;
 }
 .info_content>span:first-child{
     width: 35%;
@@ -448,8 +448,11 @@ input[type=password]{
     font-size: 12px;
     color: #4d4d4d;
     z-index: 1;
-
 }
+.select-input .move_triangle{
+    right: 60px;
+}
+
 .btn-group-11{
     width: 320px
 }
@@ -2470,10 +2473,17 @@ input[type=file]{
         left: 210px;
         line-height: 20px;
     }
+
+    .select-input .move_triangle{
+        right:120px;
+    }
 }
 
 
 @media screen and (max-width: 769px) {
+    .select-input .move_triangle{
+        right: 25%;;
+    }
     #Account_page{
         margin-left: 20%;
     }
@@ -2606,6 +2616,10 @@ input[type=file]{
 }
 
 @media screen and (max-width: 600px) {
+
+    .select-input .move_triangle{
+        right:45px;
+    }
     .top_concent_qd span{
         float: left;
     }
@@ -2732,6 +2746,10 @@ input[type=file]{
 
 @media screen and (max-width:460px) {
 
+    .select-input .move_triangle{
+        right:20px;
+    }
+
     .login_help_right {
         font-size: 12px;
         color: #3498db;
@@ -2753,7 +2771,7 @@ input[type=file]{
         display:block;
         width: 100%;
         float: none;
-        margin-left: 10px;
+        margin-left: 0;
         margin-top: 10px
     }
     h2>.staff_import{

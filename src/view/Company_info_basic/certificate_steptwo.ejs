@@ -29,23 +29,29 @@
         })%>
 
         <%- include('../../component/input/upload_file.ejs',{
-        "title":"营业执照*：",
-        "thisSrc":"../../icon/jiafu_logo.png",
+        "title":"*营业执照：",
+        "thisSrc":"../../icon/company_photo.jpg",
         "textone":"上传：营业执照图片；",
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*企业注册地址：",
+        "placeholder":"与营业执照上的地址严格一致"
         })%>
 
 
         <%- include('../../component/input/upload_download.ejs',{
-        "title":"认证授权书*：",
-        "thisSrc":"../../icon/jiafu_logo.png",
+        "title":"*认证授权书：",
+        "thisSrc":"../../icon/certificate_authority.png",
         "textone":"请下载认证授权书；",
-        "texttwo":"按要求填写，并手写仅用于企业认证字样，并加盖企业公章"
+        "texttwo":"按要求填写，并手写仅用于企业认证字样，并加盖企业公章",
+            "thishref":"../../icon/certificate_authority.doc"
         })%>
 
 
         <%- include('../../component/input/upload_file.ejs',{
-        "title":"企业公章*：",
-        "thisSrc":"../../icon/jiafu_logo.png",
+        "title":"*企业公章：",
+        "thisSrc":"../../icon/company_offiicial_seal.png",
         "textone":"上传：企业公章图片；",
         })%>
 
@@ -86,11 +92,74 @@
             </div>
         </div>
     </div>
+
+    <!--企业认证模板-->
+    <div class="modal fade" tabindex="-1" aria-labelledby="staff_lookup_editLabel" id="certificate_authority" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel">认证授权书模板 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <div class="business_license"><img src="../../icon/certificate_authority.png"></div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--企业公章模板-->
+    <div class="modal fade" tabindex="-1" aria-labelledby="staff_lookup_editLabel" id="company_official_seal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel">企业公章模板 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <div class="business_license"><img src="../../icon/company_offiicial_seal.png"></div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/BusinessService.js"></script>
 <script>
+
+
+    //企业营业执照模态框
+    document.getElementsByClassName('left_img')[0].addEventListener('click',function(){
+        //一个模态框出现的方法
+        modelInfo('#company_photo')//模态框ID选择器
+    },false)
+
+    //企业认证模态框
+    document.getElementsByClassName('left_img')[1].addEventListener('click',function(){
+        //一个模态框出现的方法
+        modelInfo('#certificate_authority')//模态框ID选择器
+    },false)
+
+    //企业公章模态框
+    document.getElementsByClassName('left_img')[2].addEventListener('click',function(){
+        //一个模态框出现的方法
+        modelInfo('#company_official_seal')//模态框ID选择器
+
+    },false)
+
+
 
 </script>
 </body>
