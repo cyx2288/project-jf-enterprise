@@ -1559,12 +1559,19 @@ section.business_logon_confirm .section_middle_button span {
 .jf_business_logon_confirm .close span {
     display: inline-block;
     position: relative;
-    background: url('../icon/Icon_bg.png') no-repeat;
-    width: 12px;
-    height: 12px;
-    background-position: -12px -318px;
+    background: url(../icon/icon_bc_close.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
     vertical-align: middle;
+    opacity: 0.5;
 }
+
+.jf_business_logon_confirm .close span:hover{
+    opacity: 1;
+}
+
+
 
 .jf_business_logon_confirm .smodal_content {
     margin-bottom: 5px;

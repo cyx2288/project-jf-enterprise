@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
  <link rel="stylesheet" href="../../css/component.css">
-<link rel="stylesheet" href="../../css/newcomponent.css">
+
 
     <meta charset="UTF-8">
     <title>Title</title>
@@ -22,26 +22,26 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 500;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            width: 132px;
+            border-right: none;
+            opacity: 0;
         }
         .selecttype{
             position: absolute;
             left: 0;
             top: 34px;
-            z-index: 1;
+            z-index:1;
             margin: 0;
             padding: 0;
-            height: 0;
-            overflow: hidden;
-            border: none;
+            height: auto;
 
         }
         .select-input>span{
             z-index: 10;
             right: 0;
-
             width: 25px;
             border-left: solid 1px #ccc
         }
@@ -52,12 +52,14 @@
             line-height: 20px;
 
         }
-        .selecttype li:first-child{
+
+
+        .selecttype li:hover{
             background: rgb(30,144,255);
             color: white;
         }
 
-        .selecttype li:hover{
+        .showlist{
             background: rgb(30,144,255);
             color: white;
         }
@@ -83,34 +85,30 @@
 
 <span class="test select-input">
 
-    <input class="form-control form-control-zy inputtype" value="">
+    <input class="form-control form-control-zy inputtype">
 
-    <span class="selectclick">▼</span>
+   <!-- <span class="selectclick">▼</span>-->
 
-      <ul class="form-control form-control-zy selecttype">
-              <li>111</li>
-              <li>222</li>
-              <li>121212</li>
-              <li>34534</li>
-              <li>erw3e</li>
-              <li>23790ufi</li>
-              <li>465156</li>
-              <li>78924</li>
-              <li>我们</li>
-              <li>我我</li>
-              <li>你们</li>
-      </ul>
+      <select class="form-control form-control-zy">
+             <option>请选择</option>
+              <option>111</option>
+              <option>222</option>
+              <option>121212</option>
+              <option>34534</option>
+              <option>erw3e</option>
+              <option>23790ufi</option>
+              <option>465156</option>
+              <option>78924</option>
+              <option>我们</option>
+              <option>我我</option>
+              <option>你们</option>
+      </select>
 
 
 
 </span>
 
-
-
-
 </div>
-
-
 
 </body>
 
@@ -118,6 +116,166 @@
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/BusinessService.js"></script>
 <script>
+
+
+    var JfInputChoose={
+
+        init:function(details){
+
+            var _this=this;
+
+             _this.InputELe=details.InputELe;//选择的input元素；
+
+            var allInputEle=$( _this.InputELe);
+
+            var allSelectEle=allInputEle.next('select');
+
+            var thisParentEle=allInputEle.parent();
+            var showArr=new Array();//新建一个数组
+
+            //当select发生change事件，input元素value发生改变
+            allSelectEle.on('change',function(){
+
+                var thischooseValue=allSelectEle.val();
+
+                allInputEle.val(thischooseValue);//设置input的value值
+
+            });
+
+
+            allInputEle.on({
+                focus:function(){
+
+                   allInputEle.css('opacity','1');//焦点状态透明度为1
+                },
+
+                keyup:function(){
+
+                    var thisInputValue=allInputEle.val();
+
+                    var alloptions=allSelectEle.children('option');
+
+
+                    showArr.splice(1,showArr.length);
+
+
+
+                    for(var i=0;i<alloptions.length;i++){
+
+                        if(!thisInputValue==""){
+
+                            if(alloptions[i].innerHTML.indexOf(thisInputValue)<0){//当前不存在，则隐藏
+
+                                alloptions[i].style.display="none";
+
+                            }else {
+
+                                alloptions[i].style.display="";
+
+                                showArr.push(alloptions[i].innerHTML);//显示的元素，放进数组;
+
+
+                                console.log(showArr)
+                            }
+
+                        }
+                        else
+                        {
+                            if($('.selecttype')){//如果当前已经存在ul下拉元素，则先删除一次
+
+                                $('.selecttype').remove();
+
+                            }
+                        }
+                    }
+
+                    var appendShowEle="";
+
+                    if(showArr.length>0){//如果当前有值存在
+                        for(var j=0;j<showArr.length;j++){
+
+                            appendShowEle+='<li>'+showArr[j]+'</li>';//需要插入的列表元素
+                        }
+
+                        var appendShowul='<ul class="form-control form-control-zy selecttype">'+appendShowEle+'</ul>';
+
+
+                         if($('.selecttype')){//如果当前已经存在ul下拉元素，则先删除一次
+
+                             $('.selecttype').remove();
+
+
+                         }
+
+                       thisParentEle.append(appendShowul);//插入下拉列表；
+
+                        allInputEle.siblings('ul').children('li:first-child').addClass('showlist');//默认第一个选中
+
+
+                        allInputEle.siblings('ul').children('li').on({
+                            click:function(){
+
+                                $(this).siblings().removeClass('showlist');
+
+                                $(this).addClass('showlist');
+
+                                var thisChooseText=$(this).text();
+
+                                allInputEle.val(thisChooseText);
+
+                                $(this).parent().remove();//选中之后即可删除插入元素
+
+                            },
+                            mouseover:function(){
+
+                                $(this).siblings().removeClass('showlist');
+
+                                $(this).addClass('showlist');
+
+                            }
+                        })
+                    }
+
+
+
+
+
+
+
+                },
+                blur:function(){
+
+                    var alloptions=allSelectEle.children('option');
+
+                    alloptions.css('display','');
+
+                   // allInputEle.css('opacity','0');//焦点状态透明度为1
+
+                }
+            })
+
+
+
+
+        }
+
+    }
+
+
+    JfInputChoose.init({"InputELe":".inputtype"});
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
 
     $('.selecttype').children('li').click(function(){
 
@@ -196,7 +354,7 @@
 
 
 
-
+*/
 
 
 

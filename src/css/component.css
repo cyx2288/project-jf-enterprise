@@ -192,7 +192,7 @@ h2>div>button>span{
     text-align: center;
 }
 .info_content_help .step_one{
-    width: 60%;
+    width: 100%;
 }
 .info_content_help .step_two{
     width: 100%;
@@ -1243,14 +1243,18 @@ td {
 
 .close span{
     display: inline-block;
-    vertical-align: middle;
     position: relative;
-    background-image: url("../icon/Icon_bg.png");
-    background-repeat: no-repeat;
-    width: 12px;
-    height:12px;
-    background-position:-12px -318px;
+    background: url(../icon/icon_bc_close.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    vertical-align: middle;
+    opacity: 0.5;
 
+}
+
+.close span:hover{
+    opacity:1;
 }
 .close{
     opacity: 0.8
