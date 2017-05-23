@@ -3,10 +3,23 @@
 @changeColor:(@lastColor - @firstColor)/2;
 
 
+.info_middlebody .jf_progress{
+  width: 65%;
+  margin: 10px auto 30px;
+}
+.modal .jf_progress{
+  width: 65%;
+  margin: 10px auto 35px;
+
+  @media screen and(max-width: 500px) {
+    width: 85%;
+    margin: 10px auto 35px;
+  }
+}
 .jf_progress{
 
   width: 80%;
-  margin: 30px auto 50px;
+  margin: 30px auto;
   .progress_bar{
     margin: 20px auto;
     width: 100%;
@@ -138,10 +151,14 @@
     span{
       display: inline-block;
       width: 100%;
-      width:20%\9; /* IE6, IE7, IE8, IE9, IE10 */
+      width:30%\9; /* IE6, IE7, IE8, IE9, IE10 */
       text-align: center;
       color: @lastColor;
       font-size: 16px;
+
+      @media screen and(max-width: 500px) {
+        font-size: 14px;
+      }
     }
 
     span.showblue~span{
@@ -176,6 +193,10 @@
   .jf_progress {
     width: 100%;
     margin: 30px auto 50px;
+  }
+
+  .info_middlebody .jf_progress{
+    width:100%;
   }
 
 }

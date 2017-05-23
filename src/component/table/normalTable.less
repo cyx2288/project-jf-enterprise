@@ -1,0 +1,53 @@
+.table.table-striped {
+
+  th{
+    text-align: center;
+  }
+ tr{
+   text-align: center;
+
+   td{
+     vertical-align: middle;
+
+     span{
+       cursor: pointer;
+      &:hover{
+        color:#3498db ;
+      }
+     }
+
+     small{
+       color:#3498db
+     }
+
+     .default_address{
+       opacity: 0;
+       transition: opacity 0.3s linear;
+       cursor: pointer;
+       padding: 2px 6px;
+       border-radius: 4px;
+       background: #3498db;
+       color: #FFFFFF;
+       border: none;
+       display:inline-block;
+       text-align: center;
+     }
+   }
+
+   &:hover{
+     .default_address{
+       opacity:1;
+       color: #FFFFFF;
+     }
+   }
+
+
+ }
+}
+
+.address_tips{
+  text-align: right;
+  margin-top: -10px;
+  color: grey;
+  margin-right: 20px;
+}

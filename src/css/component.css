@@ -192,7 +192,7 @@ h2>div>button>span{
     text-align: center;
 }
 .info_content_help .step_one{
-    width: 60%;
+    width: 100%;
 }
 .info_content_help .step_two{
     width: 100%;
@@ -204,8 +204,8 @@ h2>div>button>span{
     padding-left: 30px;
 }
 .info_content>span:last-child{
-    padding-left: 30px;
-    width: 55%;
+    padding-left: 20px;
+    width: 65%;
     text-align: left;
     position: relative;;
 }
@@ -213,8 +213,16 @@ h2>div>button>span{
 .info_content>span:last-child:hover .img_verifycode{
     opacity: 1;
 }
+
+.modal .info_content>span:first-child{
+    width: 28%;
+}
+
+.modal .info_content.modal_text>span:first-child{
+    width: 35%;
+}
 .info_content>span:first-child{
-    width: 36%;
+    width: 35%;
     text-align: right;
     margin-bottom: 0;
     min-height: 1px;
@@ -253,6 +261,10 @@ input[type=password]{
     margin-right:15px;
 }
 
+.choose-boxs input:nth-child(2){
+    margin-left: 30px;
+}
+
 .basic_info .btn-md-zy{
     outline: none;
     border: none;
@@ -261,8 +273,26 @@ input[type=password]{
     width: 200px;
     transition:box-shadow 0.3s linear;
     background: none;
+    font-size: 14px;
+}
+
+.basic_info.modal22 .btn-md-zy{
+    outline: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    width: 245px;
+    transition:box-shadow 0.3s linear;
+    background: none;
+    font-size: 14px;
 }
 .basic_info .btn-md-zy[read-only]{
+    background: none;
+    cursor: auto;
+    color: #4a4a4a;
+}
+.basic_info.modal22 .btn-md-zy[read-only]{
     background: none;
     cursor: auto;
     color: #4a4a4a;
@@ -281,7 +311,12 @@ input[type=password]{
     border-radius: 4px;
     width: 200px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
-
+}
+.basic_info.modal22  .modifyname{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 245px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
 }
 .basic_info .modifyname:focus{
     border-color: #66afe9;
@@ -413,8 +448,11 @@ input[type=password]{
     font-size: 12px;
     color: #4d4d4d;
     z-index: 1;
-
 }
+.select-input .move_triangle{
+    right: 60px;
+}
+
 .btn-group-11{
     width: 320px
 }
@@ -495,8 +533,7 @@ input[type=password]{
 }
 .control-title div {
     float: left;
-    width: 48%;
-    margin-right: 10px;
+    width: 50%;
 }
 
 .control-title-qd div {
@@ -532,7 +569,7 @@ input[type=password]{
 }
 .control-title div>span:first-child{
     /*min-width: 70px;*/
-    min-width: 85px;
+    min-width:100px;
     display: inline-block;
     text-align: right;
     line-height: 34px;
@@ -649,7 +686,7 @@ input[type=password]{
 .modal22 {
     margin: 0 auto;
     width: 65%;
-    padding: 10px 0 ;
+    padding: 5px 0 ;
 }
 .smodal_content .transfer_page{
     padding: 5px 0;
@@ -677,6 +714,27 @@ input[type=password]{
     width: 100%
 }
 
+.pay_model_pp.messageinput{
+    padding-right:70px;
+}
+
+.pay_model_pp.messageinput .validatepp{
+    padding-left:70px;
+    text-align: left;
+}
+
+
+.pay_model_pp>input{
+    margin:  0 auto;
+}
+h2>.staff_import .lookup_btn2{
+    background-color: #337ab7;
+}
+
+h2>.staff_import {
+   float: none;
+    margin-left: 50px;
+}
 /*表格样式*/
 .table-striped>tbody>tr:nth-of-type(odd) {
     background-color: #ecf3fa;
@@ -1185,14 +1243,18 @@ td {
 
 .close span{
     display: inline-block;
-    vertical-align: middle;
     position: relative;
-    background-image: url("../icon/Icon_bg.png");
-    background-repeat: no-repeat;
-    width: 12px;
-    height:12px;
-    background-position:-12px -318px;
+    background: url(../icon/icon_bc_close.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    vertical-align: middle;
+    opacity: 0.5;
 
+}
+
+.close span:hover{
+    opacity:1;
 }
 .close{
     opacity: 0.8
@@ -1546,7 +1608,8 @@ input[type=file]{
 .file{
     line-height: 22px;
     position: relative;
-    left: 130px;
+    left:200px;
+    /*left: 130px;*/
     color: #4a4a4a;
     background: RGB(241,241,241);
     border: 1px solid RGB(165,165,165);
@@ -1558,6 +1621,10 @@ input[type=file]{
 }
 .file:hover{
     text-decoration: none;
+}
+.selected_file{
+    padding-left: 20px;
+    margin-top: 15px;
 }
 
 /*成功页面与失败页面*/
@@ -1583,7 +1650,7 @@ input[type=file]{
 }
 .fail_page_button>a>button{
     margin-right: 20px;
-    width: 152px;
+    width: 160px;
     height: 35px;
     display: inline-block;
     border-radius: 4px;
@@ -1613,7 +1680,7 @@ input[type=file]{
     color: #fff;
     border: 0;
     margin-right: 20px;
-    width: 152px;
+    width: 160px;
     height: 35px;
     display: inline-block
 }
@@ -2410,10 +2477,17 @@ input[type=file]{
         left: 210px;
         line-height: 20px;
     }
+
+    .select-input .move_triangle{
+        right:120px;
+    }
 }
 
 
 @media screen and (max-width: 769px) {
+    .select-input .move_triangle{
+        right: 25%;;
+    }
     #Account_page{
         margin-left: 20%;
     }
@@ -2546,6 +2620,10 @@ input[type=file]{
 }
 
 @media screen and (max-width: 600px) {
+
+    .select-input .move_triangle{
+        right:45px;
+    }
     .top_concent_qd span{
         float: left;
     }
@@ -2672,6 +2750,10 @@ input[type=file]{
 
 @media screen and (max-width:460px) {
 
+    .select-input .move_triangle{
+        right:20px;
+    }
+
     .login_help_right {
         font-size: 12px;
         color: #3498db;
@@ -2693,9 +2775,20 @@ input[type=file]{
         display:block;
         width: 100%;
         float: none;
-        margin-left: 10px;
+        margin-left: 0;
         margin-top: 10px
     }
+    h2>.staff_import{
+        display: inline-block;
+        float: right;
+        margin: 0;
+        width: auto;
+    }
+
+    h2>.staff_import .lookup_btn2{
+       width: 152px;
+    }
+
     .release_record_tabbtn1{
         display: inline-block;
         width: 50%;
@@ -3053,6 +3146,11 @@ input[type=file]{
         width: 95%;
         margin: 0 auto 15px;
         display: block;
+    }
+
+    .pay_model_pp.messageinput{
+        padding-right:0;
+        text-align: -webkit-auto;
     }
 }
 
@@ -4019,4 +4117,11 @@ input[type=file]{
 /*——————*/
 
 
+.modal .delete_title{
 
+    text-align: center;
+    padding: 10px 0;
+    border: none;
+    margin-bottom: 20px;
+
+}

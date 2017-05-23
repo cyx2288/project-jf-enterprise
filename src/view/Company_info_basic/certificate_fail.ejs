@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>基本信息</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+        <!--用户名-->
+
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业识别号：",
+        "basicinfo":"AY2368554"
+        })%>
+
+        <%- include('../../component/basic/certificate.ejs',{
+        "title":"企业名称：",
+        "basicinfo":"上海嘉付宝信息技术有限公司",
+        "certificate":false,
+        "onesrc":"../../icon/v.png",
+        "textoneinfo":"企业已认证",
+        "texttwoinfo":"未认证",
+        "twosrc":"../../icon/v2.png",
+        "thishref":"fail_reason_one.html",
+        "textthree":"认证失败，修改认证信息"
+
+
+        })%>
+
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"企业昵称：",
+        "thisValue":"上海淘略",
+        "btntext":"修改",
+        "thisIdname":"modifynackname",
+        "modelshow":false
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"所在地区：",
+        "basicinfo":"上海市，徐汇区"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"企业联系人：",
+        "basicinfo":"李小明"
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"管理员手机号：",
+        "thisValue":"152****8955",
+        "btntext":"修改",
+        "thisIdname":"modifyphone",
+        "modelshow":true
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"管理密码：",
+        "thisValue":"********",
+        "btntext":"修改",
+        "thisIdname":"modifypasd",
+        "modelshow":true
+        })%>
+
+        <%- include('../../component/input/input_btn.ejs',{
+        "title":"咨询顾问：",
+        "thisValue":"李经理（123789564562）",
+        "btntext":"输入邀请码",
+        "thisIdname":"getcode",
+        "modelshow":true
+
+        })%>
+
+
+        <%- include('../../component/basic/uplogo.ejs')%>
+
+
+
+
+
+    </div>
+    <!--底部按钮-->
+
+    <!--修改手机号码模态框 第一步-->
+    <div class="modal fade" tabindex="-1" id="modifyphoneone" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title">修改管理员手机</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <!--进度条-->
+                    <%- include('../../component/basic/progress_bar.ejs',{
+
+                    "options":[
+                    {"text":"1.验证身份"},
+                    {"text":"2.修改管理员手机"},
+                    ],
+                    "j":"0"
+                    })%>
+
+                    <!--模态框组件-->
+                    <%- include('../../component/modal/centerText.ejs',{
+                    "titleone":"请发送验证码到手机",
+                    "titletwo":"152****5623"
+                    })%>
+
+                    <%- include('../../component/modal/getMessage.ejs')%>
+                    <!-- footer -->
+                    <div class="modal-footer" style="margin-top: 25px">
+                        <button type="button" class="btn btn-primary btn-primary-zy phone_nextbtn">下一步</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--修改手机号码模态框 第二步-->
+    <div class="modal fade" tabindex="-1" id="modifyphonetwo" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" >更改安全手机</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <!--进度条-->
+                    <%- include('../../component/basic/progress_bar.ejs',{
+
+                    "options":[
+                    {"text":"1.验证身份"},
+                    {"text":"2.修改管理员手机"},
+                    ],
+                    "j":"1"
+                    })%>
+                    <!--模态框组件-->
+                    <%- include('../../component/modal/notitleInput.ejs',{
+                    "thisplaceholder":"请输入手机号码"
+                    })%>
+
+
+                    <%- include('../../component/modal/getMessage.ejs')%>
+                    <!-- footer -->
+                    <div class="modal-footer" style="margin-top: 25px">
+                        <button type="button" class="btn btn-primary btn-primary-zy savephone">保存</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--模态框1-密码修改-->
+    <div class="modal fade" id="modifypasd_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="account_pasdxiugaiLabel">管理密码修改</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!--模态框组件-->
+                    <%- include('../../component/input/pasdInput.ejs',{
+                    "title":"旧密码",
+                    "placeholder":"请输入密码",
+                    "newpasd":false
+                    })%>
+
+                    <!--模态框组件-->
+                    <%- include('../../component/input/pasdInput.ejs',{
+                    "title":"新密码",
+                    "placeholder":"密码长度需6-20位大小写英文字母和数字",
+                    "newpasd":true
+                    })%>
+
+                    <!--模态框组件-->
+                    <%- include('../../component/input/pasdInput.ejs',{
+                    "title":"再次确认密码",
+                    "placeholder":"请输入密码",
+                    "newpasd":false
+                    })%>
+
+
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1 savepasd">&#x4FDD;&#x5B58;</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+    //修改企业名称
+    $('#modifynackname').on("click",function(){
+
+
+        if($(this).text()=="修改"){
+
+            //点击修改的方法
+            jfModifyName.modifyNameFirst(this);//参数为当前元素
+
+        }
+        else {
+
+            //修改完成后，先判断当前内容,假设为空
+            if( $('input.changeinput').val()==""){
+
+                //如果联系点击完成，会先移除一次报错方法
+                jfValidateInput.validateRemove('input.changeinput');//当前input元素选择器，
+
+                //调用报错方法
+                jfValidateInput.validateWrong('input.changeinput','输入错误');//参数一当前input元素选择器，参数二为报错文本
+
+                $('input.changeinput').focus(function(){//当input框处于焦点状态，报错消失
+
+                    //移除报错方法
+                    jfValidateInput.validateRemove('input.changeinput')//当前input元素选择器，
+                })
+
+            }else {
+
+                //点击修改完成的方法
+                jfModifyName.finishModify(this);//参数为当前元素
+            }
+        }
+
+
+    })
+
+
+
+    //修改手机号码，连续跳转两个模态框
+    $('#modifyphone').on("click",function(){
+        //模态框出现的方法
+        modelInfo('#modifyphoneone'); //参数一：模态框id选择器,
+
+    })
+
+
+    $('.phone_nextbtn').on("click",function(){
+
+        //模态框隐藏的方法
+        hideOneModal(this);//参数为当前元素
+
+        setTimeout(function(){
+            //模态框出现的方法
+            modelInfo('#modifyphonetwo'); //参数一：模态框id选择器,
+        },300)
+    })
+
+
+    //保存手机号码失败模态框
+    $('.savephone').on("click",function(){
+
+        //模态框隐藏的方法
+        hideOneModal(this);//参数为当前元素
+
+        setTimeout(function(){
+            //fail模态框出现的方法
+            jfModelFrame.failModelShow('手机修改失败','管理员手机号修改失败','')//参数一是fail模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+
+
+    })
+
+
+
+
+    //修改登录管理密码，一个模态框
+    $('#modifypasd').on("click",function(){
+        //一个模态框出现的方法
+        modelInfo('#modifypasd_modal'); //参数一：模态框id选择器
+    })
+
+
+    //保存新密码成功模态框
+    $('.savepasd').on("click",function(){
+
+        //模态框隐藏的方法
+        hideOneModal(this);//参数为当前元素
+
+        setTimeout(function(){
+            //success模态框出现的方法
+            jfModelFrame.successModelShow('管理密码修改','管理密码修改成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+
+    })
+
+
+    //倒计时效果
+
+    $('.getmessage').on("click",function(){
+        //倒计时出现的方法
+        getmessage(this,"60")//参数一是当前点击的元素，参数二是时间
+    })
+
+
+
+
+    //报错方法
+    //输入报错验证
+    $(".messageinput>input").on({
+
+        //-----------change事件出现提示信息
+        change: function () {
+            //文本报错的方法
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            //文本报错移除的方法
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业认证</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.基本信息认证"},
+        {"text":"2.企业资料提交"},
+        {"text":"3.认证完成"},
+        ],
+        "j":"2"
+        })%>
+
+        <div style="margin-top: 50px">
+            <!--模态框组件-->
+            <%- include('../../component/modal/centerText.ejs',{
+            "titleone":"认证资料已提交，嘉福会在1-3个工作日内审核完成",
+            "titletwo":""
+            })%>
+        </div>
+
+
+
+
+
+        <div class="certificate_finish_bottom" style="margin-top: 50px">
+            <!--一个按钮-->
+            <%- include('../../component/button/oneSmallBtn.ejs',{
+            "thisurl":"#",
+            "btntext":"完成"
+            })%>
+        </div>
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+</script>
+</body>
+</html>

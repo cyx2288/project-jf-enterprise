@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>企业认证</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.基本信息认证"},
+        {"text":"2.企业资料提交"},
+        {"text":"3.认证完成"},
+        ],
+        "j":"0"
+        })%>
+        <%- include('../../component/input/input_btn_e.ejs',{
+        "title":"企业名称：",
+        "thisValue":"上海淘略数据处理有限公司",
+        "btntext":"修改",
+        "thisIdname":"modify_companyname",
+        "modelshow":false
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*统一社会信用代码：",
+        "placeholder":"请输入"
+        })%>
+
+        <%- include('../../component/input/normalOneInput.ejs',{
+        "title":"*法人代表姓名：",
+        "placeholder":"请输入"
+        })%>
+        <div style="margin-top: -20px">
+            <%- include('../../component/input/input_info.ejs',{
+            "title":"",
+            "basicinfo":"企业认证每天只能提交3次,当前已经提交3次"
+            })%>
+        </div>
+
+
+        <%- include('../../component/button/oneButton.ejs',{
+        "buttontext":"下一步",
+        "thisurl":"certificate_steptwo.html"
+        })%>
+
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+
+
+    //修改企业名称
+    $('#modify_companyname').on("click",function(){
+
+
+        if($(this).text()=="修改"){
+
+            //点击修改的方法
+            jfModifyName.modifyNameFirst(this);//参数为当前元素
+
+        }
+        else {
+
+            //修改完成后，先判断当前内容,假设为空
+            if( $('input.changeinput').val()==""){
+
+                //如果联系点击完成，会先移除一次报错方法
+                jfValidateInput.validateRemove('input.changeinput');//当前input元素选择器，
+
+                //调用报错方法
+                jfValidateInput.validateWrong('input.changeinput','输入错误');//参数一当前input元素选择器，参数二为报错文本
+
+                $('input.changeinput').focus(function(){//当input框处于焦点状态，报错消失
+
+                    //移除报错方法
+                    jfValidateInput.validateRemove('input.changeinput')//当前input元素选择器
+                })
+
+            }else {
+
+                //点击修改完成的方法
+                jfModifyName.finishModify(this);//参数为当前元素
+            }
+        }
+
+
+    })
+
+</script>
+</body>
+</html>
