@@ -24,6 +24,13 @@ function devJs() {
 
         .pipe(connect.reload());
 
+
+    gulp.src('src/js/main.js') //该任务针对的文件7
+
+        .pipe(gulp.dest('build/js'))
+
+        .pipe(connect.reload());
+
     //将会在src/css下生成index.css
 
     // .pipe(notify({message: 'js_main task complete'}));
