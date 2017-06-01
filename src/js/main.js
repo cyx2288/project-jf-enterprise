@@ -442,7 +442,7 @@ void function () {
 
     //-------------------------------------------------------------------------------------------------------------------tab滑块
     function changeFatherDiv() {
-        var maxwidth = document.getElementById('iframeNav').offsetWidth - 130-116;
+        var maxwidth = document.getElementById('iframeNav').offsetWidth - 130-116-102;
         document.getElementById('iframeNavFather').style.width = maxwidth + 'px';
     }
 
@@ -781,6 +781,152 @@ var jfCustomerService = {
 };
 
 //嘉福客服模块结束
+
+
+
+
+/*iframe页面间跳转，，首页认证跳转到认证的页面*/
+function jfPageJump(thisTextHtml,jumpID){                                                                         //参数一希望弹出的tab文本值，参数二页面可以跳转的ID值
+
+
+    var clickTab = document.getElementById('accordion1').getElementsByClassName('panel-body');                          //右侧所有tab
+
+    var thisIframe=document.getElementById('iframeTt').getElementsByTagName("div");                                      //获取iframe的上级父元素
+
+    for (var i = 0; i < clickTab.length; i++) {
+
+        if (clickTab[i].innerHTML == thisTextHtml) {                                                                    //判断是否选中该文案的div
+
+            if (clickTab[i].parentNode.className.indexOf('in') < 0) {                                                   //判断是否展开
+                clickTab[i].parentNode.parentNode.getElementsByTagName('h4')[0].getElementsByTagName('a')[0].click();   //模拟点击展开
+            }
+
+
+            clickTab[i].click();//模拟点击选项（tab）
+
+
+            for(var j = 0; j < thisIframe.length; j++){
+
+                if(thisIframe[j].getAttribute('title')==thisTextHtml){                                                   //判断是否等于当前title的iframe
+
+                    var thisTargetIframe=thisIframe[j].getElementsByTagName("iframe")[0] ;                               //当前目标Iframe
+
+                    var thisJumpBtn=thisTargetIframe.contentWindow.document.getElementById(jumpID);                      //当前子页面希望被点击的元素的ID
+
+                    var thisPageTitle=thisTargetIframe.contentWindow.document.getElementsByTagName('h2')[0];             //当前页面是否存在
+
+                    if(thisPageTitle){    //如果当前iframe以及被加载过，则暂不需要判断,直接发生点击事件
+                         targetPageJump();
+                    }
+                    else
+                    {
+                        if(getPcExplorer.getExplorer()=='MSIE'){                                                             //如果是IE浏览器
+
+                            thisTargetIframe.attachEvent("onreadystatechange", function(){
+
+                                if(thisTargetIframe.readyState === "complete" || thisTargetIframe.readyState == "loaded"){     //确认加载完毕
+
+                                    targetPageJump()
+                                }
+                            });
+
+                        }
+                        else
+                        {
+                            thisTargetIframe.addEventListener("load",targetPageJump,false);                             //iframe加载完成后，执行模拟点击事件
+
+                        }
+
+                    }
+
+                    function targetPageJump(){                                                                           //页面跳转
+
+                        thisTargetIframe.removeEventListener('load',targetPageJump,false);                               //移除load事件(FF,chrome...)
+
+                        var thisJumpBtn=thisTargetIframe.contentWindow.document.getElementById(jumpID);                 //当前子页面希望被点击的元素的ID
+
+                        if(thisJumpBtn){
+
+                            thisJumpBtn.click();//模拟点击
+
+                        }
+
+
+                    }
+
+
+
+
+
+                   break
+                }
+
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+/*iframe框架返回上一页*/
+
+function iframePageGoback(thisUrl){
+
+    var thisIframe=document.getElementById('iframeTt').getElementsByTagName("div");                                      //获取iframe的上级父元素
+
+    for(var i=1;i<thisIframe.length;i++){                                                                               //排除框架首页
+
+        if(thisIframe[i].style.display!='none'){
+
+            var thisTargetIframe=thisIframe[i].getElementsByTagName("iframe")[0] ;                                       //当前目标Iframe
+
+            if(thisUrl){
+
+                thisTargetIframe.contentWindow.location.href=thisUrl;
+
+            }else {
+
+                var thisWindowHref=thisTargetIframe.contentWindow.location.pathname;                                     //当前iframe子页面的路劲
+
+                var thisiframeUrl=thisTargetIframe.getAttribute('src');                                                  //iframe首页的路径
+
+                thisiframeUrl="/"+thisiframeUrl;
+
+               if(thisiframeUrl!=thisWindowHref){                                                                       //如果当前已经是iframe首页面,则不需要跳转
+
+                    thisTargetIframe.contentWindow.history.go(-1);
+                }
+
+
+            }
+
+        }
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
 
 
 
