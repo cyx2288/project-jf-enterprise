@@ -261,18 +261,26 @@ function inputInitChange() {
     }
 }
 
-function logonInputHasError(thisEle, errorText) {                                                                       //报错方法 参数一为报错的input元素， 参数二为报错的文案
+function logonInputHasError(thisEle, errorText) {//报错方法 参数一为报错的input元素， 参数二为报错的文案
     thisEle.className = 'has_error';
+
     var tatalEle = thisEle.nextSibling;
+
     for (var i = 0; i < 1000; i++) {
+
+
         if (tatalEle.className && tatalEle.className.indexOf('input_text_switch') > -1 && tatalEle.className.indexOf('red') > -1) {
+
             tatalEle.innerHTML = errorText;
+
         }
         else {
             tatalEle = tatalEle.nextSibling;
         }
     }
 }
+
+
 
 
 window.addEventListener('load', iosInputPosition, false);
@@ -340,20 +348,6 @@ function logonInputDisabled () {
 
 // --------------------------------模态框咿呀咿呀------------------------------------------------------------------------
 
-//输入报错验证
-$(".input_valiate").on({
-
-    //-----------change事件出现提示信息
-    change: function () {
-
-        jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
-    },
-
-    //-----------再次焦点事件提示信息删除
-    focus: function () {
-        jfValidateInput.validateRemove(this);//参数为选取的该元素
-    }
-});
 
 //-----------------------密码验证(第一次新密码)
 $("input.new_password").each(function () {
@@ -443,7 +437,7 @@ function getMessage(obj,limitTime,fontColor,paddingStyle) {                     
         var timer;
         if (countdown == 0) {
             $(obj).attr("disabled", false).css("color", "color1");
-            $(obj).text('点击发送');
+            $(obj).text('点击发送').css('cursor', 'pointer');
             countdown = limitTime;
             return;
         } else {
@@ -509,3 +503,121 @@ function confirmInputDisabled() {
         }
     }
 }
+
+
+//绑定浏览器事件以及解除
+var windowBanEvent = {
+
+    bundling: function () {
+        var _self = this;
+        $(window).bind('click touchstart touchmove touchend scroll keydown keypress keyup mousedown mouseup mouseover', _self.Canceling);//绑定禁止事件
+    },
+
+    unbundling: function () {
+        var _self = this;
+        $(window).unbind('click touchstart touchmove touchend scroll keydown keypress keyup mousedown mouseup mouseover', _self.Canceling);//解除绑定事件
+
+    },
+
+    Canceling: function (evt) {
+
+        var evt = evt || window.event; //阻止事件
+        if (evt.preventDefault) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        } else {
+            evt.returnValue = false;
+            evt.cancelBubble = true;
+        }
+    }
+
+};
+
+
+//loading，success,fail的模态框调用
+var jfModelFrame = {
+
+    //-----------------------------loanding的模态框
+    loadingModelShow: function (loadingtitle, loadingtext) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
+
+        var textloading = '<div class="modal fade" id="modal_loading_frame" tabindex="-1" aria-labelledby="modal_loadingLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title" id="modal_loadingLabel">' + loadingtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="loadEffect"><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span></div><div class="wenan-zy">' + loadingtext + '</div></div></div></div></div></div>';
+
+        $('body').append(textloading);
+
+        var loading = $('#modal_loading_frame');
+
+        setTimeout(function () {
+            loading.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+        }, 300);
+
+        windowBanEvent.bundling();
+
+    },
+    //---------------------------loanding的模态框（移除）
+    loadingModelRemove: function () {
+
+        windowBanEvent.unbundling();
+
+        var loading = $('#modal_loading_frame');
+
+        loading.modal('hide');
+        loading.on('hidden.bs.modal', function (e) {
+            loading.remove();
+        });
+
+    },
+
+    //--------------------------success的模态框（移除）
+    successModelShow: function (successtitle, successtext,contentone) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+
+        var textsuccess = '<div class="modal fade" id="modal_success_demo" tabindex="-1" aria-labelledby="modal_successLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button><h4 class="modal-title" id="modal_successLabel">' + successtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="swal2-icon swal2-success animate"><span class="line tip animate-success-tip"></span> <span class="line long animate-success-long"></span><div class="placeholder"></div><div class="fix"></div></div><div class="wenan-zy">' + successtext + '</div><div class="details_content"><span>' + contentone + '</span></div></div><div class="modal-footer" style="text-align:center"><button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确认</button> </div></div></div></div></div>';
+
+        $('body').append(textsuccess);
+
+        var success = $('#modal_success_demo');
+
+        setTimeout(function () {
+            success.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+
+
+        }, 300);
+
+        success.on('hidden.bs.modal', function (e) {
+            success.remove();
+        });
+
+    },
+
+    //--------------------------------fail的模态框（移除）
+    failModelShow: function (failtitle, failtext,contentone) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+        var textfail = '<div class="modal fade" id="modal_fail" tabindex="-1" aria-labelledby="modal_failLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button><h4 class="modal-title" id="modal_failLabel">' + failtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="swal2-icon swal2-error animate-error-icon" style="display:block"><span class="x-mark animate-x-mark"><span class="line left"></span> <span class="line right"></span></span></div><div class="wenan-zy">' + failtext + '</div><div class="details_content"><span>' + contentone + '</span></div></div><div class="modal-footer" style="text-align:center"><button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">关闭</button></div></div></div></div></div>';
+
+        $('body').append(textfail);
+
+        var fail = $('#modal_fail');
+
+        setTimeout(function () {
+            fail.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+
+        }, 300);
+
+        fail.on('hidden.bs.modal', function (e) {
+            fail.remove();
+        });
+
+
+    }
+
+};
