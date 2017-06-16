@@ -172,7 +172,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.0.0.min.js"></script>
-<script src="../js/jf_business.min.js"></script>
+<script src="../js/jf_business.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/swiper.min.js"></script>
 <script>
@@ -183,16 +183,31 @@
 
         //此为报错方法，第一个参数是错误的input控件，第二个参数是显示的错误信息
         logonInputHasError(
-                document.getElementsByTagName('section')[0].getElementsByTagName('input')[0]                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
-                ,
-                '*错误显示测试'                                                                                             //报错提示的文案
+                document.getElementsByTagName('section')[0].getElementsByTagName('input')[0]
+                ,                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
+                '*错误显示测试-1123'                                                                                            //报错提示的文案
         );
         //报错方法结束
     }, false);
 
+    //输入报错验证
+    $(".input_valiate").on({
+
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+
     //-------------------倒计时
     document.getElementsByClassName('input-group-addon')[0].addEventListener('click', function () {
-        getMessage(this, '60','black','6px 0')
+        getMessage(this, '10','black','6px 0')
     }, false);
 
     //-------------------模态框调用

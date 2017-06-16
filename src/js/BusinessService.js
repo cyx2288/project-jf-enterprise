@@ -56,8 +56,7 @@ $(document).ready(function(){
             }
             timer = setTimeout(function () {
                     settime()
-                }
-                , 1000)
+                }, 1000)
         }
     }
 
