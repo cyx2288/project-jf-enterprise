@@ -350,6 +350,7 @@ function logonInputDisabled () {
 
 
 //-----------------------密码验证(第一次新密码)
+//-----------------------密码验证(第一次新密码)
 $("input.new_password").each(function () {
 
     $(this).on({
@@ -357,74 +358,88 @@ $("input.new_password").each(function () {
         //---------密码验证条出现以及识别当前密码强度
         focus: function () {
 
-            jfPasdValidateshow(this);                                                                                   //参数表示选择的该元素
+            //密码提示信息出现的方法（第一次没有的输入的情况）
+            jfPasdShow.jfPasdValidateshow(this);//参数表示选择的该元素
 
-            jfPasdValidate(this);                                                                                       //参数表示选择的该元素
+            //出现密码强度的方法
+            jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
         },
 
-        //----------密码强度
+        //----------密码强度验证
         keyup: function () {
-            jfPasdValidate(this);                                                                                       //参数表示选择的该元素
+            //出现密码强度的方法
+            jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
         },
 
         //--------密码强度移除
         blur: function () {
-            PasdValidateRemove(this);                                                                                   //参数表示选择的该元素
+            //移除密码强度的方法
+            jfPasdShow.PasdValidateRemove(this);//参数表示选择的该元素
         }
     })
 });
 //---------------------------密码强度验证事件
 
-//----------------------------focus事件，添加验证条
-function jfPasdValidateshow(obj) {                                                                                      //--------------------参数为当前元素
+//密码强度验证事件---新版
+var jfPasdShow={
 
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+    //focus事件,验证条元素出现
+    jfPasdValidateshow:function(obj){//参数为当前元素
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
-    $(obj).parent().append(pasdinput);
+        $(obj).parent().append(pasdinput);
 
-}
+    },
 
-//-----------------------------keyup事件验证密码强度
-function jfPasdValidate(obj) {                                                                                         //--------------------参数为当前元素
+    //keyup事件验证密码强度
+    jfPasdValidate:function (obj){//参数为当前元素
 
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
-    var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
-    var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-    var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+
+        var strongRegex = new RegExp("^(?=.{15,20})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//15位以上
+        var mediumRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//10位以上
+        var enoughRegex = new RegExp("^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//6位以上
 
 
-    var farEle = $('span.pasdbar00');
-    var textEle = $('span.pasdtext00');
-    var thisInputPassword = $(obj);
+        var farEle = $('span.pasdbar00');
+        var textEle = $('span.pasdtext00');
+        var thisInputPassword = $(obj);
 
-    if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20) {
-        textEle.text('密码长度需6-20位英文字母和数字');
-        farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+
+
+        if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20){
+
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
+            farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+        else if (strongRegex.test(thisInputPassword.val())) {//密码为12位及以上并且大小写字母数字三项都包括,强度最强
+            textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
+            farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+        else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且大小写字母数字三项都包括，强度是中等
+            textEle.addClass('textmid').text('密码强度：中');
+            farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
+        }
+        else if(enoughRegex.test(thisInputPassword.val())){  //如果密码为6位，并且大小写字母数字三项都包括，强度是弱的
+            // console.log('dsfds')
+            textEle.addClass('textweak').text('密码强度：弱');
+            farEle.addClass('barweak').removeClass('barmid');
+        }else {
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
+            farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+
+        return true;
+    },
+    //失焦事件移除密码验证条
+    PasdValidateRemove:function(obj){//参数为当前元素
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+        $(obj).siblings(".validatepasd").remove()
     }
-    else if (strongRegex.test(thisInputPassword.val())) {//密码为8位及以上并且字母数字特殊字符三项都包括,强度最强
-        textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
-        farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
-    }
-    else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且字母、数字、特殊字符三项中有两项，强度是中等
-        textEle.addClass('textmid').text('密码强度：中');
-        farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
-    }
-    else {  //如果密码为8位，就算字母、数字、特殊字符三项都包括，强度也是弱的
-        textEle.addClass('textweak').text('密码强度：弱');
-        farEle.addClass('barweak').removeClass('barmid');
-    }
 
-    return true;
 
-}
 
-//---------------------------------------失焦事件移除密码验证条
-function PasdValidateRemove(obj) {//--------------------参数为当前元素
-
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
-    $(obj).siblings(".validatepasd").remove()
-
-}
+};
 
 //-----------点击时获取短信验证码
 function getMessage(obj,limitTime,fontColor,paddingStyle) {                                                                              //参数一为选取的该元素，参数二是限制的时间范围
