@@ -105,7 +105,7 @@ var jfPasdShow={
 
         var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
-        var strongRegex = new RegExp("^(?=.{15,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//15位以上
+        var strongRegex = new RegExp("^(?=.{15,20})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//15位以上
         var mediumRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//10位以上
         var enoughRegex = new RegExp("^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//6位以上
 
@@ -114,8 +114,11 @@ var jfPasdShow={
         var textEle = $('span.pasdtext00');
         var thisInputPassword = $(obj);
 
-        if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20){
-            textEle.text('密码长度为6-20位，必须包含数字和大小写字母');
+
+
+       if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20){
+         
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
             farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
         }
         else if (strongRegex.test(thisInputPassword.val())) {//密码为12位及以上并且大小写字母数字三项都包括,强度最强
@@ -131,7 +134,7 @@ var jfPasdShow={
             textEle.addClass('textweak').text('密码强度：弱');
             farEle.addClass('barweak').removeClass('barmid');
         }else {
-            textEle.text('密码长度为6-20位，必须包含数字和大小写字母');
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
             farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
         }
 
