@@ -209,6 +209,9 @@ h2>div>button>span{
     text-align: left;
     position: relative;;
 }
+.info_content>span>.add_star{
+    color: red;
+}
 
 .info_content>span:last-child:hover .img_verifycode{
     opacity: 1;
@@ -1245,11 +1248,10 @@ td {
     display: inline-block;
     position: relative;
     background: url(../icon/icon_bc_close.png) no-repeat;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-size: 100%;
     vertical-align: middle;
-    opacity: 0.5;
 
 }
 
