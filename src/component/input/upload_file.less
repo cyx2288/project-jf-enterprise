@@ -84,10 +84,10 @@
 
       @media screen and (max-width: 460px){
         width: 60px;
+        margin-top: 0;
         line-height: 24px;
-        position: absolute;
-        right: 0;
-        bottom: 0
+        height: 60px;
+        margin-right: 10px;
       }
       input{
         width: 100%;
@@ -226,8 +226,14 @@
 /*营业执照模态框样式*/
 .modal .business_license{
   text-align: center;
+
   img{
     width:600px;
+
+    @media screen and (max-width: 460px){
+
+      width: 90%;
+    }
   }
 
   &+.modal-footer{
