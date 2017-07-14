@@ -328,6 +328,17 @@ input[type=password]{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 }
 
+.basic_info .company_help{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+}
+
+.basic_info .company_help:hover{
+    cursor: pointer;
+}
+
 /* 收银台页面*/
 
 .info_content>span>label{
@@ -729,6 +740,10 @@ input[type=password]{
 
 .pay_model_pp>input{
     margin:  0 auto;
+}
+
+.pay_model_pp>img{
+    width: 85%;
 }
 h2>.staff_import .lookup_btn2{
     background-color: #337ab7;

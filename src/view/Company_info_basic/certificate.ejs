@@ -38,23 +38,28 @@
         })%>
 
 
-        <%- include('../../component/input/input_btn.ejs',{
-        "title":"企业昵称：",
-        "thisValue":"上海淘略",
-        "btntext":"修改",
-        "thisIdname":"modifynackname",
-        "modelshow":false
-        })%>
+        <div class="info_content basic_info">
+            <span><img src="../../icon/icon_help.png" class="company_help">企业昵称：</span>
+            <span>
+            <input value="上海淘略" class="form-control btn-md-zy changeinput" readonly="readonly">
+            <button class="btn btn-primary input-group-addon" id="modifynackname">修改</button>
+            </span>
+        </div>
+
 
         <%- include('../../component/basic/info.ejs',{
         "title":"所在地区：",
         "basicinfo":"上海市，徐汇区"
         })%>
 
-        <%- include('../../component/basic/info.ejs',{
-        "title":"企业联系人：",
-        "basicinfo":"李小明"
-        })%>
+
+        <div class="info_content basic_info">
+            <span>企业联系人：</span>
+            <span>
+            <input value="小明" class="form-control btn-md-zy changePerson" readonly="readonly">
+            <button class="btn btn-primary input-group-addon" id="modifyCompanyPerson">修改</button>
+            </span>
+        </div>
 
         <%- include('../../component/input/input_btn.ejs',{
         "title":"管理员手机号：",
@@ -205,6 +210,46 @@
         </div>
     </div>
 </div>
+
+
+<!--模态框-企业昵称-->
+<div class="modal fade" id="companyName_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="account_pasdxiugaiLabel">查看企业昵称</h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+
+
+                <!--模态框组件-->
+                <%- include('../../component/modal/centerText.ejs',{
+                "titleone":"企业昵称会在员工端的个人中心展示",
+                "titletwo":""
+                })%>
+
+                <div class="smodal_content">
+                    <div class=" info_content">
+                        <p class="pay_model_pp">
+                            <img src="../../icon/icon_show_companyName.png">
+                        </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- footer -->
+            <div class="modal-footer" style="text-align: center;;">
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 edit_close" data-dismiss="modal">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/BusinessService.js"></script>
@@ -249,11 +294,48 @@
 
     })
 
+    //修改企业联系人
+    $('#modifyCompanyPerson').on("click",function(){
 
-    //修改手机号码，连续跳转两个模态框
-    $('#modifyphone').on("click",function(){
+
+        if($(this).text()=="修改"){
+
+            //点击修改的方法
+            jfModifyName.modifyNameFirst(this);//参数为当前元素
+
+        }
+        else {
+
+            //修改完成后，先判断当前内容
+            if( $('input.changePerson').val()==""){
+
+                //如果联系点击完成，会先移除一次报错方法
+                jfValidateInput.validateRemove('input.changePerson');//当前input元素选择器，
+
+                //调用报错方法
+                jfValidateInput.validateWrong('input.changePerson','输入错误');//参数一当前input元素选择器，参数二为报错文本
+
+                $('input.changePerson').focus(function(){//当input框处于焦点状态，报错消失
+
+                    //移除报错方法
+                    jfValidateInput.validateRemove('input.changePerson');//当前input元素选择器，
+                })
+
+            }else {
+
+                //点击修改完成的方法
+                jfModifyName.finishModify(this);//参数为当前元素
+            }
+        }
+
+
+    })
+
+
+    //查看企业昵称模态框
+    $('.company_help').on("click",function(){
         //模态框出现的方法
-        modelInfo('#modifyphoneone'); //参数一：模态框id选择器,
+        modelInfo('#companyName_modal'); //参数一：模态框id选择器,
 
     })
 
@@ -300,6 +382,14 @@
             //success模态框出现的方法
             jfModelFrame.successModelShow('管理密码修改','管理密码修改成功','')//参数一是success模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
         },300)
+
+    })
+
+
+    //修改手机号模态框
+    $('#modifyphone').on("click",function(){
+        //模态框出现的方法
+        modelInfo('#modifyphoneone'); //参数一：模态框id选择器,
 
     })
 
