@@ -57,12 +57,12 @@
             </div>
             <!-- title-->
             <div class="slick_title" id="slick_title">
-                <div>嘉福弹性福利平台</div>
-                <div class="title_active">360安全卫士</div>
-                <div>百度一下，你就知道</div>
-                <div>猎聘官网</div>
-                <div>百度一下，你就知道</div>
-                <div>360安全卫士</div>
+                <a title="嘉福弹性福利平台">嘉福弹性福利平台</a>
+                <a class="title_active" title="360安全卫士">360安全卫士</a>
+                <a title="百度一下，你就知道">百度一下，你就知道</a>
+                <a title="猎聘官网">猎聘官网</a>
+                <a title="百度一下，你就知道">百度一下，你就知道</a>
+                <a title="360安全卫士">360安全卫士</a>
             </div>
         </div>
         <!-- input 组件-->
@@ -248,7 +248,7 @@
         },
         onSlideChangeStart: function (swiper) {  //触发change title事件
 
-            var titleEleDiv = document.getElementById('slick_title').getElementsByTagName('div');
+            var titleEleDiv = document.getElementById('slick_title').getElementsByTagName('a');
 
             var slideChooseNum = swiper.activeIndex;
 
