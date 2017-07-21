@@ -1400,18 +1400,23 @@ section.business_logon_confirm .section_middle .section_middle_slick .slick_titl
 
 }
 
-section.business_logon_confirm .section_middle .section_middle_slick .slick_title > div {
+section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a {
     position: absolute;
+    display: block;
     top: -55px;
     width: 600px;
     font-size: 24px;
     opacity: 0;
     text-align: center;
+    color: #4a4a4a;
+    cursor:default;
+    text-decoration: none;
     /*transition: opacity .1s;*/
 }
 
-section.business_logon_confirm .section_middle .section_middle_slick .slick_title > div.title_active {
+section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a.title_active {
     opacity: 1;
+    z-index: 99;
 }
 
 /*bottom*/
@@ -1443,7 +1448,7 @@ section.business_logon_confirm .section_middle_button span {
         margin-top: 10px;
     }
 
-    section.business_logon_confirm .section_middle .section_middle_slick .slick_title > div {
+    section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a {
         top: -10px;
         font-size: 22px;
     }
@@ -1531,7 +1536,7 @@ section.business_logon_confirm .section_middle_button span {
         width: 85px;
     }
 
-    section.business_logon_confirm .section_middle .section_middle_slick .slick_title > div {
+    section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a {
         width: 280px;
         font-size: 18px;
         overflow: hidden;
