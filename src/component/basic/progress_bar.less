@@ -172,15 +172,34 @@
 
 /*嘉福平台使用协议*/
 
-.register_agreement_page{
+.register_agreement_page {
   background: white;
   padding: 0;
-
-  .jf_service_agreement{
+.special_title{
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+  .jf_service_agreement {
     width: 85%;
     margin: 0 auto;
-
-    h2{
+    img{
+      width: 550px;
+      height: 154px;
+    }
+    .small_title {
+      margin-top: 30px;
+    }
+    .representative {
+      margin-top: 50px;
+    }
+    span.company {
+      display: inline-block;
+      width: 400px;
+    }
+    h2 {
       text-align: center;
       border-bottom: none;
       margin: 30px 0 40px 0;
@@ -188,13 +207,15 @@
   }
 }
 
-
 @media screen and(max-width: 480px) {
   .jf_progress {
     width: 100%;
     margin: 30px auto 50px;
   }
-
+  span.company{
+    display: inline-block;
+    width: 100%;
+  }
   .info_middlebody .jf_progress{
     width:100%;
   }

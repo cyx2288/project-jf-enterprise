@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/jf_business.css" rel="stylesheet">
     <title>嘉福企业端登录</title>
 
@@ -136,6 +137,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="../js/jf_business.min.js"></script>
 
 
@@ -158,16 +160,20 @@
 
     //-------------------报错
     /*！！！！报错方法演示！！！！！*/
-/*         document.getElementsByTagName('section')[0].getElementsByTagName('input')[2].addEventListener('click', function () {
+         document.getElementsByTagName('section')[0].getElementsByTagName('input')[1].addEventListener('click', function () {
 
+             //调用success模态框
+
+             jfModelFrame.successModelShow('登录','恭喜！登录成功','');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+/*
      //此为报错方法，第一个参数是错误的input控件，第二个参数是显示的错误信息
      logonInputHasError(
-     document.getElementsByTagName('section')[0].getElementsByTagName('input')[1]                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
+     document.getElementsByTagName('section')[0].getElementsByTagName('input')[0]                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
      ,
      '*错误显示测试'                                                                                             //报错提示的文案
-     );
+     );*/
      //报错方法结束
-     }, false);*/
+     }, false);
 
     //-------------------倒计时
     document.getElementsByClassName('button_code')[0].addEventListener('click',function(){

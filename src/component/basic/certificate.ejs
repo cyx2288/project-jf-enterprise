@@ -7,12 +7,16 @@
 
         <% if(certificate){ %>
 
-        <span><img src="<%=onesrc%>"><%=textoneinfo%></span>
+        <span>
+            <img src="<%=onesrc%>"><%=textoneinfo%>
+            <a class="look_certificate_info" href="certificate_info.html">查看认证信息</a>
+        </span>
 
 
         <% } else { %>
 
         <a href="<%=thishref%>" id="go_certificate"><img src="<%=twosrc%>"><%=texttwoinfo%><span class="gocertificate"><%=textthree%></span></a>
+
         <% } %>
 
     </span>

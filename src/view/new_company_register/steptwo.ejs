@@ -43,8 +43,8 @@
 
 
         <!--企业名称-->
-        <%- include('../../component/input/normalOneInput.ejs',{
-        "title":"*企业(团队)名称",
+        <%- include('../../component/input/addstarinput.ejs',{
+        "title":"企业(团队)名称",
         "placeholder":"请填写企业(团队)名称"
         })%>
 
@@ -75,23 +75,22 @@
 
 
         <%- include('../../component/input/pasdInput.ejs',{
-        "title":"*管理密码",
+        "title":"管理密码",
         "newpasd":true,
-         "placeholder":"必须是6-20位大小写英文字母和数字组成"
+         "placeholder":"密码长度为6-20位、必须包含数字和大小写字母"
         })%>
 
         <%- include('../../component/input/pasdInput.ejs',{
-        "title":"*确认管理密码",
+        "title":"确认管理密码",
         "newpasd":false,
         "placeholder":"请再次确认密码"
         })%>
 
 
-        <%- include('../../component/input/bottomtextInput.ejs',{
-        "title":"*联系人姓名",
-        "placeholder":"",
-        "thistype":"text",
-        "text":"请填写身份证上姓名"
+        <!--企业名称-->
+        <%- include('../../component/input/addstarinput.ejs',{
+        "title":"联系人姓名",
+        "placeholder":"请填写身份证上姓名"
         })%>
 
 

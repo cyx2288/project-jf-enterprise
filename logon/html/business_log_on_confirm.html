@@ -57,12 +57,12 @@
             </div>
             <!-- title-->
             <div class="slick_title" id="slick_title">
-                <div>嘉福弹性福利平台</div>
-                <div class="title_active">360安全卫士</div>
-                <div>百度一下，你就知道</div>
-                <div>猎聘官网</div>
-                <div>百度一下，你就知道</div>
-                <div>360安全卫士</div>
+                <a title="嘉福弹性福利平台">嘉福弹性福利平台</a>
+                <a class="title_active" title="360安全卫士">360安全卫士</a>
+                <a title="百度一下，你就知道">百度一下，你就知道</a>
+                <a title="猎聘官网">猎聘官网</a>
+                <a title="百度一下，你就知道">百度一下，你就知道</a>
+                <a title="360安全卫士">360安全卫士</a>
             </div>
         </div>
         <!-- input 组件-->
@@ -76,7 +76,7 @@
                         <img class="section_middle_image1 red " src="../icon/business_password_red.png">
                         <img class="section_middle_image2 red " src="../images/business_line_red.png">
                         <div class="section_input_bg"></div>
-                        <div class="input_text_switch">管理密码</div>
+                        <div class="input_text_switch"></div>
                         <div class="input_text_switch red">*输入错误</div>
                     </label>
                 </div>
@@ -147,7 +147,7 @@
                         <span>*&#x65B0;&#x7BA1;&#x7406;&#x5BC6;&#x7801;：</span>
         <span>
             <input type="password" class="form-control btn-md-zy11 new_password"
-                   placeholder="&#x5FC5;&#x987B;&#x662F;6-20&#x4F4D;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x7EC4;&#x6210;">
+                   placeholder="密码长度为6-20位，必须包含数字和大小写字母">
         </span>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.0.0.min.js"></script>
-<script src="../js/jf_business.min.js"></script>
+<script src="../js/jf_business.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/swiper.min.js"></script>
 <script>
@@ -183,16 +183,31 @@
 
         //此为报错方法，第一个参数是错误的input控件，第二个参数是显示的错误信息
         logonInputHasError(
-                document.getElementsByTagName('section')[0].getElementsByTagName('input')[0]                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
-                ,
-                '*错误显示测试'                                                                                             //报错提示的文案
+                document.getElementsByTagName('section')[0].getElementsByTagName('input')[0]
+                ,                                //此处为报错的输入控件：0为输入用户名，1为输入密码，2为输入验证码
+                '*错误显示测试-1123'                                                                                            //报错提示的文案
         );
         //报错方法结束
     }, false);
 
+    //输入报错验证
+    $(".input_valiate").on({
+
+        //-----------change事件出现提示信息
+        change: function () {
+
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+
     //-------------------倒计时
     document.getElementsByClassName('input-group-addon')[0].addEventListener('click', function () {
-        getMessage(this, '60','black','6px 0')
+        getMessage(this, '10','black','6px 0')
     }, false);
 
     //-------------------模态框调用
@@ -233,7 +248,7 @@
         },
         onSlideChangeStart: function (swiper) {  //触发change title事件
 
-            var titleEleDiv = document.getElementById('slick_title').getElementsByTagName('div');
+            var titleEleDiv = document.getElementById('slick_title').getElementsByTagName('a');
 
             var slideChooseNum = swiper.activeIndex;
 

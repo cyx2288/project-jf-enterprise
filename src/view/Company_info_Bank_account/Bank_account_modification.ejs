@@ -26,11 +26,37 @@
 
         <div class="cards">
             <%- include("../../component/bank/bankCards.ejs")%>
+
+
+            <div class="bank">
+                <div class="bank_title">
+                    <div class="text">中国工商银行</div>
+                    <div class="delete_bankcard">X</div>
+                </div>
+                <div class="bank_value">
+                    <div class="number">6222 8148 6215 0076 0076 0076</div>
+                    <div class="account_number">UAT测试账号</div>
+                </div>
+            </div>
+
+            <div class="bank">
+                <div class="bank_title">
+                    <div class="text">中国工商银行</div>
+                    <div class="delete_bankcard">X</div>
+                </div>
+                <div class="bank_value">
+                    <div class="number">6222 8148 6215 0076 007</div>
+                    <div class="account_number">UAT测试账号</div>
+                </div>
+            </div>
+
             <%- include("../../component/bank/bankCards.ejs")%>
             <%- include("../../component/bank/bankCards.ejs")%>
-            <%- include("../../component/bank/bankCards.ejs")%>
+
             <%- include("../../component/bank/bankAdd.ejs")%>
+
         </div>
+
 
 
     </div>
@@ -150,16 +176,12 @@
 
         $('.delete_card_btn').on("click",function () {//点击确认删除按钮
 
-
             //模态框隐藏的方法
             hideOneModal(this);
 
             setTimeout(function(){
                 thisCard.parents('.bank').remove();//删除当前银行卡
             },300)
-
-
-
 
         })
     })

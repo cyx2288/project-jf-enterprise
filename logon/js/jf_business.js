@@ -261,18 +261,26 @@ function inputInitChange() {
     }
 }
 
-function logonInputHasError(thisEle, errorText) {                                                                       //报错方法 参数一为报错的input元素， 参数二为报错的文案
+function logonInputHasError(thisEle, errorText) {//报错方法 参数一为报错的input元素， 参数二为报错的文案
     thisEle.className = 'has_error';
+
     var tatalEle = thisEle.nextSibling;
+
     for (var i = 0; i < 1000; i++) {
+
+
         if (tatalEle.className && tatalEle.className.indexOf('input_text_switch') > -1 && tatalEle.className.indexOf('red') > -1) {
+
             tatalEle.innerHTML = errorText;
+
         }
         else {
             tatalEle = tatalEle.nextSibling;
         }
     }
 }
+
+
 
 
 window.addEventListener('load', iosInputPosition, false);
@@ -340,21 +348,8 @@ function logonInputDisabled () {
 
 // --------------------------------模态框咿呀咿呀------------------------------------------------------------------------
 
-//输入报错验证
-$(".input_valiate").on({
 
-    //-----------change事件出现提示信息
-    change: function () {
-
-        jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
-    },
-
-    //-----------再次焦点事件提示信息删除
-    focus: function () {
-        jfValidateInput.validateRemove(this);//参数为选取的该元素
-    }
-});
-
+//-----------------------密码验证(第一次新密码)
 //-----------------------密码验证(第一次新密码)
 $("input.new_password").each(function () {
 
@@ -363,74 +358,88 @@ $("input.new_password").each(function () {
         //---------密码验证条出现以及识别当前密码强度
         focus: function () {
 
-            jfPasdValidateshow(this);                                                                                   //参数表示选择的该元素
+            //密码提示信息出现的方法（第一次没有的输入的情况）
+            jfPasdShow.jfPasdValidateshow(this);//参数表示选择的该元素
 
-            jfPasdValidate(this);                                                                                       //参数表示选择的该元素
+            //出现密码强度的方法
+            jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
         },
 
-        //----------密码强度
+        //----------密码强度验证
         keyup: function () {
-            jfPasdValidate(this);                                                                                       //参数表示选择的该元素
+            //出现密码强度的方法
+            jfPasdShow.jfPasdValidate(this);//参数表示选择的该元素
         },
 
         //--------密码强度移除
         blur: function () {
-            PasdValidateRemove(this);                                                                                   //参数表示选择的该元素
+            //移除密码强度的方法
+            jfPasdShow.PasdValidateRemove(this);//参数表示选择的该元素
         }
     })
 });
 //---------------------------密码强度验证事件
 
-//----------------------------focus事件，添加验证条
-function jfPasdValidateshow(obj) {                                                                                      //--------------------参数为当前元素
+//密码强度验证事件---新版
+var jfPasdShow={
 
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+    //focus事件,验证条元素出现
+    jfPasdValidateshow:function(obj){//参数为当前元素
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
 
-    $(obj).parent().append(pasdinput);
+        $(obj).parent().append(pasdinput);
 
-}
+    },
 
-//-----------------------------keyup事件验证密码强度
-function jfPasdValidate(obj) {                                                                                         //--------------------参数为当前元素
+    //keyup事件验证密码强度
+    jfPasdValidate:function (obj){//参数为当前元素
 
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
-    var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");
-    var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-    var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+
+        var strongRegex = new RegExp("^(?=.{15,20})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//15位以上
+        var mediumRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//10位以上
+        var enoughRegex = new RegExp("^(?=.{6,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$", "g");//6位以上
 
 
-    var farEle = $('span.pasdbar00');
-    var textEle = $('span.pasdtext00');
-    var thisInputPassword = $(obj);
+        var farEle = $('span.pasdbar00');
+        var textEle = $('span.pasdtext00');
+        var thisInputPassword = $(obj);
 
-    if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20) {
-        textEle.text('密码长度需6-20位英文字母和数字');
-        farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+
+
+        if (!thisInputPassword.val() || thisInputPassword.val().length < 6 || thisInputPassword.val().length > 20){
+
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
+            farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+        else if (strongRegex.test(thisInputPassword.val())) {//密码为12位及以上并且大小写字母数字三项都包括,强度最强
+            textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
+            farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+        else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且大小写字母数字三项都包括，强度是中等
+            textEle.addClass('textmid').text('密码强度：中');
+            farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
+        }
+        else if(enoughRegex.test(thisInputPassword.val())){  //如果密码为6位，并且大小写字母数字三项都包括，强度是弱的
+            // console.log('dsfds')
+            textEle.addClass('textweak').text('密码强度：弱');
+            farEle.addClass('barweak').removeClass('barmid');
+        }else {
+            textEle.text('密码长度为6-20位，必须包含数字和大小写字母').removeClass('textstrong');
+            farEle.removeClass('barstyong').removeClass('barmid').removeClass('barweak');
+        }
+
+        return true;
+    },
+    //失焦事件移除密码验证条
+    PasdValidateRemove:function(obj){//参数为当前元素
+        var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
+        $(obj).siblings(".validatepasd").remove()
     }
-    else if (strongRegex.test(thisInputPassword.val())) {//密码为8位及以上并且字母数字特殊字符三项都包括,强度最强
-        textEle.addClass('textstrong').text('密码强度：高').removeClass('textmid').removeClass('textweak');
-        farEle.addClass('barstyong').removeClass('barmid').removeClass('barweak');
-    }
-    else if (mediumRegex.test(thisInputPassword.val())) { //密码为8位及以上并且字母、数字、特殊字符三项中有两项，强度是中等
-        textEle.addClass('textmid').text('密码强度：中');
-        farEle.addClass('barmid').removeClass('barstyong').removeClass('barweak');
-    }
-    else {  //如果密码为8位，就算字母、数字、特殊字符三项都包括，强度也是弱的
-        textEle.addClass('textweak').text('密码强度：弱');
-        farEle.addClass('barweak').removeClass('barmid');
-    }
 
-    return true;
 
-}
 
-//---------------------------------------失焦事件移除密码验证条
-function PasdValidateRemove(obj) {//--------------------参数为当前元素
-
-    var pasdinput = "<span class='validatepasd'><span class='pasdtext00'></span><span class='pasdbar00'></span></span>";
-    $(obj).siblings(".validatepasd").remove()
-
-}
+};
 
 //-----------点击时获取短信验证码
 function getMessage(obj,limitTime,fontColor,paddingStyle) {                                                                              //参数一为选取的该元素，参数二是限制的时间范围
@@ -443,7 +452,7 @@ function getMessage(obj,limitTime,fontColor,paddingStyle) {                     
         var timer;
         if (countdown == 0) {
             $(obj).attr("disabled", false).css("color", "color1");
-            $(obj).text('点击发送');
+            $(obj).text('点击发送').css('cursor', 'pointer');
             countdown = limitTime;
             return;
         } else {
@@ -509,3 +518,121 @@ function confirmInputDisabled() {
         }
     }
 }
+
+
+//绑定浏览器事件以及解除
+var windowBanEvent = {
+
+    bundling: function () {
+        var _self = this;
+        $(window).bind('click touchstart touchmove touchend scroll keydown keypress keyup mousedown mouseup mouseover', _self.Canceling);//绑定禁止事件
+    },
+
+    unbundling: function () {
+        var _self = this;
+        $(window).unbind('click touchstart touchmove touchend scroll keydown keypress keyup mousedown mouseup mouseover', _self.Canceling);//解除绑定事件
+
+    },
+
+    Canceling: function (evt) {
+
+        var evt = evt || window.event; //阻止事件
+        if (evt.preventDefault) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        } else {
+            evt.returnValue = false;
+            evt.cancelBubble = true;
+        }
+    }
+
+};
+
+
+//loading，success,fail的模态框调用
+var jfModelFrame = {
+
+    //-----------------------------loanding的模态框
+    loadingModelShow: function (loadingtitle, loadingtext) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
+
+        var textloading = '<div class="modal fade" id="modal_loading_frame" tabindex="-1" aria-labelledby="modal_loadingLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title" id="modal_loadingLabel">' + loadingtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="loadEffect"><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span></div><div class="wenan-zy">' + loadingtext + '</div></div></div></div></div></div>';
+
+        $('body').append(textloading);
+
+        var loading = $('#modal_loading_frame');
+
+        setTimeout(function () {
+            loading.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+        }, 300);
+
+        windowBanEvent.bundling();
+
+    },
+    //---------------------------loanding的模态框（移除）
+    loadingModelRemove: function () {
+
+        windowBanEvent.unbundling();
+
+        var loading = $('#modal_loading_frame');
+
+        loading.modal('hide');
+        loading.on('hidden.bs.modal', function (e) {
+            loading.remove();
+        });
+
+    },
+
+    //--------------------------success的模态框（移除）
+    successModelShow: function (successtitle, successtext,contentone) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+
+        var textsuccess = '<div class="modal fade" id="modal_success_demo" tabindex="-1" aria-labelledby="modal_successLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button><h4 class="modal-title" id="modal_successLabel">' + successtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="swal2-icon swal2-success animate"><span class="line tip animate-success-tip"></span> <span class="line long animate-success-long"></span><div class="placeholder"></div><div class="fix"></div></div><div class="wenan-zy">' + successtext + '</div><div class="details_content"><span>' + contentone + '</span></div></div><div class="modal-footer" style="text-align:center"><button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确认</button> </div></div></div></div></div>';
+
+        $('body').append(textsuccess);
+
+        var success = $('#modal_success_demo');
+
+        setTimeout(function () {
+            success.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+
+
+        }, 300);
+
+        success.on('hidden.bs.modal', function (e) {
+            success.remove();
+        });
+
+    },
+
+    //--------------------------------fail的模态框（移除）
+    failModelShow: function (failtitle, failtext,contentone) {//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+        var textfail = '<div class="modal fade" id="modal_fail" tabindex="-1" aria-labelledby="modal_failLabel" aria-hidden="true" data-backdrop="static"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button><h4 class="modal-title" id="modal_failLabel">' + failtitle + '</h4></div><div class="modal-body"><div class="title-success"><div class="swal2-icon swal2-error animate-error-icon" style="display:block"><span class="x-mark animate-x-mark"><span class="line left"></span> <span class="line right"></span></span></div><div class="wenan-zy">' + failtext + '</div><div class="details_content"><span>' + contentone + '</span></div></div><div class="modal-footer" style="text-align:center"><button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">关闭</button></div></div></div></div></div>';
+
+        $('body').append(textfail);
+
+        var fail = $('#modal_fail');
+
+        setTimeout(function () {
+            fail.modal({
+                'show': true,
+                'backdrop': 'static',
+                'keyboard': false
+            })
+
+        }, 300);
+
+        fail.on('hidden.bs.modal', function (e) {
+            fail.remove();
+        });
+
+
+    }
+
+};
