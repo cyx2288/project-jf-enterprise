@@ -14,6 +14,11 @@
     <h2>福利发放确认</h2>
     <!--内容111-->
     <div class="info_middlebody">
+
+        <div class="info_content">
+            <span>发放账户：</span>
+            <span>福利账户</span>
+        </div>
         <!--用户名-->
         <div class="info_content">
             <span>本次福利发放总人数：</span>
@@ -22,7 +27,7 @@
 
         <!--服务费-->
         <div class="info_content">
-            <span>发放总金额：</span>
+            <span>发放总金额（元）：</span>
             <span >4000</span>
         </div>
 
@@ -31,20 +36,15 @@
             <span>发放明细：</span>
             <span ><button class="btn btn-primary look_details">查看详情</button></span>
         </div>
-        <!--纯文本---名称带*-->
-        <div class="info_content" >
-            <span style="vertical-align: top">备注信息：</span>
-            <span>
-               <textarea rows="3" cols="20" maxlength="50" class="form-control btn-md-zy11"></textarea>
-               <p style="margin-top: 5px;font-size: 12px">最多输入50个字符</p>
-            </span>
-        </div>
-        <div class="info_content">
-            <span></span>
-            <span>
-                  <a href="../pay_info_success/pay_details.html"><button type="button" class="btn btn-primary release_confirm_btn">确认发放</button></a>
-                 <a href="welfare_release.html"><button type="button" class="btn btn-primary release_confirm_btn">取消</button></a>
-            </span>
+
+
+
+
+
+        <div class="success_page_button" style="margin-top: 50px">
+            <a href="../pay_info_success/pay_details.html"><button type="button" class="btn btn-primary">确认发放</button></a>
+
+            <a onclick="window.history.go(-1)"><button type="button" class="btn btn-primary">取消</button></a>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
                                 <th>收款人账号</th>
                                 <th>收款人姓名</th>
                                 <th>转账金额（元）</th>
-                                <th>转账说明</th>
+                                <th>备注</th>
                             </tr>
                             </thead>
                             <tbody>

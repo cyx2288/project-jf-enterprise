@@ -97,7 +97,8 @@
           margin: 0 auto;
           height: 1px;
           border-bottom: 2px solid #dddddd;
-          top: 60px;
+         // top: 60px;
+          bottom: 0;
           position: absolute;
         }
         &:after{
@@ -157,7 +158,7 @@
               margin: 0 auto;
               height: 1px;
               border-bottom: 2px solid #dddddd;
-              top: 60px;
+             bottom: 0;
               position: absolute;
             }
 
@@ -192,7 +193,7 @@
             margin: 0 auto;
             height: 1px;
             border-bottom: 2px solid #dddddd;
-            top: 54px;
+           bottom: 0;
             position: absolute;
           }
 
@@ -227,7 +228,8 @@
             margin: 0 auto;
             height: 1px;
             border-bottom: 2px solid #dddddd;
-            top: 48px;
+          //  top: 48px;
+            bottom: 0;
             position: absolute;
           }
 
@@ -260,7 +262,8 @@
             margin: 0 auto;
             height: 1px;
             border-bottom: 2px solid #dddddd;
-            top: 36px;
+           // top: 36px;
+            bottom: 0;
             position: absolute;
           }
 
@@ -295,7 +298,8 @@
             margin: 0 auto;
             height: 1px;
             border-bottom: 2px solid #dddddd;
-            top: 48px;
+           // top: 48px;
+            bottom: 0;
             left:-1px;
             position: absolute;
           }
@@ -445,7 +449,6 @@
       border:#dddddd dashed 2px;
       background: #f8f8f8;
       text-align: center;
-
       font-size: 24px;
       color: #ababab;
       font-weight: lighter;
@@ -538,6 +541,194 @@
       }
     }
   }
+
+
+  /*福利充值，现金充值页面*/
+  .payer.cards,.collected.cards{
+    width: 100%;
+    margin-top: 0;
+
+
+    @media screen and(max-width: 800px) {
+      width: 100%;
+      margin-top: 10px;
+
+    }
+
+
+
+    .choosed{
+      position: relative;
+      box-shadow: 0 0 5px 1px #59c7f4 inset;
+      &:after{
+        content: "";
+        position: absolute;
+        right: -4px;
+        bottom: -19px;
+        width: 0;
+        height: 0;
+        border-width: 30px 0 30px 30px;
+        border-style: solid;
+        border-color: transparent transparent transparent #59c7f4;
+        border-radius: 6px;
+        transform: rotate(45deg);
+      }
+
+      &:before{
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        right: 7px;
+        width: 10px;
+        height: 18px;
+        z-index: 10;
+        border: solid 2px white;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+      }
+    }
+
+
+    .bank{
+      width: 48%;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      line-height: 20px;
+
+
+
+      @media screen and(max-width: 800px){
+        width: 85%;
+      }
+
+      @media screen and(max-width: 500px){
+        width: 100%;
+      }
+
+      &:nth-child(2n){
+        margin-left: 20px;
+        margin-right: 0;
+
+        @media screen and(max-width: 1100px){
+          margin-left: 10px;
+        }
+        @media screen and(max-width: 800px){
+          margin-left: 0;
+        }
+
+
+        &:last-child{
+
+          margin-bottom: 0;
+
+        }
+      }
+
+
+
+      &:nth-child(2n-1){
+       margin-left: 0;
+        margin-bottom: 0;
+
+        @media screen and(max-width: 1100px){
+          margin-bottom: 10px;
+
+        }
+      }
+
+      .bank_value{
+        padding-left: 0;
+      }
+
+      .bank_value .number{
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 0;
+        padding-left: 10px;
+        span{
+          &:last-child{
+            font-weight: bold;
+          }
+        }
+      }
+
+      .bank_title{
+        &:before{
+          transform: scale(0.95,0.6);
+          bottom: 0;
+          border-bottom: none;
+        }
+      }
+
+      .bank_value .account_number{
+        font-size: 12px;
+        padding: 5px 0 5px;
+        font-weight: normal;
+        padding-left: 10px;
+        span{
+          &:last-child{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .bank .bank_title .text{
+      width: 100%;
+      font-size:12px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 60px;
+      display: table;
+      padding-right: 0;
+      padding-left: 10px;
+
+      p{
+        margin: 0;
+        display: table-cell;
+        vertical-align: middle;
+
+        span{
+          &:last-child{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+     .bank_add .add_text{
+       >span{
+         font-size: 22px;
+       }
+       padding: 45px 0;
+       font-size: 22px;
+     }
+
+
+  }
+
+  .checkorder.payer.cards,.checkorder.collected.cards{
+    margin-top: 0;
+
+    .bank{
+      float: none;
+      width: 50%;
+      margin: 0 auto;
+
+      @media screen and(max-width: 992px) {
+        float: left;
+      }
+
+      @media screen and(max-width: 500px) {
+        width: 100%;
+      }
+    }
+
+  }
 }
 /*模态框3-企业认证模态框*/
 .authentication_title{
@@ -555,4 +746,17 @@
   text-align: center;
   margin-top: 10px;
 
+}
+
+.charge_certificate{
+  margin-top: 100px;
+
+  .authentication_sub{
+    margin-top: 50px;
+  }
+}
+
+.mid_text{
+  text-align: center;
+  margin-top: 30px;
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>充值提交成功</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.录入充值信息"},
+        {"text":"2.核对充值信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"2"
+        })%>
+
+
+        <%- include('../../component/basic/success.ejs',{
+            "title":"充值申请提交成功！"
+        })%>
+
+
+        <div class="success_page">
+
+            <div class="success_page_pp">
+                <p>贵公司打款到账后，嘉福平台会在1-2个工作日内为您的企业充值。如有疑问，请咨询4008216990，在线时间为工作日：9:00-19:30</p>
+            </div>
+
+        </div>
+
+
+
+        <div class="success_page_button">
+            <a><button class="btn btn-primary" onclick="window.parent.selectLeftTab('企业充值订单')">查看订单</button></a>
+        </div>
+
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>

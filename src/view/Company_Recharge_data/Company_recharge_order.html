@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业充值订单详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>充值订单详情</h2>
+
+    <div class="info_middlebody" style="margin-left: 0">
+
+        <!-- 交易类型-->
+        <div class="control-title">
+            <div>
+                <span>订单状态：</span>
+                <span>
+                    <select class="form-control  form-control-zy" >
+                        <option selected="selected">全部</option>
+                        <option>处理成功</option>
+                        <option>订单撤销</option>
+                    </select>
+                </span>
+            </div>
+            <div>
+                <span>发放账户：</span>
+                <span>
+                    <select class="form-control  form-control-zy" >
+                        <option selected="selected">全部</option>
+                        <option >福利账户</option>
+                        <option >现金账户</option>
+                    </select>
+                </span>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- 收款方类型-->
+        <div class="control-title">
+            <div>
+                <span>收款方：</span>
+                <span>
+                    <input class="form-control  form-control-zy" placeholder="请输入收款方">
+                </span>
+            </div>
+            <div>
+                <span>订单号：</span>
+                <span>
+                    <input class="form-control  form-control-zy" placeholder="请输入订单号">
+                </span>
+            </div>
+        </div>
+        <!--日期-->
+        <div class="control-title">
+            <div style="width: 100%">
+                <span >下单日期：</span>
+                <span>
+                     <input size="16" type="text" value="2016-06-15" readonly class="form_datetime form-control form-control-zy1">
+                    至
+                    <input size="16" type="text" value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                </span>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="control-title">
+
+            <div>
+                <span></span>
+                <span>
+                    <a href="../error/404.html"><button type="button" class="btn btn-primary btn-zyone">导出数据</button></a>
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span><a href="../error/404.html"><button type="button" class="btn btn-primary btn-zyone">查询</button></a></span>
+            </div>
+        </div>
+
+    </div>
+        <div class="table-responsive info_table">
+
+            <table class="table table-striped">
+                <thead>
+                <tr class="tr-zy">
+                    <th>订单号</th>
+                    <th>收款方</th>
+                    <th>发放账户</th>
+                    <th>充值金额</th>
+                    <th>服务费率</th>
+                    <th>服务费</th>
+                    <th>订单总金额</th>
+                    <th>订单状态</th>
+                    <th>下单时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr>
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>现金账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr>
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>现金账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>订单撤销</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr >
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>订单撤销</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr >
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr >
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr >
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr>
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr >
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+                <tr>
+                    <td><span class="order_num">1358458458455</span></td>
+                    <td>上海淘略数据处理有限公司</td>
+                    <td>福利账户</td>
+                    <td>1,000.00</td>
+                    <td>6%</td>
+                    <td>0</td>
+                    <td>1,000.00</td>
+                    <td>处理成功</td>
+                    <td>2017/07/01 12:00:00</td>
+                    <td><a>撤销订单</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info_page">
+            <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+            <ul class="pagination" style="margin-top:0px; float:right;">
+                <li class="go"><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li class="active"><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">30</a></li>
+                <li class="go"><a href="#">»</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+    <!--修改手机号码模态框 第一步-->
+    <div class="modal fade" tabindex="-1" id="cancle_order" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel">撤销订单</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <div class="authentication_title">确认要撤销该笔订单吗？</div>
+
+                    <div class="modal-footer" style="margin-top: 25px">
+                        <button type="button" class="btn btn-primary btn-primary-zy phone_nextbtn">确认</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--编辑模态框-->
+    <div class="modal fade"  id="order_detials" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">充值订单详情</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <div class="modal_section_text">
+                        <div class="text_value"><span>订单号：</span><span>10000000231</span></div>
+                        <div class="text_value"><span>发放账户：</span><span>福利账户</span></div>
+                        <div class="text_value"><span>订单状态：</span><span>处理成功</span></div>
+                        <div class="text_value"><span>下单时间：</span><span>2017-7-8 19:24:34</span></div>
+                        <div class="text_value"><span>订单总金额（元）：</span><span>106000</span></div>
+                        <div class="text_value"><span>充值金额（元）：</span><span>100000</span></div>
+                        <div class="text_value"><span>订单状态：</span><span>处理成功</span></div>
+                        <div class="text_value"><span>服务费率（%）：</span><span>6</span></div>
+                    </div>
+                    <div class="madal_section_payer">
+                        <div class="payer_title">付款方信息</div>
+                        <div class="payer_text">
+                            <div class="text_number"><span>银行账户：</span><span>上海嘉银数据处理有限公司</span></div>
+                            <div class="text_number"><span></span><span></span></div>
+                            <div class="text_number"><span>银行账号：</span><span>85965623231</span></div>
+                            <div class="text_number"><span>银行名称：</span><span>上海嘉银信息处理有限公司</span></div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="madal_section_payer">
+                        <div class="payer_title">收款方信息</div>
+                        <div class="payer_text">
+                            <div class="text_number"><span>银行户名：</span><span>上海广略人力资源服务公司</span></div>
+                            <div class="text_number"><span></span><span></span></div>
+                            <div class="text_number"><span>银行账号：</span><span>85965623231</span></div>
+                            <div class="text_number"><span>银行名称：</span><span>上海嘉银信息处理有限公司</span></div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <!-- footer -->
+                <div class="modal-footer" style="text-align: center">
+                    <button type="button" class="btn btn-default btn-primary-zy"  data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+    <script>
+
+        $('input.form_datetime').each(function(){//------------------日历插件
+            $(this).datepicker({
+                format: "yyyy-mm-dd",
+                autoclose :true,
+                todayBtn :true,
+                minView :2,
+                weekStart :1,
+                linked :true
+            });
+        });
+
+        $('ul.pagination').find('li:not(.go)').each(function(){
+
+            $(this).click(function(){
+
+                jfpagechange(this);//参数为选择的当前元素
+            })
+        })
+
+        //撤销订单模态框
+        $('td>a').on("click",function(){
+            modelInfo('#cancle_order'); //参数一：模态框id选择器,
+        })
+
+
+        //撤销订单模态框
+        $('td>span').on("click",function(){
+            modelInfo('#order_detials'); //参数一：模态框id选择器,
+        })
+
+
+    </script>
+</body>
+</html>
