@@ -16,7 +16,7 @@ var bom = require('gulp-bom');//解决UTF-8文件是采用无BOM
 
 function devEjs() {
 
-    gulp.src('src/view/*/**.{ejs,html}')
+    gulp.src('src/view/*/*.{ejs,html}')
 
         .pipe(ejs())
 

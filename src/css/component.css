@@ -164,6 +164,12 @@ h2>div>button>span{
     display: none;
 }
 
+h2 .show_details{
+    font-size: 16px;
+    color: #10a6e2;
+    margin-right: 20px;;
+}
+
 /*中间内容部分以及部分模态框1组件*/
 #Account_page{
     margin-left: 32%;
@@ -210,6 +216,9 @@ h2>div>button>span{
     position: relative;;
 }
 .info_content>span>.add_star{
+    color: red;
+}
+.add_redstar{
     color: red;
 }
 
@@ -455,6 +464,7 @@ input[type=password]{
     position: absolute;
     right: 10px;
     right: 12px\9;
+    display: none\9;
     top:0;
     height: 34px;
     line-height: 34px;
@@ -464,7 +474,8 @@ input[type=password]{
     z-index: 1;
 }
 .select-input .move_triangle{
-    right: 60px;
+    right: 90px;
+    display: none\9;
 }
 
 .btn-group-11{
@@ -494,6 +505,26 @@ input[type=password]{
     color: #fff;
     border: 0
 }
+
+@media screen and (min-width:1200px) {
+    .submitorder_btn{
+        margin-right: 30px;
+        margin-left: -10px;
+    }
+}
+
+
+
+@media screen and (max-width:1200px) and (min-width:992px ) {
+    .submitorder_btn{
+        margin-left: -50px;
+        margin-right: 30px;
+
+    }
+}
+
+
+
 .staff_import_downbtn{
     margin-left:37px;
     background: RGB(241,241,241);
@@ -598,7 +629,7 @@ input[type=password]{
     width: 157px;
     display: inline-block;
     height: 34px;
-    padding: 6px 0;
+    padding: 6px 0 6px 2px;
 }
 .form-inline {
     display: inline-block;
@@ -609,7 +640,7 @@ input[type=password]{
     width: 157px;
     height: 34px;
     display: inline-block;
-    padding: 6px 1px;
+    padding: 6px 2px;
 }
 .form-control-qd{
     width: 160px;
@@ -772,6 +803,18 @@ th {
 }
 td {
     word-break: keep-all;/*必须*/
+}
+
+td>a{
+  cursor: pointer;
+}
+
+td>p{
+    cursor: pointer;
+    color: #23527c;
+}
+td>a:hover{
+    text-decoration: none;
 }
 
 /* 分页样式 */
@@ -3011,6 +3054,8 @@ input[type=file]{
         margin-top: 5px;
         width: 100%
     }
+
+
     .look_details{
         width: 100%;
     }
