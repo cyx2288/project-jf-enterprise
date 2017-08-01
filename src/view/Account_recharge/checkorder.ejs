@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>充值确认</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.录入充值信息"},
+        {"text":"2.核对充值信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"1"
+        })%>
+
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"充值账户：",
+        "content":"福利账户"
+        })%>
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"充值金额（元）：",
+        "content":"1000.00"
+        })%>
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"服务费（元）：",
+        "content":"10.00"
+        })%>
+
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"付款金额（元）：",
+        "content":"1,006.00"
+        })%>
+
+
+        <!--付款方-->
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span><span class="add_star">*</span>付款方：</span>
+                <span>
+
+        <div class="payer cards">
+
+            <div class="bank">
+                <div class="bank_title">
+                    <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司嘉付宝信息技术有限公司嘉付宝信息技术有限公司</span></p></div>
+                </div>
+                <div class="bank_value">
+                    <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+                    <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+                </div>
+            </div>
+
+        </div>
+
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span><span class="add_star">*</span>收款方：</span>
+                <span>
+
+
+      <!--收款方-->
+
+        <div class="collected cards">
+
+            <div class="bank">
+                <div class="bank_title">
+                    <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司嘉付宝信息技术有限公司嘉付宝信息技术有限公司</span></p></div>
+                </div>
+                <div class="bank_value">
+                    <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+                    <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+                </div>
+            </div>
+
+        </div>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="success_page_button" style="margin-top: 30px">
+            <a href="charge_success.html"><button type="button" class="btn btn-primary">提交充值申请</button></a>
+
+            <a onclick="window.history.go(-1)"><button type="button" class="btn btn-primary">返回上一步</button></a>
+        </div>
+
+
+
+
+
+    </div>
+    <!--底部按钮-->
+</div>
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>

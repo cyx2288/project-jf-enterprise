@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利发放
+        <div>
+            <a href="../Welfare_release_record/new_release_details.html" class="show_details">查看发放明细</a>
+        </div>
+    </h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li class="active"><a href="#">部分发放</a></li>
+            <li><a href="all_release.html">全体员工</a></li>
+            <li><a href="batch_release.html">批量发放</a></li>
+        </ul>
+    </div>
+
+    <!--组件-->
+
+    <div class="smodal_content">
+        <div class="info_content modal22">
+            <span>发放账户：</span>
+                <span>
+                    <span class="radio_boxs">
+                         <label>
+                             <input type="radio" name="account" checked>福利账户
+                         </label>
+                    </span>
+
+                    <span class="radio_boxs">
+                        <label>
+                            <input type="radio" name="account">现金账户
+                        </label>
+                    </span>
+                </span>
+        </div>
+    </div>
+
+
+    <div class="smodal_content">
+        <div class=" info_content modal22">
+            <span class="release_account">福利账户余额：</span>
+            <span >10,000.00</span>
+        </div>
+    </div>
+
+    <div class="smodal_content">
+        <div class=" info_content modal22">
+            <span>发放对象：</span>
+            <span>
+                <div class="release_people">
+                    <div class="choosed_people">
+                        <span>小明</span>
+                        <span class="cancle"></span>
+                    </div>
+                    <div class="choosed_people">
+                        <span>小李</span>
+                        <span class="cancle"></span>
+                    </div>
+                    <div class="choosed_people">
+                        <span>葫芦娃</span>
+                        <span class="cancle"></span>
+                    </div>
+                    <div class="choosed_people">
+                        <span>孙悟空</span>
+                        <span class="cancle"></span>
+                    </div>
+                    <div class="choosed_people">
+                        <span>超人</span>
+                        <span class="cancle"></span>
+                    </div>
+                    <div class="release_choose">
+                        <span class="choose_staff">选择员工</span><span class="show_choose_num">5</span><span>/30</span>
+                    </div>
+
+                </div>
+
+            </span>
+        </div>
+    </div>
+
+    <%- include('../../component/input/addstarinput.ejs',{
+    "title":"单笔发放金额（元）：",
+    "placeholder":"请输入金额"
+    })%>
+
+
+    <div class="smodal_content">
+        <div class="info_content modal22">
+            <span style="vertical-align: top">备注信息：</span>
+            <span>
+               <textarea rows="3" cols="20" maxlength="50" class="form-control btn-md-zy11"></textarea>
+               <p style="margin-top: 5px;font-size: 12px">(20字以内)</p>
+            </span>
+        </div>
+    </div>
+
+    <%- include('../../component/button/oneButton.ejs',{
+        "thisurl":"release_comfirm.html",
+        "buttontext":"下一步"
+
+    })%>
+
+
+
+</div>
+
+<!--模态框1-->
+<div class="modal fade"  id="choose_staff_modal" tabindex="-1" aria-labelledby="info_modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="info_modalLabel">选择员工 </h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+                <!--通用组件-->
+
+                <div class="control-title modal_inputchoose">
+                    <div>
+                        <span>员工编号：</span>
+                        <span><input type="text" class="form-control form-control-zy" placeholder="请输入员工编号"></span>
+                    </div>
+                    <div>
+                        <span>员工姓名：</span>
+                        <span><input type="text" class="form-control form-control-zy"  placeholder="请输入员工姓名"></span>
+                    </div>
+
+                    <div class="noinput">
+                        <span>当前已选员工：</span>
+                        <span><span class="choosed_num">2</span>/<span class="total_num">30</span></span>
+                    </div>
+                </div>
+
+
+                <!-- 一排多个组件-->
+                <div class="control-title modal_inputchoose">
+                    <div>
+                        <span>邮箱：</span>
+                        <span><input type="text" class="form-control form-control-zy" placeholder="请输入员工邮箱"></span>
+                    </div>
+                    <div>
+                        <span>手机号码：</span>
+                        <span><input type="text" class="form-control form-control-zy"  placeholder="请输入手机号码"></span>
+                    </div>
+
+                    <div class="noinput">
+                        <span><button type="button" class="btn btn-primary lookup_btn2">查询</button></span>
+                    </div>
+                </div>
+
+
+                <!-- 模态框中的表格-->
+                <div class="table-responsive info_table">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr class="tr-zy">
+                            <th>选择员工</th>
+                            <th>员工编号</th>
+                            <th>员工姓名</th>
+                            <th>邮箱</th>
+                            <th>手机号码</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" checked class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">小明</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" checked class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">小李</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff"  class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">老李</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff"  class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">老黄</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">老明</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">老王</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">小王</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">猪八戒</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">唐僧</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">孙悟空</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">葫芦娃</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="checkbox" name="staff" class="checkbox_staff"></td>
+                            <td>123@163.com</td>
+                            <td class="name">皮卡丘</td>
+                            <td>300</td>
+                            <td>9月福利</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <%- include('../../component/table/infoPage.ejs')%>
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-zy choosed_check">确认</button>
+                <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+
+    //选择员工模态框
+    $('.choose_staff').on("click",function(){
+
+        modelInfo('#choose_staff_modal'); //参数一：模态框id选择器
+    })
+
+    //选择员工(数量加减)
+    $('td>input').on("click",calcNum)//调用方法calcNum即可
+
+
+    //删除选中员工（事件委托完成）
+    $('.release_people').on("click",function(e){
+
+        var allChoosedPeople=$('.choosed_people');
+
+        var showChooseNum=$('.show_choose_num')
+
+        var thisTargetEle= e.srcElement|| e.target;
+
+        if(thisTargetEle.className=="cancle"){//如果当前点击的X
+
+            $(thisTargetEle).parent('.choosed_people').addClass('remove')//出现动画效果
+
+            setTimeout(function(){
+                $(thisTargetEle).parent('.choosed_people').remove();//删除当前元素
+            },300)
+
+            var thisShowChooseNum= showChooseNum.text() //当前已经被选中的数量
+
+            thisShowChooseNum--
+
+            showChooseNum.text(thisShowChooseNum) //当前已经被选中的数量
+
+        }
+
+    })
+
+
+    //点击切换发放账户
+    $('label').on("click",function(){
+
+        if($(this).find('input[type=radio]').is(":checked")){//当前是否选中
+
+            var thisInnerText=$(this).text().replace(/(^\s*)|(\s*$)/g, "");//去除空格
+
+            thisInnerText=thisInnerText+'余额：';
+
+            $('.release_account').text(thisInnerText)
+
+        }
+
+    })
+
+</script>
+</body>
+</html>
