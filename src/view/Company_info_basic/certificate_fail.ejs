@@ -81,7 +81,7 @@
         <%- include('../../component/input/input_btn.ejs',{
         "title":"咨询顾问：",
         "thisValue":"李经理（123789564562）",
-        "btntext":"输入邀请码",
+        "btntext":"补填邀请码",
         "thisIdname":"getcode",
         "modelshow":true
 
@@ -211,6 +211,37 @@
                 <!-- footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary btn-primary-zy model-change1 savepasd">&#x4FDD;&#x5B58;</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--模态框1-邀请码-->
+    <div class="modal fade" id="inviateCode_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="account_pasdxiugaiLabel">请输入邀请码</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!--模态框组件-->
+
+                    <div class="smodal_content">
+                        <div class=" info_content modal22">
+                            <span>邀请码</span>
+                            <span><input type="text" class="form-control btn-md-zy11 input_code" placeholder="请输入邀请码"/></span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1">&#x4FDD;&#x5B58;</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">&#x53D6;&#x6D88;</button>
                 </div>
             </div>
@@ -363,6 +394,14 @@
     })
 
 
+    //邀请码模态框
+    $('#getcode').on("click",function(){
+        //模态框出现的方法
+        modelInfo('#inviateCode_modal'); //参数一：模态框id选择器,
+
+    })
+
+
     //保存手机号码失败模态框
     $('.savephone').on("click",function(){
 
@@ -413,7 +452,7 @@
 
     //报错方法
     //输入报错验证
-    $(".messageinput>input").on({
+    $(".messageinput>input,.input_code").on({
 
         //-----------change事件出现提示信息
         change: function () {
