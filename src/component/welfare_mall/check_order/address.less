@@ -1,0 +1,227 @@
+.choose_address{
+   width: 85%;
+   margin:30px auto;
+
+  @media screen and(max-width: 1250px) {
+    width: 100%;
+  }
+   >p{
+     text-align: left;
+     width: 100%;
+     font-size: 22px;
+     margin-left: 10px;
+   }
+   .address_list{
+     width: 23%;
+     float: left;
+     box-shadow: 1px 0 10px #dfdfdf;
+     padding: 10px;
+     margin: 10px;
+
+     &:hover{
+       cursor: pointer;
+     }
+
+     /*&:first-of-type{
+       margin-left: 0;
+     }
+
+     &:last-of-type{
+       margin-right: 0;
+     }
+
+     &:nth-of-type(4){
+        margin-right: 0;
+
+
+       @media screen and(max-width: 992px) {
+         margin-left: 0;
+         margin-right: 10px;
+
+       }
+
+      }
+
+     &:nth-of-type(5){
+       margin-left: 0;
+
+       @media screen and(max-width: 992px) {
+         margin-left: 10px;
+       }
+     }*/
+
+
+     @media screen and(max-width: 1250px) {
+       width: 23%;
+     }
+
+     @media screen and(max-width: 992px) {
+       width: 30%;
+
+     }
+
+     @media screen and(max-width: 680px) {
+       width: 45%;
+
+     }
+     @media screen and(max-width: 500px) {
+       width: 85%;
+       float: none;
+       margin: 10px auto;
+
+     }
+
+     >div{
+       &:first-child{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         border-bottom: solid 1px #DDDDDD;
+
+         .name{
+           font-size: 18px;
+
+           @media screen and(max-width: 1100px){
+             font-size: 14px;
+           }
+         }
+
+         p{
+
+           span{
+             &:hover{
+               color: #0a71b7;
+             }
+           }
+           &:last-child{
+             color: #10a6e2;
+
+             @media screen and(max-width: 1100px){
+               font-size: 12px;
+             }
+             span{
+               display: inline-block;
+               margin: 0 5px;
+
+               @media screen and(max-width: 1100px){
+                 margin: 0;
+               }
+
+             }
+             .delete{
+               position: relative;
+
+               &:before{
+                 content: "";
+                 display: block;
+                 position: absolute;
+                 left: -8px;
+                 top: 0;
+                 border-left: solid 1px #10a6e2;
+                 width: 100%;
+                 height: 100%;
+                 transform: scaleY(0.7);
+
+                 @media screen and(max-width: 1100px){
+                   border-left:none;
+                 }
+               }
+             }
+           }
+         }
+     }
+
+       &:nth-child(2){
+         margin: 8px 0;
+
+         p{
+           margin: 0;
+         }
+       }
+
+     }
+     .address_info{
+       height: 52px;
+       font-size: 12px;
+       display: table;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       display: -webkit-box;
+       -webkit-line-clamp: 3;
+       -webkit-box-orient: vertical;
+
+       >span{
+        // display: table-cell;
+         //vertical-align: middle;
+       }
+       .default{
+         color: #10a6e2;
+       }
+     }
+   }
+
+  .address_list.choosed{
+    position: relative;
+    box-shadow: 0 0 5px 1px #59c7f4 inset;
+
+  &:before{
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      right: 7px;
+      width: 10px;
+      height: 18px;
+      z-index: 10;
+      border: solid 2px white;
+      border-top: 0;
+      border-left: 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &:after{
+      content: "";
+      position: absolute;
+      right: -4px;
+      bottom: -19px;
+      width: 0;
+      height: 0;
+      border-width: 30px 0 30px 30px;
+      border-style: solid;
+      border-color: transparent transparent transparent #59c7f4;
+      border-radius: 6px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+  }
+
+  .add_address.address_list{
+    height: 144px;
+    font-size: 22px;
+    text-align: center;
+    display: table;
+
+    @media screen and(max-width: 1100px){
+      height: 139px;
+    }
+
+    >span{
+      display: table-cell;
+      vertical-align: middle;
+      color: #ababab;
+
+      span{
+        font-size: 26px;
+      }
+    }
+  }
+
+   &:after{
+     content: "";
+     display: block;
+     clear: both;
+   }
+ }

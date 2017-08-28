@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利商城</h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li ><a href="homepage_cards.html">电子卡券</a></li>
+            <li class="active"><a href="#">实物商品</a></li>
+        </ul>
+
+        <div class="search_product">
+            <input type="text" class="form-control search_input">
+            <button class="btn btn-primary search_btn">
+                <img src="../../icon/icon_search.png">
+                搜索
+            </button>
+
+        </div>
+    </div>
+
+
+    <!--商品列表页-->
+    <div class="product_list">
+
+        <!--可直接复制列表-->
+
+        <a class="list" href="product_details.html">
+            <p class="produce_img"><img src="../../icon/icon_product.jpg"></p>
+            <p class="price">￥200</p>
+            <p class="product">【嘉福商城】三只松鼠 坚果炒货 休闲零食 开心果225g/袋【嘉福商城】三只松鼠 坚果炒货 休闲零食 开心果225g/袋【嘉福商城】三只松鼠 坚果炒货 休闲零食 开心果225g/袋</p>
+        </a>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/product.ejs')%>
+
+</div>
+
+
+    <!--分页-->
+    <%-include('../../component/table/infoPage.ejs')%>
+
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+<div class="buy_page">
+
+
+    <div class="picture">
+        <div class="main_img">
+            <img src="../../icon/icon_pro.jpg" class="pic">
+            <img src="../../icon/jia_fu_img.png" class="jf_logo">
+        </div>
+
+        <div class="small_img">
+            <div>
+                <img src="../../icon/icon_pro.jpg">
+            </div>
+            <div>
+                <img src="../../icon/icon_product.jpg">
+            </div>
+            <div>
+                <img src="../../icon/icon_pro.jpg">
+            </div>
+            <div>
+                <img src="../../icon/icon_product.jpg">
+            </div>
+            <div>
+                <img src="../../icon/icon_pro.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="show_text">
+        <p>【嘉福商城】三只松鼠坚果大礼包 中秋特惠礼盒装 零食 坚果 1432g</p>
+
+        <div class="value">
+            <p class="price">
+                <span>价格</span>
+                <span>￥<span>300.00</span></span>
+            </p>
+        </div>
+
+        <div class="choose_tab">
+            <p>选择口味</p>
+            <p>
+                <span class="sku choosed">五香</span>
+                <span class="sku">麻辣</span>
+                <span class="sku">蒜香</span>
+                <span class="sku">混合味</span>
+            </p>
+        </div>
+
+        <div class="choose_tab">
+            <p>选择礼盒</p>
+            <p>
+                <span class="sku choosed">4袋装</span>
+                <span class="sku">6袋装</span>
+                <span class="sku">8袋装</span>
+                <span class="sku noshow">10袋装</span>
+                <span class="sku">大礼包</span>
+                <span class="sku">超级无敌大礼包</span>
+            </p>
+        </div>
+
+        <div class="num">
+            <p>购买数量</p>
+
+            <div class="edit">
+                <div class="area">
+                    <input value="1" type="tel" pattern="[0-9]*" class="inputele" max_data="9999"/>
+                    <div>
+                        <span class="add">+</span>
+                        <span class="reduce">-</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="show_error">
+                <!--<p></p>-->
+                <p>
+                    <img src="../../icon/icon_warning.png">
+                    <span class="error_text">最多购买199件</span>
+                </p>
+
+            </div>
+
+
+        </div>
+
+        <div class="go_buy">
+            <p></p>
+            <a href="check_product_order.html">立即购买</a>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script>
+
+    //sku选择
+    $('.sku').not('.noshow').on("click",function(){//选中样式有calss-choosed控制
+
+        $(this).addClass('choosed');
+
+        $(this).siblings('.sku').removeClass('choosed')
+    })
+
+    //金额加减绑定事件
+    document.getElementsByClassName('reduce')[0].addEventListener('click',function(){//相减
+
+        welfareMallBuy.changeValue(this);//参数为当前点击元素
+
+        var thisValue=document.getElementsByClassName('inputele')[0].value;
+
+        if(thisValue==1){
+
+            welfareMallBuy.showError('数量最少为1')//报错提示文本,2秒之后会自动删除
+        }
+    },false);
+
+
+
+    document.getElementsByClassName('add')[0].addEventListener('click',function(){//相加
+        welfareMallBuy.changeValue(this)
+    },false);
+
+
+
+    document.getElementsByClassName('inputele')[0].addEventListener('keyup',function(){//手动输入，不能超过最大数量（max-data），不能等于0，默认为1
+        welfareMallBuy.changeValue(this)
+    },false);
+
+
+    welfareMallBuy.changeImgSrc();//图片切换（鼠标移入）
+
+</script>

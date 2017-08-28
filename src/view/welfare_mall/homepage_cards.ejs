@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利商城</h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li class="active"><a href="#">电子卡券</a></li>
+            <li><a href="homepage_product.html">实物商品</a></li>
+        </ul>
+
+        <div class="search_product">
+            <input type="text" class="form-control search_input">
+            <button class="btn btn-primary search_btn">
+                <img src="../../icon/icon_search.png">
+                搜索
+            </button>
+
+        </div>
+    </div>
+
+
+    <!--商品列表页-->
+    <div class="product_list">
+        <!--可直接复制列表-->
+        <a class="list">
+            <p class="produce_img"><img src="../../icon/shopping_cards_jingdong.jpg"></p>
+            <div class="cards_value">
+                <p class="price">￥200</p>
+                <p class="value">面值：<span>300</span></p>
+            </div>
+
+            <p class="title">京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡京东电子卡</p>
+        </a>
+
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+        <%- include('../../component/welfare_mall/product/card.ejs')%>
+
+
+
+
+    </div>
+
+    <!--分页-->
+    <%-include('../../component/table/infoPage.ejs')%>
+
+
+</div>
+
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+</body>
+</html>

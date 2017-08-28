@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>查看订单</h2>
+
+
+    <%-include('../../component/welfare_mall/check_order/product_details.ejs')%>
+
+    <!--商品订单列表-->
+    <%-include('../../component/welfare_mall/check_order/product_table.ejs')%>
+
+
+    <!--订单总金额-->
+    <div class="check_bottom order_total">
+        <p>
+            <span>运费：</span>
+            <span>￥0.00</span>
+        </p>
+        <div class="order_info">
+            <p>
+                <span>订单总金额（含运费）</span>
+                <span class="price">￥60000.00</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+</body>
+</html>
