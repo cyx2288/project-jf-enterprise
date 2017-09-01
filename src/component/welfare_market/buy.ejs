@@ -1,0 +1,108 @@
+
+<!--买入模块-->
+<div class="welfare_buy_mid">
+
+    <div class="welfare_buy">
+
+        <div class="title_img">
+           <img src="../../icon/welfare_add_title.png">
+        </div>
+        <div class="main_input">
+            <p>买入福利：</p>
+            <p>
+                <input type="tel" pattern="[0-9*]" placeholder="请输入买入福利额度" class="form-control">
+            </p>
+        </div>
+
+    </div>
+
+    <div class="buy_info">
+        <div class="buy_price">
+            <div class="title">买入单价：</div>
+            <div class="content">
+                <div>
+                <button class="btn reduce" data-toggle="tooltip">—</button>
+                <input class="form-control inputele" value="0.998" max-price="0.998"/>
+                <button class="btn add" data-toggle="tooltip">+</button>
+                </div>
+            <div>
+                <span>元</span>
+                <img src="../../icon/welfare_explain.png" class="tooltip-test showTips"  data-placement="right" title="买入一份福利额度时，现金账户需要支付的最高额。不高于该价格的买单都会按卖方价格买入">
+            </div>
+
+
+            </div>
+        </div>
+
+        <div class="pay_total">
+            <div class="title">预计支付金额：</div>
+            <div class="content">
+            <div class="total_money">1000.00</div>
+            <div>
+                <span>元</span>
+                <img src="../../icon/welfare_explain.png" class="tooltip-test showTips" data-toggle="tooltip" data-placement="right" title="买入福利额度成交后，现金账户支付的最高金额">
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buy_tips">
+        <div>
+            <span>现金账户余额：</span>
+            <span>1000.00</span>
+        </div>
+        <div>
+            <span>平台手续费：</span>
+            <span>0%</span>
+        </div>
+    </div>
+
+    <div class="buy_agreement">
+        <div><input type="checkbox" checked> <span>同意<a class="transfer_agreement">《福利买入服务协议》</a></span></div>
+    </div>
+
+    <div class="success_page_button">
+        <a href="check_order.html"><button type="button" class="btn btn-primary buy_btn">提交买入申请</button></a>
+
+        <a onclick="window.parent.selectLeftTab('首页')"><button type="button" class="btn btn-primary">取消</button></a>
+    </div>
+
+
+
+
+
+
+</div>
+
+<script>
+
+
+
+    //金额加减绑定事件
+    document.getElementsByClassName('reduce')[0].addEventListener('click',function(){
+
+        WelfareMarketBuy.changePrice(this);//参数为当前点击元素
+
+        WelfareMarketBuy.removeTips('.add');//移除提示，参数为出现提示的元素的class
+
+    },false);//相减
+
+    document.getElementsByClassName('add')[0].addEventListener('click',function(){
+        WelfareMarketBuy.changePrice(this);
+
+        var thisValue=document.getElementsByClassName('inputele')[0].value;
+
+        var thisMaxPrice=document.getElementsByClassName('inputele')[0].getAttribute('max-price');
+
+        if(thisValue==thisMaxPrice){
+            WelfareMarketBuy.showTips(this,'最高价￥0.998');//出现提示的方法，参数一为当前点击的元素，参数二为当前提示文本
+        }
+
+    },false);//相加
+
+    document.getElementsByClassName('inputele')[0].addEventListener('keyup',function(){//手动输入，不能超过最大数量（max-data），不能等于0，默认为1
+        WelfareMarketBuy.changePrice(this)
+    },false);
+
+</script>

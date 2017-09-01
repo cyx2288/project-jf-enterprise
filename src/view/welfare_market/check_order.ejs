@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利买入页面</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利买入确认</h2>
+
+    <div class="info_middlebody">
+
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.提交买入申请"},
+        {"text":"2.确认买入信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"1"
+        })%>
+
+        <div class="all_mid_text">
+
+
+
+        <%- include('../../component/basic/info.ejs',{
+        "title":"买入福利：",
+        "basicinfo":"1000.00"
+        })%>
+
+        <%- include('../../component/basic/info.ejs',{
+                "title":"最高买入单价：",
+                "basicinfo":"￥0.998"
+        })%>
+
+
+
+<%- include('../../component/basic/info.ejs',{
+"title":"平台优惠：",
+"basicinfo":"￥0.00"
+})%>
+<%- include('../../component/basic/info.ejs',{
+"title":"预计现金账户扣款金额：",
+"basicinfo":"999.00元"
+})%>
+</div>
+
+        <div class="success_page_button">
+            <a href="buy_success.html"><button type="button" class="btn btn-primary">确认买入申请</button></a>
+
+            <a onclick="window.history.go(-1)"><button type="button" class="btn btn-primary">返回上一步</button></a>
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+
+
+</script>
+
+</body>
+</html>

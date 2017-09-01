@@ -8,8 +8,21 @@
 </head>
 <body class="ovfHiden qiao">
 <div class="panel-body panel-body-shodow">
+    <h2>福利买入提交成功</h2>
+
     <!--内容111-->
     <div class="info_middlebody" style="margin-left: 0">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.提交买入申请"},
+        {"text":"2.确认买入信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"2"
+        })%>
 
 
         <div class="weui_icon_area" style="margin-bottom:0px;">
@@ -20,21 +33,18 @@
         </div>
 
         <div class="success_page">
-            <h2 style="text-align: center;border-bottom: none;margin-bottom: 10px">支付成功</h2>
-            <div>
-                <p><span>订单编号：</span><span>105155312562562</span></p>
-                <p><span>支付金额：</span><span>￥500.00</span></p>
-            </div>
+            <h2 style="text-align: center;border-bottom: none;margin-bottom: 10px">提交成功,系统处理中！</h2>
+
 
             <div class="success_page_pp">
-                <p>订单正在处理中，请妥善保管好此订单号作为查询依据。</p>
+              <p></p>
             </div>
         </div>
 
         <div class="success_page_button">
-            <a href="../welfare_mall/lookup_cards_order.html"><button type="button" class="btn btn-primary">查看订单</button></a>
+            <a href="order_buy.html"><button type="button" class="btn btn-primary">查看订单</button></a>
 
-            <a href="#"><button type="button" class="btn btn-primary">返回商城首页</button></a>
+            <a href="#"><button type="button" class="btn btn-primary">返回首页</button></a>
         </div>
 
     </div>
