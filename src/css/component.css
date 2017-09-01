@@ -613,12 +613,13 @@ input[type=password]{
     margin-right: 20px;
 }
 .control-title div>span:first-child{
-    /*min-width: 70px;*/
     min-width:100px;
     display: inline-block;
     text-align: right;
     line-height: 34px;
 }
+
+
 .control-title-qd div>span:first-child {
     min-width: 85px;
     display: inline-block;
@@ -784,6 +785,16 @@ h2>.staff_import {
    float: none;
     margin-left: 50px;
 }
+
+
+
+@media screen and(max-width: 5000px) {
+    h2>small{
+        font-size: 14px;
+    }
+}
+
+
 /*表格样式*/
 .table-striped>tbody>tr:nth-of-type(odd) {
     background-color: #ecf3fa;
@@ -1320,10 +1331,16 @@ td>a:hover{
     opacity: 0.8
 }
 
+
+
+
 .control-title div>span:last-child{
     display: inline-table;
     vertical-align: middle;
+
 }
+
+
 .control-title-qd div>span:last-child{
     display: inline-table;
     padding-left: 30px;
@@ -4185,5 +4202,55 @@ input[type=file]{
     padding: 10px 0;
     border: none;
     margin-bottom: 20px;
+
+}
+
+td>.download_pasd{
+    position: relative;
+    margin-left: 10px;
+}
+td>.download_pasd:before{
+    content: "";
+   position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -4px;
+    top: 0;
+    border-left: solid 1px #10a6e2;
+    transform: scaleY(0.7);
+
+}
+
+/*福利买入订单查询*/
+
+td>.look,td>.cancle_buy{
+    color:#3498db;
+    cursor: pointer;
+    position: relative;
+    margin: 0 5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+
+.table.table-striped tr td>.look:hover {
+    color: #0a71b7;
+ }
+
+.table.table-striped tr td>.cancle_buy:hover{
+    color: #0a71b7;
+}
+
+td>.cancle_buy:after{
+    content: "";
+    position: absolute;
+    border-left: solid 1px #3498db;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: -5px;
+    transform: scaleY(0.7);
+
 
 }

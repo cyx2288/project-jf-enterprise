@@ -2,6 +2,7 @@
 
   th{
     text-align: center;
+    white-space: nowrap;
   }
  tr{
    text-align: center;
@@ -57,4 +58,30 @@
   margin-top: -10px;
   color: grey;
   margin-right: 20px;
+}
+
+
+
+
+/*修改input组件遗留问题----换行问题*/
+@media screen and(max-width:1150px) {
+  .control-title div>span:last-child{
+    width: calc(~"100% - 100px");
+  }
+}
+@media screen and(max-width:992px) {
+  .control-title div>span:last-child{
+    width: auto;;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .control-title div > span:last-child {
+    width: 100%;
+  }
+}
+@media screen and(max-width:1150px) {
+  .control-title div>span:first-child{
+    text-align: left;
+  }
 }

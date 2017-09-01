@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 function devImg() {
 
-    gulp.src('src/icon/**/*.png')
+    gulp.src('src/icon/**/*.{png,jpg,gif}')
 
         .pipe(cache(imagemin({
 
