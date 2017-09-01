@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利买入页面</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利买入<img src="../../icon/welfare_explain.png" class="welfare_help"></h2>
+
+    <div class="info_middlebody">
+
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.提交买入申请"},
+        {"text":"2.确认买入信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"0"
+        })%>
+
+       <%- include('../../component/welfare_market/buy.ejs')%>
+
+    </div>
+
+
+    <!--服务协议----模态框-->
+    <div class="modal fade"  id="agreement_model" tabindex="-1" aria-labelledby="transfer_agreementLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel" style="text-align: center;font-size: 20px">福利额度买入服务协议</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body agreement">
+                    <!--协议具体内容-->
+                    <div class="agreement_content">
+                        <p class="agreement_content_tilte">1、福利买入订单提交规则</p>
+                        <p>用户确定好需要买入的福利额度、最高买入单价，提交买入申请，薪资账户准备好余额。</p>
+
+
+                        <p class="agreement_content_tilte">2、福利买入订单成交规则</p>
+                        <p>求购单价越高、申请时间越早、系统越优先撮合</p>
+                        <p>成交价格以卖出方单份要价为准，但不高于最高求购单价</p>
+                        <p>成交数量以卖方卖出福利额度为准，但累计不高于求购总额。</p>
+
+
+                        <p class="agreement_content_tilte">3、福利买入订单结束规则</p>
+
+                        <p>求购福利额度全部买入或用户中止继续买入时，买入订单结束，系统不再撮合</p>
+
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--常见问题----模态框-->
+    <div class="modal fade"  id="question_model" tabindex="-1" aria-labelledby="transfer_agreementLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel" style="text-align: center;font-size: 20px">福利买入常见问题</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body agreement">
+                    <!--协议具体内容-->
+                    <div class="agreement_content">
+                        <p class="agreement_content_tilte">Q：福利集市是什么？</p>
+                        <p>福利集市为用户提供福利买卖服务，闲置福利额度可以转让（卖出）到集市，也可以在集市中购买福利额度</p>
+
+
+                        <p class="agreement_content_tilte">Q：怎样买入福利额度？</p>
+                        <p>在福利集市中，通过“我要买入”提交买入委托，系统会撮合买卖双方，自动成交</p>
+
+
+
+                        <p class="agreement_content_tilte">Q：系统怎样撮合买卖？</p>
+
+                        <p>委托的买入单价越高，提交时间越早，系统优先撮合，成交时按卖出方单份要价成交，但数量和单价都不高于买卖方需求。</p>
+
+
+
+                        <p class="agreement_content_tilte">Q：福利买入订单结束规则？</p>
+
+                        <p>买入申请提交后，还没有全部买入成功时，可以在买入订单中中止委托，中止后不再继续，但不影响前面已经成交的买入。</p>
+
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--余额不足----模态框-->
+    <div class="modal fade"  id="balance_model" tabindex="-1" aria-labelledby="transfer_agreementLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title">提交余额不足</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <div class="banlace_less">
+                        <h3>现金账户余额不足</h3>
+
+                        <p>完成买入，预计还需<span>300.00</span>元</p>
+                    </div>
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy">确认</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    //常见问题模态框
+    $('.welfare_help').on('click', function () {
+
+        modelInfo('#question_model'); //参数一：模态框id选择器
+    });
+
+    $('.transfer_agreement').on('click', function () {
+
+        modelInfo('#agreement_model'); //参数一：模态框id选择器
+    });
+
+    $('.buy_btn').on('click', function () {
+
+       // modelInfo('#balance_model'); //参数一：模态框id选择器
+    });
+
+    //提示工具
+   $(".showTips").tooltip();
+
+
+</script>
+
+</body>
+</html>

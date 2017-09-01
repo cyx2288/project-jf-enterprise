@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <h2>福利买入提交成功</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.提交买入申请"},
+        {"text":"2.确认买入信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"2"
+        })%>
+
+
+        <div class="weui_icon_area" style="margin-bottom:0px;">
+            <div class="swal2-icon swal2-success animate"> <span class="line tip animate-success-tip"></span> <span class="line long animate-success-long"></span>
+                <div class="placeholder"></div>
+                <div class="fix"></div>
+            </div>
+        </div>
+
+        <div class="success_page">
+            <h2 style="text-align: center;border-bottom: none;margin-bottom: 10px">提交成功,系统处理中！</h2>
+
+
+            <div class="success_page_pp">
+              <p></p>
+            </div>
+        </div>
+
+        <div class="success_page_button">
+            <a href="order_buy.html"><button type="button" class="btn btn-primary">查看订单</button></a>
+
+            <a href="#"><button type="button" class="btn btn-primary">返回首页</button></a>
+        </div>
+
+    </div>
+    <!--底部按钮-->
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+</body>
+</html>

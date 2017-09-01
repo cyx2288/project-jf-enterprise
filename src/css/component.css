@@ -4220,3 +4220,37 @@ td>.download_pasd:before{
     transform: scaleY(0.7);
 
 }
+
+/*福利买入订单查询*/
+
+td>.look,td>.cancle_buy{
+    color:#3498db;
+    cursor: pointer;
+    position: relative;
+    margin: 0 5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+
+.table.table-striped tr td>.look:hover {
+    color: #0a71b7;
+ }
+
+.table.table-striped tr td>.cancle_buy:hover{
+    color: #0a71b7;
+}
+
+td>.cancle_buy:after{
+    content: "";
+    position: absolute;
+    border-left: solid 1px #3498db;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: -5px;
+    transform: scaleY(0.7);
+
+
+}
