@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/jf_business.css" rel="stylesheet">
+    <link href="../css/jf_business.min.css" rel="stylesheet">
     <title>嘉福企业端登录</title>
 
 </head>
@@ -91,7 +91,10 @@
                                         <div class="input_text_switch red">*输入错误</div>
                                     </label>
                                 </div>-->
+
+                <p class="show_voice_code">收不到验证码？可获取<span class="voice_code"> 语音验证码</span></p>
                 <div class="section_middle_input_check">
+
                     <label class="section_middle_check">
                         <input type="button" value="登录" class="login_button" disabled onclick="window.location.href='business_log_on_confirm.html'">
                     </label>
@@ -138,7 +141,7 @@
 </div>
 <script src="../js/jquery-3.0.0.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/jf_business.min.js"></script>
+<script src="../js/jf_business.js"></script>
 
 
 <script>
@@ -182,6 +185,11 @@
 
     //-------------------input无值状态登录按钮为disabled
     logonInputDisabled ();
+
+
+    document.getElementsByClassName('voice_code')[0].addEventListener('click',function(){
+        jfModelFrame.successModelShow('语音验证码','语言验证码已发送，请注意接听。','');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+    },false)
 
 
 </script>
