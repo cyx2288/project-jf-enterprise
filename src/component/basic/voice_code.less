@@ -1,0 +1,42 @@
+.show_voice_code{
+  text-align: center;
+
+  span{
+    color: #10a6e2;
+    cursor: pointer;
+
+    &:hover{
+      color: #23527c;
+    }
+  }
+}
+
+
+.register_box{
+
+  .show_voice_code{
+
+    padding-right: 2%;
+
+    @media screen and(max-width:1200px) {
+      padding-right: 0;
+      padding-left: 3%;
+    }
+
+    @media screen and(max-width: 992px) {
+      padding-left: 50px;
+      text-align: left;
+    }
+    @media screen and(max-width: 768px) {
+      padding-left: 15%;
+      text-align: left;
+    }
+    @media screen and(max-width: 500px) {
+      padding-left: 0;
+      text-align: center;
+    }
+
+  }
+}
+
+
