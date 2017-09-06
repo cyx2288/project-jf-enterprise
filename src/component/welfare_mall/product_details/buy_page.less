@@ -16,29 +16,51 @@
 
   .picture{
     width: 40%;
+
     margin-right: 40px;
     display: inline-block;
     float: left;
-
-
     @media screen and(max-width: 1200px) {
       width:45%;
+     // height: calc(~"(100vw - 87px)*0.8*0.45");
     }
 
     @media screen and(max-width: 768px) {
       width: 90%;
       margin: 0 auto;
+      //height: calc(~"(100vw - 87px)*0.95*0.9");
     }
     @media screen and(max-width: 500px) {
       width: 100%;
       margin: 0 auto;
+      //height: calc(~"(100vw - 87px)*0.95");
     }
+
+
 
     .main_img{
       width:100%;
+      height: calc(~"(100vw - 87px)*0.8*0.4");
+      max-height: 452px;
       border: solid 1px #e9e9e9;
       position: relative;
       text-align: center;
+
+      @media screen and(max-width: 1200px) {
+        height: calc(~"(100vw - 87px)*0.8*0.45");
+      }
+      @media screen and(max-width:  992px) {
+        height: calc(~"(100vw - 87px)*0.95*0.45");
+      }
+      @media screen and(max-width: 768px) {
+        height: calc(~"(100vw - 87px)*0.95*0.9");
+      }
+      @media screen and(max-width: 500px) {
+
+        height: calc(~"(100vw - 87px)*0.95");
+      }
+
+
       .pic{
         width: 100%;
         max-width: 450px;
@@ -66,6 +88,7 @@
 
         img{
           width: 100%;
+          height: 100%;
         }
 
         &:hover{

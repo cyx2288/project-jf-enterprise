@@ -31,7 +31,7 @@ var WelfareMarketBuy={
 
             document.getElementsByClassName('add')[0].style.cursor = "pointer";
 
-            document.getElementsByClassName('inputele')[0].value = thisValue
+            document.getElementsByClassName('inputele')[0].value = parseFloat(thisValue).toFixed(3)
 
         }
         else if (ele.className.indexOf('add') > -1) {
@@ -50,9 +50,7 @@ var WelfareMarketBuy={
                 ele.style.opacity = "1"
             }
 
-
-
-            document.getElementsByClassName('inputele')[0].value = thisValue;
+            document.getElementsByClassName('inputele')[0].value = parseFloat(thisValue).toFixed(3);
 
             document.getElementsByClassName('reduce')[0].style.opacity = "1";
 
@@ -75,7 +73,7 @@ var WelfareMarketBuy={
 
                 thisValue = 0.001;
 
-                document.getElementsByClassName('inputele')[0].value = thisValue;
+                document.getElementsByClassName('inputele')[0].value = parseFloat(thisValue).toFixed(3);;
 
                 document.getElementsByClassName('reduce')[0].style.opacity = "0.1";
             }
