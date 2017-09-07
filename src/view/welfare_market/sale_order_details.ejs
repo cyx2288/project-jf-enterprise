@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利代卖查询明细</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>福利代卖明细
+        <div>
+            <a href="order_sale.html"><button class="release_record_tabbtn1"><span></span><span>订单记录</span></button></a>
+            <a href=""><button class="release_record_tabbtn22"><span></span><span>订单明细</span></button></a>
+        </div>
+    </h2>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+
+
+        <div class="control-title">
+            <div>
+                <span>批次号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入批次号" >
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+
+        <div class="control-title">
+            <div>
+                <span>明细编号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入明细编号" >
+                </span>
+            </div>
+            <div>
+                <span>代提账号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入代提账号" >
+                </span>
+            </div>
+        </div>
+
+        <!-- 一排多个组件-->
+        <div class="control-title">
+            <div style="width: 100%">
+                <span>订单时间：</span>
+                <span>
+                     <input size="16" type="text"  value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                    至
+                    <input size="16" type="text" value="2016-06-18"  readonly class="form_datetime form-control form-control-zy1" >
+                </span>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span>员工姓名：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入姓名" >
+                </span>
+            </div>
+            <div>
+                <span>状态：</span>
+               <span>
+                    <select class="form-control  form-control-zy ">
+                        <option value="待处理" selected="selected">全部</option>
+                        <option value="待处理">成功</option>
+                        <option value="待处理">失败</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zyone">导出数据</button>
+                </span>
+            </div>
+
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span ></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zyone ">查询</button>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 表格-->
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>批次号</th>
+                <th>明细编号</th>
+                <th>员工姓名</th>
+                <th>代提账号</th>
+                <th>开户银行</th>
+                <th>代提金额（元）</th>
+                <th>服务费（元）</th>
+                <th>总金额（元）</th>
+                <th>处理状态</th>
+                <th>订单时间</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            <tr align="center">
+                <td>1000232232</td>
+                <td>4654695659655</td>
+                <td>葫芦娃</td>
+                <td>516151651</td>
+                <td>工商银行徐汇分行</td>
+                <td>100,000.00</td>
+                <td>100</td>
+                <td>100,100.00</td>
+                <td>成功</td>
+                <td>2016.04.04 19:20:22</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li class="go"><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li class="active"><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">30</a></li>
+            <li class="go"><a href="#">»</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+
+</script>
+</body>
+</html>
