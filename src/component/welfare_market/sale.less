@@ -213,8 +213,316 @@
 .sale_check{
   width: 80%;
   margin: 0 auto;
-
+  @media screen and(max-width: 768px) {
+    width: 90%;
+  }
   .check_details{
-
+    text-align: center;
+    position: relative;
+    padding: 5px 0;
+    margin-bottom: 320px;
+    @media screen and(max-width: 768px) {
+      margin-bottom: 180px;
+    }
+    img {
+      width: 20%;
+      @media screen and(max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  /*******01*******/
+  .check_one {
+    position: absolute;
+    width: 25%;
+    margin-top: -40px;
+    margin-left: 0;
+    @media screen and(max-width: 768px) {
+      width: 100%;
+      margin-top: -15px;
+      margin-left: 0;
+    }
+    p {
+      position: absolute;
+      right: 45px;
+      color: #10a6e2;
+      font-size: 18px;
+      @media screen and(max-width: 768px) {
+        top: 8px;
+        left: 25px;
+      }
+    }
+    img {
+      position: absolute;
+      top: 2px;
+      right: 5%;
+      width: 20px;
+      height: 20px;
+    }
+    .cirlce {
+      position: absolute;
+      top: -25px;
+      right: -25%;
+      display: inline-block;
+      color: white;
+      font-size: 26px;
+      text-align: center;
+      line-height: 65px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: linear-gradient(left, #3ec1dd, #399bde);
+      @media screen and(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        left: 0;
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
+  }
+  .img_one {
+    position: absolute;
+    top: 252px;
+    left: 28%;
+    transform: rotate(15deg);
+    @media screen and(min-width: 1880px) {
+      top: 335px;
+      left: 30%;
+      transform: rotate(5deg);
+    }
+    img {
+      width: 100px;
+      height: 60px;
+      @media screen and(min-width: 1880px) {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  }
+  /*******02*******/
+  .check_two {
+    position: relative;
+    width: 25%;
+    margin-top: 140px;
+    margin-left: 15%;
+    @media screen and(max-width: 768px) {
+      width: 100%;
+      margin-top: 30px;
+      margin-left: 0;
+    }
+    p {
+      position: absolute;
+      color: #10a6e2;
+      font-size: 18px;
+      top: 5px;
+      right: 50px;
+      @media screen and(max-width: 768px) {
+        left: 75px;
+        top: 8px;
+      }
+    }
+    img {
+      position: absolute;
+      top: 8px;
+      right: 5%;
+      width: 20px;
+      height: 20px;
+    }
+    .cirlce {
+      position: absolute;
+      top: -65px;
+      right: -15%;
+      display: inline-block;
+      color: white;
+      font-size: 26px;
+      text-align: center;
+      line-height: 65px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: linear-gradient(left, #3ec1dd, #399bde);
+      animation: keyFrame 1s infinite .5s linear ;
+      transform: tranlate3d(0,0,0);
+      @media screen and(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        left: 0;
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
+  }
+  .img_two {
+    position: absolute;
+    top: 345px;
+    left: 44%;
+    @media screen and(min-width: 1880px) {
+      top: 445px;
+      left: 44%;
+    }
+    img {
+      width: 120px;
+      height: 20px;
+      @media screen and(min-width: 1880px) {
+        width: 180px;
+        height: 30px;
+      }
+    }
+  }
+  /*******03*******/
+  .check_three {
+    position: relative;
+    width: 25%;
+    margin-top: 140px;
+    margin-left: 60%;
+    @media screen and(max-width: 768px) {
+      position: relative;
+      width: 100%;
+      margin-top: 70px;
+      margin-left: 0;
+    }
+    p {
+      position: absolute;
+      color: #10a6e2;
+      font-size: 18px;
+      top: 5px;
+      @media screen and(max-width: 768px) {
+        left: 75px;
+        top: 8px;
+      }
+    }
+    img {
+      position: absolute;
+      top: 8px;
+      left: 120px;
+      width: 20px;
+      height: 20px;
+    }
+    .cirlce {
+      position: absolute;
+      top: -65px;
+      left: -15%;
+      display: inline-block;
+      color: white;
+      font-size: 26px;
+      text-align: center;
+      line-height: 65px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: linear-gradient(left, #3ec1dd, #399bde);
+      @media screen and(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        left: 0;
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
+  }
+  .img_three {
+    position: absolute;
+    top: 248px;
+    left: 62%;
+    transform: rotate(-20deg);
+    @media screen and(min-width: 1880px) {
+      top: 325px;
+      left: 60%;
+      transform: rotate(-5deg);
+    }
+    img {
+      width: 100px;
+      height: 60px;
+      @media screen and(min-width: 1880px) {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  }
+  /*******04*******/
+  .check_four {
+    position: relative;
+    width: 25%;
+    margin-top: -180px;
+    margin-left: 75%;
+    @media screen and(max-width: 768px) {
+      width: 100%;
+      margin-top: 110px;
+      margin-left: 0;
+    }
+    p {
+      position: absolute;
+      left: 5%;
+      color: #10a6e2;
+      font-size: 18px;
+      @media screen and(max-width: 768px) {
+        left: 30%;
+        top: 8px;
+      }
+    }
+    img {
+      position: absolute;
+      top: 2px;
+      left: 135px;
+      width: 20px;
+      height: 20px;
+    }
+    .cirlce {
+      position: absolute;
+      top: -25px;
+      left: -25%;
+      display: inline-block;
+      color: white;
+      font-size: 26px;
+      text-align: center;
+      line-height: 65px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: linear-gradient(left, #3ec1dd, #399bde);
+      @media screen and(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        left: 0;
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
   }
 }
+/* animation: keyFrame 1s infinite .5s linear ;
+ transform: tranlate3d(0,0,0);*/
+
+/*    @keyframes keyFrame
+    {
+      0% {
+        transform: translate3d(-100px,-100px,0);
+      }
+
+      20%{
+        transform: translate3d(-90px,-82px,0);
+
+      }
+
+      40%{
+        transform: translate3d(-80px,-55px,0);
+      }
+
+      60%{
+        transform: translate3d(-60px,-35px,0);
+      }
+
+      80%{
+        transform: translate3d(-30px,-18px,0);
+      }
+
+      100% {
+        transform: translate3d(0,0,0);
+      }
+    }
+*/
