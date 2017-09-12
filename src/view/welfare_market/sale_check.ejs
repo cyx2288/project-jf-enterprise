@@ -14,9 +14,17 @@
     <div class="info_middlebody">
 
         <%- include('../../component/welfare_market/sale_check.ejs')%>
-
+        <!--代卖福利明细-->
+        <%- include('../../component/welfare_market/check_box.ejs')%>
 
     </div>
+
+    <div class="success_page_button" style="margin-top: 50px">
+        <a href="../pay_info_success/pay_details.html"><button type="button" class="btn btn-primary">确认发放</button></a>
+
+        <a onclick="window.history.go(-1)"><button type="button" class="btn btn-primary">取消</button></a>
+    </div>
+
 </div>
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
