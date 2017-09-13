@@ -131,6 +131,7 @@ section .section_middle_input form > div {
 }
 .show_voice_code{
     text-align: center;
+    color: gray;
 }
 
 
