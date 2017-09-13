@@ -1,0 +1,56 @@
+/************/
+.check_box {
+  width: 15%;
+  position: absolute;
+  top: 500px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border: 1px #10a6e2 dashed;
+  border-radius: 5px;
+  @media screen and(max-width: 768px) {
+    width: 60%;
+    position: absolute;
+    top: 300px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  @media screen and(min-width: 1880px) {
+    width: 20%;
+    position: absolute;
+    top: 600px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  .sell_welfare {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px #10a6e2 solid;
+    p {
+      color: #4a4a4a;
+      font-size: 14px;
+      margin: 0;
+      padding: 5px 0;
+      &:nth-child(1) {
+        padding-left: 10px;
+      }
+      &:nth-child(2) {
+        padding-right: 10px;
+      }
+    }
+  }
+  .sell_welfare_details {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    p {
+      color: #10a6e2;
+      font-size: 14px;
+      margin: 0;
+      padding: 5px 0;
+    }
+  }
+}
