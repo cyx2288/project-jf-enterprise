@@ -80,14 +80,8 @@
                         </div>
                     </div>
 
-                    <div class="smodal_content">
-                        <div class=" info_content">
-                           <p class="pay_model_pp">
-                               如果收不到验证码，请拨打 <span style="color: #3498db;">400-821-6990</span>
-                           </p>
+                    <%- include('../../component/basic/voice_code.ejs')%>
 
-                        </div>
-                    </div>
 
                     <!-- footer -->
                     <div class="modal-footer">
@@ -113,6 +107,12 @@
     $('button.getmessage').on('click', function () {
         getmessage(this,60);//参数表示选择的该元素
     });
+</script>
+<script>
+    //语言验证码
+    document.getElementsByClassName('voice_code')[0].addEventListener('click',function(){
+        jfModelFrame.successModelShow('语音验证码','语言验证码已发送，请注意接听。','');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+    },false)
 </script>
 
 

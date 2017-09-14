@@ -22,7 +22,7 @@
             <div class="content">
                 <div>
                 <button class="btn reduce" data-toggle="tooltip">—</button>
-                <input class="form-control inputele" value="0.998" max-price="0.998"/>
+                <input class="form-control inputele" value="0.998" max-price="0.998" type="tel" maxlength="5"/>
                 <button class="btn add" data-toggle="tooltip">+</button>
                 </div>
             <div>
@@ -104,5 +104,7 @@
     document.getElementsByClassName('inputele')[0].addEventListener('keyup',function(){//手动输入，不能超过最大数量（max-data），不能等于0，默认为1
         WelfareMarketBuy.changePrice(this)
     },false);
+
+
 
 </script>

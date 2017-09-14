@@ -81,6 +81,10 @@ var welfareMallBuy={
                 document.getElementsByClassName('add')[0].style.opacity = "1";
 
                 document.getElementsByClassName('reduce')[0].style.opacity = "1";
+
+                document.getElementsByClassName('add')[0].style.cursor = "pointer";
+
+                document.getElementsByClassName('reduce')[0].style.cursor = "pointer";
             }
 
         }

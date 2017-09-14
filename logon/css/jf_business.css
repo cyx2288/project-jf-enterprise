@@ -125,6 +125,23 @@ section .section_middle_input form > div {
     box-sizing: content-box;
 }
 
+
+.jf_business_logon_confirm .show_voice_code{
+    padding-left:40px;
+}
+.show_voice_code{
+    text-align: center;
+    color: gray;
+}
+
+
+.show_voice_code>span{
+    color: #10a6e2;
+    cursor: pointer;
+}
+.show_voice_code>span:hover{
+     color: #23527c;
+ }
 section .section_middle_input form > div.section_middle_input_check {
     height: 66px;
     padding: 0;
@@ -832,7 +849,7 @@ footer .footer_right {
         background-size: 100% 106%;
         background-position: top center;
         background-repeat: no-repeat;
-        height: 570px;
+        height: 600px;
     }
 
     section .scetion_top_rope {
@@ -1157,6 +1174,10 @@ footer .footer_right {
     section form > div .input_text_switch{
         top: 0;
         font-size: 12px;
+    }
+
+    .show_voice_code{
+       font-size: 12px;
     }
 }
 
@@ -1790,6 +1811,12 @@ section.business_logon_confirm .section_middle_button span {
         height: 20px;
         margin-top: 5px;
     }
+
+    .jf_business_logon_confirm .show_voice_code{
+        padding-left:100px;
+        text-align: left;
+
+    }
 }
 
 @media screen and (max-width: 769px) {
@@ -1852,6 +1879,11 @@ section.business_logon_confirm .section_middle_button span {
     section.business_logon_confirm .swiper-slide{
         width: 100%;
         height: 100%;
+    }
+
+    .jf_business_logon_confirm .show_voice_code{
+        padding-left:0;
+        text-align: left;
     }
 }
 
@@ -2116,3 +2148,63 @@ section.business_logon_confirm .section_middle_button span {
     opacity: 0.5;
 }
 
+/*
+!*嘉福平台通用UI*!
+a {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+#tip_toast {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: calc(8vh);
+    z-index: 1000;
+    opacity: 0;
+    -webkit-animation: opacity_change 2s linear both;
+    animation: opacity_change 2s linear both;
+}
+#tip_toast.tip_input {
+    bottom: calc(55vh);
+}
+#tip_toast span {
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    max-width: calc(65vw);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+@-webkit-keyframes opacity_change {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes opacity_change {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}*/
