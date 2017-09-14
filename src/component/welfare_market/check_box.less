@@ -1,39 +1,33 @@
-/************/
-.check_box {
-  width: 15%;
-  position: absolute;
-  top: 500px;
-  right: 0;
-  left: 0;
-  margin: auto;
-  border: 1px #10a6e2 dashed;
+
+
+.sale_check_page.check_box {
+  width: 40%;
+  margin: 50px auto 20px ;
+  border: 1.5px #a5d2f3 dashed;
   border-radius: 5px;
   @media screen and(max-width: 768px) {
+    margin:20px auto 20px ;
     width: 60%;
-    position: absolute;
-    top: 300px;
-    right: 0;
-    left: 0;
-    margin: auto;
   }
-  @media screen and(min-width: 1880px) {
-    width: 20%;
-    position: absolute;
-    top: 600px;
-    right: 0;
-    left: 0;
-    margin: auto;
+  @media screen and(max-width: 500px) {
+    width: 100%;
   }
+
   .sell_welfare {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px #10a6e2 solid;
+    border-bottom: 1px #a5d2f3 solid;
     p {
+      float: left;
+      &:after{
+        content: "";
+        clear: both;
+      }
       color: #4a4a4a;
       font-size: 14px;
       margin: 0;
-      padding: 5px 0;
+      padding: 10px 0;
       &:nth-child(1) {
         padding-left: 10px;
       }
@@ -46,11 +40,13 @@
     width: 100%;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
+
     p {
       color: #10a6e2;
-      font-size: 14px;
+      font-size: 16px;
       margin: 0;
-      padding: 5px 0;
+      padding: 10px 0;
     }
   }
 }
