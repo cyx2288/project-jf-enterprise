@@ -28,7 +28,7 @@ $(document).ready(function(){
 
         var thisElectWidth=$(thisSelect[i]).width()
 
-        if(thisElectWidth=="299"){
+        if(thisElectWidth>="299"){
 
             $(thisSelect[i]).next('span').addClass('move_triangle')
         }
@@ -1275,3 +1275,48 @@ var drawChar = {
     }
 
 };
+
+
+/*福利发放页面*/
+function calcNum(e){
+
+    var thischoosedNum=$('.choosed_num').text();//显示已选员工数
+
+    var thisTotalNum=$('.total_num').text();//可选总数
+
+    if($(this).is(":checked")){
+
+        if(parseFloat(thischoosedNum) < parseFloat(thisTotalNum)){
+
+            thischoosedNum++;
+
+            $('.choosed_num').text(changeValue(thischoosedNum))
+
+        }else{
+
+            e.preventDefault();//阻止选中行为
+        }
+
+    }else {
+        thischoosedNum--;
+
+        $('.choosed_num').text(changeValue(thischoosedNum))
+    }
+
+
+
+    function changeValue(num) { //循环 小于等于1的时候永远为1，反之为他本身的值
+
+
+        if (num <= 0 || !num) {
+
+            return 0;
+        }
+        else {
+
+            return num;
+
+        }
+
+    }
+}

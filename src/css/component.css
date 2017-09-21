@@ -164,6 +164,12 @@ h2>div>button>span{
     display: none;
 }
 
+h2 .show_details{
+    font-size: 16px;
+    color: #10a6e2;
+    margin-right: 20px;;
+}
+
 /*中间内容部分以及部分模态框1组件*/
 #Account_page{
     margin-left: 32%;
@@ -210,6 +216,9 @@ h2>div>button>span{
     position: relative;;
 }
 .info_content>span>.add_star{
+    color: red;
+}
+.add_redstar{
     color: red;
 }
 
@@ -328,6 +337,17 @@ input[type=password]{
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 }
 
+.basic_info .company_help{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+}
+
+.basic_info .company_help:hover{
+    cursor: pointer;
+}
+
 /* 收银台页面*/
 
 .info_content>span>label{
@@ -444,6 +464,7 @@ input[type=password]{
     position: absolute;
     right: 10px;
     right: 12px\9;
+    display: none\9;
     top:0;
     height: 34px;
     line-height: 34px;
@@ -453,7 +474,8 @@ input[type=password]{
     z-index: 1;
 }
 .select-input .move_triangle{
-    right: 60px;
+    right: 90px;
+    display: none\9;
 }
 
 .btn-group-11{
@@ -483,6 +505,26 @@ input[type=password]{
     color: #fff;
     border: 0
 }
+
+@media screen and (min-width:1200px) {
+    .submitorder_btn{
+        margin-right: 30px;
+        margin-left: -10px;
+    }
+}
+
+
+
+@media screen and (max-width:1200px) and (min-width:992px ) {
+    .submitorder_btn{
+        margin-left: -50px;
+        margin-right: 30px;
+
+    }
+}
+
+
+
 .staff_import_downbtn{
     margin-left:37px;
     background: RGB(241,241,241);
@@ -571,12 +613,13 @@ input[type=password]{
     margin-right: 20px;
 }
 .control-title div>span:first-child{
-    /*min-width: 70px;*/
     min-width:100px;
     display: inline-block;
     text-align: right;
     line-height: 34px;
 }
+
+
 .control-title-qd div>span:first-child {
     min-width: 85px;
     display: inline-block;
@@ -587,7 +630,7 @@ input[type=password]{
     width: 157px;
     display: inline-block;
     height: 34px;
-    padding: 6px 0;
+    padding: 6px 0 6px 2px;
 }
 .form-inline {
     display: inline-block;
@@ -598,7 +641,7 @@ input[type=password]{
     width: 157px;
     height: 34px;
     display: inline-block;
-    padding: 6px 1px;
+    padding: 6px 2px;
 }
 .form-control-qd{
     width: 160px;
@@ -730,6 +773,10 @@ input[type=password]{
 .pay_model_pp>input{
     margin:  0 auto;
 }
+
+.pay_model_pp>img{
+    width: 85%;
+}
 h2>.staff_import .lookup_btn2{
     background-color: #337ab7;
 }
@@ -738,6 +785,16 @@ h2>.staff_import {
    float: none;
     margin-left: 50px;
 }
+
+
+
+@media screen and(max-width: 5000px) {
+    h2>small{
+        font-size: 14px;
+    }
+}
+
+
 /*表格样式*/
 .table-striped>tbody>tr:nth-of-type(odd) {
     background-color: #ecf3fa;
@@ -757,6 +814,18 @@ th {
 }
 td {
     word-break: keep-all;/*必须*/
+}
+
+td>a{
+  cursor: pointer;
+}
+
+td>p{
+    cursor: pointer;
+    color: #23527c;
+}
+td>a:hover{
+    text-decoration: none;
 }
 
 /* 分页样式 */
@@ -1262,10 +1331,16 @@ td {
     opacity: 0.8
 }
 
+
+
+
 .control-title div>span:last-child{
     display: inline-table;
     vertical-align: middle;
+
 }
+
+
 .control-title-qd div>span:last-child{
     display: inline-table;
     padding-left: 30px;
@@ -1386,8 +1461,8 @@ td {
     margin-left: 1em;
 }
 
-
-/*首页*/
+/*
+!*旧版首页*!
 .top_concent_qd{
     width: 100%;
     margin: 0 auto;
@@ -1400,7 +1475,7 @@ td {
     width: 24.5%;
 }
 .top_concent_qd span div{
-    /*min-width:230px;*/
+    !*min-width:230px;*!
     margin-bottom: 10px;
 }
 .top_concent_qd span div:first-child{
@@ -1422,7 +1497,7 @@ td {
     width: 95%;
     height: 70px;
     position: absolute;
-    /* position: relative; */
+    !* position: relative; *!
     bottom: 5px;
     left: 0;
     display: block;
@@ -1432,7 +1507,7 @@ td {
     width: 20%;
     height: 20px;
     position: absolute;
-    /* position: relative; */
+    !* position: relative; *!
     bottom: 30%;
 	left: 90%;
     display: block;
@@ -1491,7 +1566,7 @@ td {
 }
 
 .homepage_img{
-    /*display: inline-block;*/
+    !*display: inline-block;*!
     width: 43%;
     height: 100%;
     text-align: center;
@@ -1557,9 +1632,9 @@ td {
 
 }
 .homepage_lists{
-   /* display: inline-block;*/
+   !* display: inline-block;*!
     width: 57%;
-    /*margin: 0 auto;*/
+    !*margin: 0 auto;*!
     text-align: center;
 }
 .homepage_lists_title{
@@ -1593,7 +1668,7 @@ td {
 .homepage_lists_items ul li a{
      color: #3498db;
      font-size: 16px;
- }
+ }*/
 
 
 input[type=file]{
@@ -2996,6 +3071,8 @@ input[type=file]{
         margin-top: 5px;
         width: 100%
     }
+
+
     .look_details{
         width: 100%;
     }
@@ -3083,7 +3160,7 @@ input[type=file]{
         display: block;
     }
 
-    .homepage_bigbox {
+    /*.homepage_bigbox {
         display: block;
         width: 100%;
     }
@@ -3108,7 +3185,7 @@ input[type=file]{
     }
     .homepage_mid>div:nth-child(2) {
         margin: 0;
-    }
+    }*/
     .fail_page_button>a>button{
         margin-right: 20px;
         width: 100%;
@@ -4125,5 +4202,55 @@ input[type=file]{
     padding: 10px 0;
     border: none;
     margin-bottom: 20px;
+
+}
+
+td>.download_pasd{
+    position: relative;
+    margin-left: 10px;
+}
+td>.download_pasd:before{
+    content: "";
+   position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -4px;
+    top: 0;
+    border-left: solid 1px #10a6e2;
+    transform: scaleY(0.7);
+
+}
+
+/*福利买入订单查询*/
+
+td>.look,td>.cancle_buy{
+    color:#3498db;
+    cursor: pointer;
+    position: relative;
+    margin: 0 5px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+
+.table.table-striped tr td>.look:hover {
+    color: #0a71b7;
+ }
+
+.table.table-striped tr td>.cancle_buy:hover{
+    color: #0a71b7;
+}
+
+td>.cancle_buy:after{
+    content: "";
+    position: absolute;
+    border-left: solid 1px #3498db;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: -5px;
+    transform: scaleY(0.7);
+
 
 }

@@ -11,7 +11,9 @@
     <h2 class="hometitle">
         <img src="../../icon/icon_homepage.png">
         <p>你好，上海淘略数据处理有限公司</p>
-        <a onclick="window.parent.jfPageJump('基本信息','go_certificate')"><img src="../../icon/v2.png">未认证<span class="go_certificate">立刻认证</span></a></h2>
+        <span>（识别号:<span>15855dfdsf</span>）</span>
+        <a onclick="window.parent.jfPageJump('基本信息','go_certificate')"><img src="../../icon/v2.png">未认证<span class="go_certificate">立刻认证</span></a>
+    </h2>
     <div class="homepage_content">
 
         <div class="homepage_left">
@@ -37,13 +39,28 @@
                 <div class="main_title">
                     <div><img src="../../icon/icon_balance.png"></div>
                     <div>
-                        <p>企业账户余额（元）</p>
+                        <p>福利账户余额（元）</p>
                         <p>12,263,895.00</p>
                     </div>
                 </div>
 
                 <div class="main_btn">
-                    <button class="btn btn-default" onclick="window.parent.selectLeftTab('企业充值明细')">充值</button>
+                    <button class="btn btn-default" onclick="window.parent.selectLeftTab('账户充值')">充值</button>
+                </div>
+            </div>
+
+            <!--企业账户余额-->
+            <div>
+                <div class="main_title">
+                    <div><img src="../../icon/icon_balance.png"></div>
+                    <div>
+                        <p>现金账户余额（元）</p>
+                        <p>12,263,895.00</p>
+                    </div>
+                </div>
+
+                <div class="main_btn">
+                    <button class="btn btn-default cash_recharge">充值</button>
                 </div>
             </div>
             <!--理财持有总额-->
@@ -63,7 +80,7 @@
             </div>
 
             <!--累计充值余额-->
-            <div>
+            <!--<div>
                 <div class="main_title">
                     <div><img src="../../icon/icon_recharge.png"></div>
                     <div>
@@ -72,7 +89,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div>-->
             
             
         </div>
@@ -143,15 +160,39 @@
                 </div>
             </div>
 
+            <!--福利集市-->
+            <div>
+                <div class="main_menu_title">
+                    <p>福利集市</p>
+                    <p>福利买卖、成交快</p>
+                </div>
+                <div class="main_menu_content">
+                    <div>
+                        <img src="../../icon/icon_company_welfare.png">
+                    </div>
+
+                    <ul>
+                        <li>福利买入</li>
+                        <li>福利买入查询</li>
+                        <li>福利代卖</li>
+                        <li>福利代卖查询</li>
+                    </ul>
+
+
+                </div>
+            </div>
+
         </div>
 
     </div>
+
 
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
 <script>
 
+    /*页面间跳转*/
     $('.main_menu_content li ').on('click',function () {
 
         var thisInnerHtml=$(this).html().replace(/\s/g,"");
@@ -159,6 +200,9 @@
         window.parent.selectLeftTab(thisInnerHtml);//选中左边对应目录的方法
 
     })
+
+
+
 
 </script>
 </body>

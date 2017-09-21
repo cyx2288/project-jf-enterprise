@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>确认订单信息</h2>
+
+    <!--收货地址列表-->
+    <div class="choose_address">
+        <p>选择收货地址</p>
+       <%-include('../../component/welfare_mall/check_order/default_address.ejs')%>
+
+        <%-include('../../component/welfare_mall/check_order/address.ejs')%>
+
+        <%-include('../../component/welfare_mall/check_order/address.ejs')%>
+
+        <%-include('../../component/welfare_mall/check_order/address.ejs')%>
+        <%-include('../../component/welfare_mall/check_order/address.ejs')%>
+
+        <%-include('../../component/welfare_mall/check_order/add_address.ejs')%>
+    </div>
+
+
+    <!--商品订单列表-->
+    <%-include('../../component/welfare_mall/check_order/product_table.ejs')%>
+
+
+    <div class="check_bottom">
+        <p>
+            <span>运费：</span>
+            <span>￥0.00</span>
+        </p>
+        <div class="order_info">
+            <p>
+                <span>订单总金额（含运费）</span>
+                <span class="price">￥60000.00</span>
+            </p>
+            <p>
+                <span>寄送至：</span>
+                <span>上海市徐汇区虹桥路808号上海家化商务中心D5栋3楼</span>
+            </p>
+            <p>
+                <span>收货人：</span>
+                <span>孙悟空</span>
+                <span>15236589654</span>
+            </p>
+        </div>
+
+        <div class="submit_order">
+            <a href="../pay_info_fail/pay_fail.html">提交订单</a>
+        </div>
+    </div>
+
+
+
+
+
+    <!--删除地址模态框-->
+    <div class="modal fade"  id="delete_address_modal" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">删除地址</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+
+                    <h2 class="delete_title">您确认要删除这条地址信息吗？</h2>
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy delete_address">确认</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--新增地址模态框-->
+    <div class="modal fade"  id="add_address_modal" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">新增地址</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"收件人",
+                    "placeholder":"请输入"
+                    })%>
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"联系电话",
+                    "placeholder":"请输入电话号码"
+                    })%>
+
+                    <%- include('../../component/select/twoSelect.ejs',{
+                    "title":"所在地区",
+                    "placeholderone":"请选择",
+                    "placeholdertwo":"请选择",
+                    "optionone":[
+                    {"option":"上海"},
+                    {"option":"江苏"},
+                    {"option":"浙江"},
+                    {"option":"北京"},
+                    {"option":"重庆"},
+                    {"option":"天津"},
+                    {"option":"安徽"},
+                    ],
+                    "optiontwo":[
+                    {"option":"徐汇"},
+                    {"option":"闵行"},
+                    {"option":"浦东"},
+                    {"option":"宝山"},
+                    {"option":"虹口"},
+                    {"option":"静安"},
+                    {"option":"黄埔"},
+                    ],
+
+                    })%>
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"详细地址",
+                    "placeholder":"请输入具体地址"
+                    })%>
+                    <div style="margin-top: -20px">
+                        <%- include('../../component/input/oneRadioBox.ejs',{
+                        "title":"",
+                        "text":"设为默认地址",
+                        "thistype":"checkbox"
+                        })%>
+                    </div>
+
+                    <!--
+                    <div style="margin-top: -25px;">
+                        <div class="smodal_content">
+                            <div class="info_content modal22">
+                                <span></span>
+                                <span>已经保存了<span>3</span>条企业地址，还能保存<span>3</span>条</span>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 add_address_close">保存</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--修改地址模态框-->
+    <div class="modal fade"  id="modify_address_modal" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">修改地址</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"收件人",
+                    "placeholder":"请输入"
+                    })%>
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"联系电话",
+                    "placeholder":"请输入电话号码"
+                    })%>
+
+                    <%- include('../../component/select/twoSelect.ejs',{
+                    "title":"所在地区",
+                    "placeholderone":"请选择",
+                    "placeholdertwo":"请选择",
+                    "optionone":[
+                    {"option":"上海"},
+                    {"option":"江苏"},
+                    {"option":"浙江"},
+                    {"option":"北京"},
+                    {"option":"重庆"},
+                    {"option":"天津"},
+                    {"option":"安徽"},
+                    ],
+                    "optiontwo":[
+                    {"option":"徐汇"},
+                    {"option":"闵行"},
+                    {"option":"浦东"},
+                    {"option":"宝山"},
+                    {"option":"虹口"},
+                    {"option":"静安"},
+                    {"option":"黄埔"},
+                    ],
+
+                    })%>
+
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"详细地址",
+                    "placeholder":"请输入具体地址"
+                    })%>
+                    <div style="margin-top: -25px">
+                        <%- include('../../component/input/oneRadioBox.ejs',{
+                        "title":"",
+                        "text":"设为默认地址",
+                        "thistype":"checkbox"
+                        })%>
+                    </div>
+
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 modify_address_close">保存</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    //选择地址
+    $('.address_list').not('.add_address').on("click",function(){//选中样式有calss-choosed控制
+
+        $(this).addClass('choosed');
+
+        $(this).siblings('.address_list').removeClass('choosed')
+    })
+
+
+
+    //删除地址模态框
+    $('.delete').on("click",function(e){//点击按钮cass值
+
+        var thisEle=$(this);
+
+        var thisParEle=thisEle.parents('.address_list')
+
+        e.stopPropagation()
+
+        //模态框出现的方法
+        modelInfo('#delete_address_modal'); //参数：模态框id选择器
+
+        $('.delete_address').on("click",function(){//点击删除按钮，模态框隐藏，并且删除地址
+
+            $(this).parents('.modal').modal('hide');//模态框隐藏
+
+            thisParEle.remove();//删除地址
+
+        })
+    })
+
+
+    //新增地址模态框
+    $('.add_address').on("click",function(){
+        modelInfo('#add_address_modal'); //参数：模态框id选择器, //模态框出现的方法
+    })
+
+
+    //修改地址模态框
+    $('.edit').on("click",function(e){
+
+        e.stopPropagation()
+
+        //模态框出现的方法
+        modelInfo('#modify_address_modal'); //参数：模态框id选择器
+    })
+
+</script>
+
+</body>
+</html>

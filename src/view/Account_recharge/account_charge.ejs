@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>账户充值</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody">
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.录入充值信息"},
+        {"text":"2.核对充值信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"0"
+        })%>
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span>充值账户：</span>
+                <span>
+                    <span class="radio_boxs">
+                         <label>
+                             <input type="radio" name="account" checked>福利账户
+                         </label>
+                       <img class="tooltip-test" src="../../icon/icon_help.png" class="welfare_account" title="企业可以使用该账户给员工的福利账户充值。员工福利账户可以购买福利商品" data-toggle="tooltip">
+                    </span>
+                    
+                    <span class="radio_boxs not_choose">
+                        <label>
+                            <input type="radio" name="account" disabled>现金账户
+                        </label>
+                        <img class="tooltip-test" src="../../icon/icon_help.png" title="企业可以使用该账户给员工的现金账户充值。员工现金账户可以购买福利商品和提现" data-toggle="tooltip">
+                    </span>
+                    
+
+
+                </span>
+            </div>
+        </div>
+
+        <%- include('../../component/input/addstarinput.ejs',{
+            "title":"充值金额（元）：",
+            "placeholder":"请输入金额"
+
+        })%>
+
+        <%- include('../../component/input/changetext.ejs',{
+            "title":"服务费率：",
+            "content":"6%"
+        })%>
+
+        <%- include('../../component/input/changetext.ejs',{
+        "title":"服务费：",
+        "content":"600"
+        })%>
+
+
+
+        <%- include('../../component/input/input_wrong_info.ejs',{
+        "title":"付款金额（元）：",
+        "basicinfo":"10,000.00"
+        })%>
+
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span><span class="add_star">*</span>付款方：</span>
+                <span>
+
+
+<div class="payer cards">
+
+    <div class="bank choosed">
+        <div class="bank_title">
+            <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司嘉付宝信息技术有限公司嘉付宝信息技术有限公司</span></p></div>
+        </div>
+        <div class="bank_value">
+            <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+            <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+        </div>
+    </div>
+
+
+
+    <div class="bank ">
+        <div class="bank_title">
+            <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司</span></p></div>
+        </div>
+        <div class="bank_value">
+            <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+            <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行光大银行浦东支行光大银行浦东支行</span></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="bank ">
+        <div class="bank_title">
+            <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司</span></p></div>
+        </div>
+        <div class="bank_value">
+            <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+            <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+        </div>
+    </div>
+
+    <div class="bank ">
+        <div class="bank_title">
+            <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司</span></p></div>
+        </div>
+        <div class="bank_value">
+            <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+            <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="bank_add bank">
+        <div class="add_text">
+            <span>+</span>添加银行账户
+        </div>
+
+    </div>
+
+
+
+</div>
+
+                </span>
+            </div>
+        </div>
+
+
+
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span><span class="add_star">*</span>收款方：</span>
+                <span>
+
+
+      <!--收款方-->
+
+        <div class="collected cards">
+
+            <div class="bank choosed">
+                <div class="bank_title">
+                    <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司嘉付宝信息技术有限公司嘉付宝信息技术有限公司</span></p></div>
+                </div>
+                <div class="bank_value">
+                    <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+                    <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行</span></div>
+                </div>
+            </div>
+
+
+
+            <div class="bank ">
+                <div class="bank_title">
+                    <div class="text"><p><span>银行户名：</span><span>嘉付宝信息技术有限公司</span></p></div>
+                </div>
+                <div class="bank_value">
+                    <div class="number"><span>银行账号：</span><span>6222 8148 6215 0076 </span></div>
+                    <div class="account_number"><span>银行名称：</span><span>光大银行浦东支行光大银行浦东支行光大银行浦东支行</span></div>
+                </div>
+            </div>
+
+
+
+        </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span></span>
+                <span>
+         充值成功后，如需发票，请联系您的咨询顾问，可选发票内容为：服务费、福利费、代理服务费等
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <%- include('../../component/button/oneButton.ejs',{
+        "buttontext":"下一步",
+        "thisurl":"checkorder.html"
+        })%>
+
+
+
+        <!--用户名-->
+
+    </div>
+    <!--底部按钮-->
+</div>
+
+<!--模态框1-添加银行账户-->
+<div class="modal fade" id="addbankcard_modal" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="account_pasdxiugaiLabel">添加银行账户</h4>
+            </div>
+            <!-- body-->
+            <div class="modal-body">
+                <!--模态框组件-->
+                <%- include('../../component/input/input_info.ejs',{
+                "title":"账户名",
+                "basicinfo":"小丁农场",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/input/normalOneInput.ejs',{
+                "title":"银行账号",
+                "placeholder":"请输入银行账号",
+                })%>
+
+                <!--模态框组件-->
+                <%- include('../../component/input/normalOneInput.ejs',{
+                "title":"银行名称",
+                "placeholder":"请输入银行名称",
+                })%>
+
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.js"></script>
+<script>
+
+    //提示符
+    $("[data-toggle='tooltip']").tooltip()
+
+
+
+    //选择收款方以及付款方
+    $('.collected,.payer').find('.bank').not('.bank_add').on("click",function(){//选中样式有calss-choosed控制
+
+        $(this).addClass('choosed');
+
+        $(this).siblings('.bank').removeClass('choosed')
+    })
+
+
+
+    //添加银行卡模态框
+
+    $('.bank_add').on("click",function () {
+
+        //添加银行卡模态框出现的方法
+        modelInfo('#addbankcard_modal')///模态框的ID值
+
+    })
+
+
+</script>
+</body>
+</html>
