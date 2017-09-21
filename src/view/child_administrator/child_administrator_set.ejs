@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>子管理员设置</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>子管理员设置
+
+        <div class="staff_import">
+            <a href="Staff_import.html"><button type="button" class="btn btn-primary lookup_btn2">添加子管理员</button></a>
+        </div>
+    </h2>
+
+    <!-- 表格-->
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>状态</th>
+                <th>所属权限</th>
+                <th>操作</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>小王</td>
+                <td>13956997856</td>
+                <td>未激活</td>
+                <td>员工查询、员工导入、福利分配导入</td>
+                <td><span class="modify_address_btn">编辑</span> | <span class="delete_address_btn">权限</span></td>
+            </tr>
+            <tr>
+                <td>小王</td>
+                <td>13956997856</td>
+                <td>关闭</td>
+                <td>VIP卡回收、VIP卡回收查询、企业转账、企业充值明细</td>
+                <td><span class="modify_address_btn">编辑</span> | <span class="delete_address_btn">权限</span></td>
+            </tr>
+            <tr>
+                <td>小王</td>
+                <td>13956997856</td>
+                <td>启用</td>
+                <td>全部</td>
+                <td><span class="modify_address_btn">编辑</span> | <span class="delete_address_btn">权限</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--编辑模态框-->
+    <div class="modal fade"  id="modify_address_modal" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">编辑子管理员</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!--模态框组件-->
+                    <%- include('../../component/modal/modal_info.ejs',{
+                    "title":"姓名：",
+                    "basicinfo":"老李",
+                    })%>
+
+                    <!--模态框组件-->
+                    <%- include('../../component/modal/modal_info.ejs',{
+                    "title":"手机号：",
+                    "basicinfo":"15269382356",
+                    })%>
+
+                    <!--模态框组件-->
+                    <%- include('../../component/select/normalSelect.ejs',{
+                    "title":"状态：",
+                    "placeholder":"启用",
+                    "options":[
+                    {"option":"启用"},
+                    {"option":"未激活"},
+                    {"option":"关闭"},
+                    ],
+                    })%>
+                </div>
+
+
+
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1 modify_address_close">保存</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    //编辑模态框
+    $('.modify_address_btn').on("click",function(){
+        //一个模态框出现的方法
+        modelInfo('#modify_address_modal'); //参数：模态框id选择器
+    })
+
+    //编辑模态框失败
+    $('.modify_address_close').on("click",function(){
+        //模态框隐藏的方法
+        hideOneModal(this);
+
+        setTimeout(function(){
+            //fail模态框出现的方法
+            jfModelFrame.failModelShow('企业地址修改','企业地址修改失败','')//参数一是fail模态框的标题，参数二是模态框中间提示文本，参数三是提示信息
+        },300)
+    })
+
++
+
+
+
+    //文本提示信息（以员工查询页面为例）
+    $("#email").on({
+
+        //-----------change事件出现提示信息，出现文本报错的方法
+        change: function () {
+            jfValidateInput.validateWrong(this, '输入错误');//参数一为选取的该元素，参数二为出现的提示信息
+        },
+
+        //-----------再次焦点事件提示信息删除，移除文本报错的方法，
+        focus: function () {
+            jfValidateInput.validateRemove(this);//参数为选取的该元素
+        }
+    });
+
+
+
+
+    //分页点击选择页面事件
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).on("click",function(){
+            //页面选择
+            jfpagechange(this);//参数为选择的当前元素
+        })
+
+    });
+
+
+
+
+    //加载loading模态框，以及自动移除
+    $('.btn_loading').on('click', function () {
+
+        //-----------loading模态框出现
+        jfModelFrame.loadingModelShow('加载完成', '数据导入成功');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败）
+
+
+        setTimeout(function(){//3秒后关闭
+
+            //loading模态框自动移除的方法
+            jfModelFrame.loadingModelRemove()
+        },3000);
+
+    });
+
+
+
+
+
+    $('.edit_close').on("click",function(){
+        //模态框隐藏的方法
+        hideOneModal(this);
+    })
+
+</script>
+</body>
+</html>

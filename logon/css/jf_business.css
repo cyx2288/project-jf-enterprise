@@ -2208,3 +2208,27 @@ a {
         opacity: 0;
     }
 }*/
+
+
+
+
+
+/*子管理员-未激活页面中间登录部分*/
+.child_logon_active section .section_middle{
+    background: none;
+    height: 300px;
+}
+.child_logon_active section .section_middle .section_middle_tip{
+    padding-top: 20px;
+}
+
+/*子管理员-激活成功页面底部按钮*/
+.child_activate_success_button .smodal_content .info_content.modal22 .release_confirm_btn{
+    margin-right: 20px;
+
+}
+.child_activate_success_button .smodal_content .info_content.modal22{
+    margin-right: 135px;
+    margin-top: 30px;
+
+}
