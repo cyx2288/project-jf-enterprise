@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>子管理员权限</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>设置子管理员权限</h2>
+
+    <div class="child_section_text_one">当前子管理员：老李</div>
+    <div class="child_section_text_two">
+        管辖范围：
+        <span><input type="radio" name="employee">  全公司</span>
+        <span><input type="radio" name="employee">  所在部门以及下级部门</span>
+        <span><input type="radio" name="employee">  特定部门</span>
+
+    </div>
+    <div class="child_section_text_three">分配权限：</div>
+    <div class="child_section_text_four">
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span>
+                <td><input type="radio" name="employee">  全部权限</td>
+            </span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span>
+                <a href="../error/403.html"><button type="submit" class="btn btn-primary btn-zyone btn-modeltwo">保存</button></a>
+            </span>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- 表格-->
+
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+                <tr class="tr-zy">
+                    <th>权限类别</th>
+                    <th>权限细分</th>
+                </tr>
+                </thead>
+            <tbody>
+            <tr align="center">
+                <td>企业信息管理</td>
+                <td class="child_table_option">
+                    <span data-toggle="tooltip" title="首页"><input type="checkbox" name="employee"> 首页</span>
+                    <span data-toggle="tooltip" title=" 基本信息"><input type="checkbox" name="employee"> 基本信息</span>
+                    <span data-toggle="tooltip" title="银行账户"><input type="checkbox" name="employee"> 银行账户</span>
+                    <span data-toggle="tooltip" title="企业地址"><input type="checkbox" name="employee"> 企业地址</span>
+                </td>
+
+                </tr>
+            <tr align="center">
+                    <td>企业账户管理</td>
+                    <td class="child_table_option">
+                        <span data-toggle="tooltip" title="首页"><input type="checkbox" name="employee"> 企业转账</span>
+                        <span data-toggle="tooltip" title="企业转账查询"><input type="checkbox" name="employee"> 企业转账查询</span>
+                        <span data-toggle="tooltip" title="福利增值"><input type="checkbox" name="employee"> 福利增值</span>
+                        <span data-toggle="tooltip" title="企业充值明细"><input type="checkbox" name="employee"> 企业充值明细</span>
+                        <span data-toggle="tooltip" title="企业消费明细"><input type="checkbox" name="employee"> 企业消费明细</span>
+                    </td>
+            </tr>
+            <tr align="center">
+                    <td>员工信息管理</td>
+                    <td class="child_table_option">
+                        <span data-toggle="tooltip" title="员工信息管理"><input type="checkbox" name="employee"> 员工信息管理</span>
+                        <span data-toggle="tooltip" title="员工消费明细"><input type="checkbox" name="employee"> 员工消费明细</span>
+                    </td>
+
+                </tr>
+            <tr align="center">
+                    <td>员工福利管理</td>
+                    <td class="child_table_option">
+                        <span data-toggle="tooltip" title="福利发放"><input type="checkbox" name="employee"> 福利发放</span>
+                        <span data-toggle="tooltip" title="福利发放查询"><input type="checkbox" name="employee"> 福利发放查询</span>
+                        <span data-toggle="tooltip" title="VIP卡回收"><input type="checkbox" name="employee"> VIP卡回收</span>
+                        <span data-toggle="tooltip" title="VIP卡回收查询"><input type="checkbox" name="employee"> VIP卡回收查询</span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $(function () { $("[data-toggle='tooltip']").tooltip(); })
+</script>
+
+</body>
+</html>
