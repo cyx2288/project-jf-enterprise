@@ -25,7 +25,7 @@
     position: relative;
     color: #10a6e2;
     font-size: 18px;
-    display: none\9;
+    display: none\9\0;
 
     @media screen and(max-width: 1350px) {
       font-size: 16px;
@@ -152,11 +152,13 @@
       }
       .text{
         animation-delay: 1.7s;
+        animation-fill-mode:forwards;
       }
+
       >span:first-child{
-        position: relative;
+       /* position: relative;
         top: 50px;
-        left: 30px;
+        left: 30px;*/
       }
     }
     .cirlcethree{
@@ -184,11 +186,12 @@
       }
       .text{
         animation-delay: 2.3s;
+        animation-fill-mode:forwards;
       }
       >span:last-child{
-        position: relative;
+       /* position: relative;
         top: 50px;
-        right: 30px;
+        right: 30px*/
 
       }
     }
@@ -288,6 +291,7 @@
 .sale_check{
   width: 80%;
   margin: 0 auto;
+  display: none\9\0;
 
   @media screen and(max-width: 768px) {
     display: none;

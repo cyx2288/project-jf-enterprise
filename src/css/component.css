@@ -428,8 +428,8 @@ input[type=password]{
     position: absolute;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    margin-left: -4px\9; /* IE6, IE7, IE8, IE9, IE10 */;
-    margin-top: 1px\9; /* IE6, IE7, IE8, IE9, IE10 */;;
+    margin-left: -4px\9\0; /* IE6, IE7, IE8, IE9, IE10 */;
+    margin-top: 1px\9\0; /* IE6, IE7, IE8, IE9, IE10 */;;
 }
 .btn-md-zy{
     display: inline-block;
@@ -463,8 +463,8 @@ input[type=password]{
     display: block;
     position: absolute;
     right: 10px;
-    right: 12px\9;
-    display: none\9;
+    right: 12px\9\0;
+    display: none\9\0;
     top:0;
     height: 34px;
     line-height: 34px;
@@ -475,7 +475,7 @@ input[type=password]{
 }
 .select-input .move_triangle{
     right: 90px;
-    display: none\9;
+    display: none\9\0;
 }
 
 .btn-group-11{
@@ -523,38 +523,30 @@ input[type=password]{
     }
 }
 
-
-
-.staff_import_downbtn{
-    margin-left:37px;
+.staff_import_downbtn,.welfare_release_downbtn{
     background: RGB(241,241,241);
     border: 1px solid RGB(165,165,165);
     padding: 1px 6px;
     width: 72px;
     font-size: 14px;
     line-height: 22px;
+}
+
+.staff_import_downbtn{
+    margin-left:37px;
+
 }
 .staff_import_upbtn{
     margin-left: 205px;
 }
 .welfare_release_downbtn{
-    margin-left: 32px;
-    background: RGB(241,241,241);
-    border: 1px solid RGB(165,165,165);
-    padding: 1px 6px;
-    width: 72px;
-    font-size: 14px;
-    line-height: 22px;
+    margin-left: 155px;
+
 }
 .welfare_release_upbtn{
     margin-left:130px;
 }
-/*一排多个组件*/
-/*.control-title{
-    margin: 5px auto;
-    width:95%;
-    padding:5px 0;
-}*/
+
 .control-title{
     display: inline-block;
     width: 49%;
@@ -3419,7 +3411,7 @@ input[type=file]{
 .datepicker td.active:hover:active,
 .datepicker td.active.active,
 .datepicker td.active:hover.active {
-    background-color: #003399 \9;
+    background-color: #003399 \9\0;
 }
 .datepicker td span {
     display: block;

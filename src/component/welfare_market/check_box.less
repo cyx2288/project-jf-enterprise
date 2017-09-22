@@ -19,11 +19,8 @@
     justify-content: space-between;
     border-bottom: 1px #a5d2f3 solid;
     p {
-      float: left;
-      &:after{
-        content: "";
-        clear: both;
-      }
+
+      display: inline-block;
       color: #4a4a4a;
       font-size: 14px;
       margin: 0;
@@ -33,6 +30,7 @@
       }
       &:nth-child(2) {
         padding-right: 10px;
+        float: right;
       }
     }
   }
