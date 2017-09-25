@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),//css兼容性
 
     concatDir = require('gulp-concat-dir'),//按文件夹合并
-    
+
     concat = require("gulp-concat"),//文件合并
 
     connect = require('gulp-connect'),//服务器
