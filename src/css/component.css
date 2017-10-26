@@ -418,6 +418,7 @@ input[type=password]{
     width: 105px;
 }
 .input-group-addon{
+    position: absolute;
     width:75px;;
     height:34px;
     line-height: 20px;
@@ -425,7 +426,6 @@ input[type=password]{
     padding: 0;
     font-size: 12px;
     display: inline;
-    position: absolute;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -4px\9\0; /* IE6, IE7, IE8, IE9, IE10 */;
@@ -609,6 +609,7 @@ input[type=password]{
     display: inline-block;
     text-align: right;
     line-height: 34px;
+    vertical-align: top;
 }
 
 
@@ -680,8 +681,13 @@ input[type=password]{
     right: 5px;
 }
  a {
-    color: #337ab7;
-    text-decoration: none;
+      color: #3498db;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+a:hover {
+   text-decoration: nones;
 }
  select{
      line-height: 28px;/*兼容safari*/
@@ -764,6 +770,7 @@ input[type=password]{
 
 .pay_model_pp>input{
     margin:  0 auto;
+    margin-right: 0;
 }
 
 .pay_model_pp>img{
@@ -2569,7 +2576,6 @@ input[type=file]{
     }
 
     .info_content>span:last-child {
-        display: block;
         width: 98%;
         padding: 0;
     }
@@ -2999,7 +3005,7 @@ input[type=file]{
     }
 
     .info_content>span:last-child {
-        display: block;
+
         width: 100%;
         padding-right: 5px;
         padding-left: 0;
@@ -4237,7 +4243,7 @@ td>.look,td>.cancle_buy{
 td>.cancle_buy:after{
     content: "";
     position: absolute;
-    border-left: solid 1px #3498db;
+    border-left: solid 1px #4a4a4a;
     width: 1px;
     height: 100%;
     top: 0;

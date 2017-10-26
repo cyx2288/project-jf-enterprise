@@ -1417,7 +1417,7 @@ section.business_logon_confirm .section_middle .section_middle_slick .slick_arro
 section.business_logon_confirm .section_middle .section_middle_slick .slick_title {
     position: relative;
     margin: 0 auto;
-    width: 600px;
+    width: 520px;
 
 }
 
@@ -1425,13 +1425,16 @@ section.business_logon_confirm .section_middle .section_middle_slick .slick_titl
     position: absolute;
     display: block;
     top: -55px;
-    width: 600px;
+    width: 100%;
     font-size: 24px;
     opacity: 0;
     text-align: center;
     color: #4a4a4a;
     cursor:default;
     text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     /*transition: opacity .1s;*/
 }
 
@@ -1471,7 +1474,7 @@ section.business_logon_confirm .section_middle_button span {
 
     section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a {
         top: -10px;
-        font-size: 22px;
+        font-size: 24px;
     }
 
     section.business_logon_confirm .section_middle_button {
@@ -1558,18 +1561,18 @@ section.business_logon_confirm .section_middle_button span {
     }
 
     section.business_logon_confirm .section_middle .section_middle_slick .slick_title > a {
-        width: 280px;
+        width: 100%;
         font-size: 18px;
-        overflow: hidden;
+        /*overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 2;*/
     }
 
     section.business_logon_confirm .section_middle .section_middle_slick .slick_title {
-        width: 280px;
-        top: -15px;
+        width: 380px;
+        top: 0;
     }
 
     section.business_logon_confirm .section_middle_input input[type=text], section.business_logon_confirm .section_middle_input input[type=password] {

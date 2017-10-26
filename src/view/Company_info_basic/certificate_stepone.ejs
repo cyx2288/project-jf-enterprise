@@ -40,10 +40,12 @@
         "placeholder":"请输入"
         })%>
 
-        <%- include('../../component/input/addstarinput.ejs',{
-        "title":"法人代表姓名：",
-        "placeholder":"请输入"
-        })%>
+        <div class="smodal_content">
+            <div class=" info_content modal22">
+                <span><span class="add_star">*</span>法定代表姓名</span>
+                <span><input type="text" class="form-control btn-md-zy11 people_name" placeholder="请输入正确的法人姓名"/></span>
+            </div>
+        </div>
         <div style="margin-top: -20px">
             <%- include('../../component/input/input_info.ejs',{
             "title":"",
@@ -105,6 +107,27 @@
             }
         }
     })
+
+
+
+    //示例-------------------报错信息出现与清除
+
+    $(".pasd-comfirm-btn").on({
+
+        click: function () {
+
+           // jfValidateInput.validateWrong('.people_name' , '格式错误');//参数一为选取的input元素（class或者ID值），参数二为出现的提示信息
+        }
+    });
+
+
+    $('.people_name').on('focus',function(){ //-----------再次焦点事件提示信息删除
+
+       // jfValidateInput.validateRemove(this);//参数为选取的该元素
+
+    })
+
+
 
 </script>
 </body>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>企业基本信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>余额归集</h2>
+
+    <!--内容-->
+    <div class="info_middlebody" style="margin-left: 0">
+
+
+
+
+        <!--中间内容-->
+
+        <div class="smodal_content" >
+            <div class=" info_content modal22 transfer_page">
+                <span>对方企业识别号：</span>
+                            <span style="position: relative;">
+                                <!--添加disabled 属性，input无法编辑，适用于余额归集开启之前，输入框无法编辑-->
+                                <input type="text" class="form-control btn-md-zy11 company_ID" id="company_ID"  disabled value="1649652656dsfd" placeholder="请填写对方企业识别号"/>
+                                 <span class="login_help_right" style="">如何查询企业识别号以及全称？</span>
+                            </span>
+            </div>
+        </div>
+        <div class="smodal_content">
+            <div class=" info_content modal22 transfer_page">
+                <span>对方企业全称：</span>
+                            <span>
+                                <input type="text" class="form-control btn-md-zy11" placeholder="请填写对方企业全称"/>
+
+                            </span>
+            </div>
+        </div>
+
+        <div class="smodal_content" >
+            <div class=" info_content modal22 transfer_page">
+                <span>转让说明：</span>
+                            <span>
+                                 <textarea rows="3" cols="20" maxlength="60"class="form-control btn-md-zy11" placeholder="余额归集"></textarea>
+                                <p></p>
+                            </span>
+            </div>
+        </div>
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span></span>
+               <span><input type="checkbox" value="同意" checked="checked">已阅读并同意<span class="transfer_agreement">《企业余额归集服务协议》</span></span>
+            </div>
+        </div>
+
+        <div class="smodal_content">
+            <div class="info_content modal22">
+                <span></span>
+            <span><input type="checkbox" class="form-control btn-md-zy11 open_close_btn"/></span>
+            </div>
+        </div>
+
+
+        <div class="batch_import_info balance_gather" >
+
+            <div class="import_content">
+                <div class="content_top" >
+                    <h4 class="text-left import_info">规则说明</h4>
+                    <p class="text-left"><span>1、开启余额归集后，我方企业账户余额将自动归集至对方企业账户;</span></p>
+                    <p class="text-left">2、企业账户余额每30分钟归集一次，即每个整点和半点。</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!--模态框-->
+    <div class="modal fade"  id="help_tips_model" tabindex="-1" aria-labelledby="pay_info_modelLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel">怎样查看对方企业的企业识别号以及全称</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body lookup_help">
+
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content info_content_help">
+                            <p class="pay_model_pp">
+                                1、让对方登录企业自助平台
+                            </p>
+                            <img src="../../icon/step_one.png" class="step_one">
+                        </div>
+                    </div>
+                    <!--模态框组件-->
+                    <div class="smodal_content">
+                        <div class=" info_content info_content_help">
+                            <p class="pay_model_pp">
+                                2、查看对方企业的企业识别号以及企业全称
+                            </p>
+
+                            <p class="text-left">1.首页</p>
+                            <img src="../../icon/step_two2.png" class="step_two">
+
+                            <p class="text-left">2.基本信息</p>
+                            <img src="../../icon/step_two.png" class="step_two">
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--确认开启模态框-->
+    <div class="modal fade" tabindex="-1" id="check_open" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close cancle_open" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel">确认开启</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+
+                    <div class="smodal_content">
+                        <div class=" info_content">
+                            <p class="pay_model_pp">
+                              余额归集开启以后，企业账户余额将根据账户类型全部归集至
+                                <span class="open_company_name">河北乐聘人力资源服务有限公司——开放平台</span>
+                            </p>
+                            <p class="pay_model_pp">
+                                当前福利余额<span>100,000.00元</span>，工资余额<span>100,000.00元</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <%- include('../../component/modal/getMessage.ejs')%>
+
+                    <%- include('../../component/basic/voice_code.ejs')%>
+
+                    <!-- footer -->
+                    <div class="modal-footer" style="margin-top: 25px">
+                        <button type="button" class="btn btn-primary btn-primary-zy">确认</button>
+                        <button type="button" class="btn btn-default cancle_open" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--确认关闭模态框-->
+    <div class="modal fade" tabindex="-1" id="check_close" aria-labelledby="staff_lookup_editLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close cancle_close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="staff_lookup_editLabel">确认关闭</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+
+                    <div class="smodal_content">
+                        <div class=" info_content">
+                            <p class="pay_model_pp">
+                                余额归集开启以后，企业账户余额将根据账户类型全部归集至
+                                <span class="open_company_name">河北乐聘人力资源服务有限公司——开放平台</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- footer -->
+                    <div class="modal-footer" style="margin-top: 25px">
+                        <button type="button" class="btn btn-primary btn-primary-zy">确认</button>
+                        <button type="button" class="btn btn-default cancle_close" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--余额归集协议模态框-->
+    <div class="modal fade"  id="agreement_model" tabindex="-1" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title"  style="text-align: center;font-size: 20px">企业余额归集服务协议</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body agreement">
+
+                    <!--协议具体内容-->
+                    <div class="agreement_content">
+
+                        <div class="content"> 一、余额归集，是指企业用户根据需求设置开通的余额自动归集服务。</div>
+
+                        <div class="content"> 二、规则设置后，出款企业将按照所设置的规则将企业账户中的余额对应的归集至收款企业</div>
+
+                        <div class="content"> 三、开通日期为企业用户设置并开通余额归集且账户中存在余额的当天，关闭日期为企业用户关闭余额归集的当天</div>
+
+                        <div class="content">四、余额归集频率为每30分钟一次</div>
+
+                        <div class="content">五、余额归集打开时进行手动转账以时间先后为准</div>
+
+                        <div class="content">六、余额归集相关解释： </div>
+
+                        <div class="content">归集金额 = 被扣款企业账户的相应可用余额</div>
+
+                        <div class="content">企业账户类型：福利账户，企业账户</div>
+
+
+                        <div class="content">七、因以下原因发生的资金归集不成功，嘉福平台不承担任何责任：</div>
+
+                        <div class="content"> 1. 被扣款账户内资金可用余额不足的；</div>
+
+                        <div class="content">2. 被扣款账户状态不正常的；</div>
+
+                        <div class="content">4. 客户未能按照嘉福平台的有关业务规定正确操作的；</div>
+
+                        <div class="content"> 5. 不可抗力以及嘉福平台可控制范围以外因素或其他非嘉福平台过错的情形。</div>
+
+                        <div class="content">本条中的不可抗力是指一方不能预见、不能避免并不能克服的客观情况，包括（但不限于）：法律、法规、政府行为、罢工、电力、通讯系统故障或瘫痪，业务处理系统故障或瘫痪或自然灾害如地震或洪水等事件。</div>
+
+                        <div class="content">八、本条款由嘉福平台制定、修改和解释。</div>
+
+
+
+                    </div>
+                </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+//模态框--确认开启以及关闭
+document.getElementsByClassName('open_close_btn')[0].addEventListener("click",function(){
+
+    setTimeout(function(){
+
+        if(document.getElementsByClassName('open_close_btn')[0].checked){
+
+            modelInfo('#check_open');//确认开启模态框出现
+
+        } else {
+
+            modelInfo('#check_close');//确认关闭模态框出现
+        }
+    },400)
+
+
+ },false)
+
+//取消关闭
+
+$('.cancle_close').on('click',function(){
+
+    document.getElementsByClassName('open_close_btn')[0].checked=true;
+
+})
+
+//取消开启
+$('.cancle_open').on('click',function(){
+
+    document.getElementsByClassName('open_close_btn')[0].checked=false;
+
+})
+
+
+//查询企业识别号以及企业名称的模态框
+$(".login_help_right").on('click',function(){
+
+    modelInfo('#help_tips_model'); //参数：模态框id选择器
+})
+
+//倒计时效果
+
+$('.getmessage').on("click",function(){
+    //倒计时出现的方法
+    getmessage(this,"60")//参数一是当前点击的元素，参数二是时间
+})
+//余额归集协议模态框
+$(".transfer_agreement").on("click",function(){
+    modelInfo('#agreement_model'); //参数：模态框id选择器
+})
+
+
+</script>
+</body>
+</html>
