@@ -442,7 +442,18 @@ void function () {
 
     //-------------------------------------------------------------------------------------------------------------------tab滑块
     function changeFatherDiv() {
-        var maxwidth = document.getElementById('iframeNav').offsetWidth - 130-116-102;
+
+        var leftEleOne=document.getElementById('pageGoback').offsetWidth;
+
+        var leftEleTwo=document.getElementById('turnLeft').offsetWidth;
+
+        var righEleOne=document.getElementById('turnRight').offsetWidth;
+
+        var rightEleTwo=document.getElementById('closs_all_tabs').offsetWidth;
+
+        var totalBalance=parseFloat(leftEleOne)+parseFloat(leftEleTwo)+parseFloat(righEleOne)+parseFloat(rightEleTwo)+5;
+
+        var maxwidth = document.getElementById('iframeNav').offsetWidth - totalBalance;
         document.getElementById('iframeNavFather').style.width = maxwidth + 'px';
     }
 

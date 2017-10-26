@@ -211,6 +211,11 @@ function PasdValidateRemove(obj) {//参数为当前元素
 //----------------------------------------change事件输入报错提示
         validateWrong: function (obj, textWrong) {//参数一为选取的该元素，参数二为出现的提示信息
 
+            if($('.validatepp')){//每次插入之前，先清除一次，防止多次插入
+
+                this.validateRemove(obj)
+            }
+
             var redWrong = '<span style="color:red;display: block;" class="validatepp"><span class="validate_wrong">×</span> <span style="width:60px;display: inline">' + textWrong + '</span></span>';
             $(obj).parent().append(redWrong);
 
