@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>员工余额</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>员工余额</h2>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+
+        <%- include('../../component/table/twoNormalInput.ejs',{
+        "titleone":"员工编号：",
+        "placeholderone":"输入员工编号",
+        "titletwo":"员工姓名：",
+        "placeholdertwo":"输入员工姓名"
+        })%>
+        <%- include('../../component/table/twoNormalInput.ejs',{
+        "titleone":"邮箱：",
+        "placeholderone":"输入邮箱",
+        "titletwo":"手机号：",
+        "placeholdertwo":"输入手机号"
+        })%>
+
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span >
+                        <button type="button" class="btn btn-primary btn-zyone">导出数据</button>
+                </span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span>
+                        <a href="../error/404.html"><button type="button" class="btn btn-primary btn-zyone">查询</button></a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 表格-->
+    <div class="table-responsive info_table">
+        <table class="table table-striped">
+            <thead>
+            <tr class="tr-zy">
+                <th>员工编号</th>
+                <th>员工姓名</th>
+                <th>手机号</th>
+                <th>邮箱</th>
+                <th>工资余额</th>
+                <th>福利余额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr align="center">
+                <td>5465656265625</td>
+                <td>小明</td>
+                <td>13761629225</td>
+                <td>123@163.com</td>
+                <td>5000.00</td>
+                <td>100.00</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="info_page">
+        <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+        <ul class="pagination" style="margin-top:0px; float:right;">
+            <li class="go"><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li class="active"><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li>&nbsp;...&nbsp;</li>
+            <li><a href="#">30</a></li>
+            <li class="go"><a href="#">»</a></li>
+        </ul>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+
+
+
+    //分页点击选择页面事件
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).on("click",function(){
+            //页面选择
+            jfpagechange(this);//参数为选择的当前元素
+        })
+
+    });
+
+
+</script>
+</body>
+</html>
