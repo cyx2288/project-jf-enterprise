@@ -19,12 +19,17 @@
                         <p class="text-left">2、上传填写好的数据文件 <a href="#" class="file"><input type="file" class="welfare_release_upbtn" >选择文件</a></p>
                         <p class="text-left selected_file">文件名：<span>dshidnski.xls</span></p>
 
+                        <div class="choose_message_style">
+                            <label><input type="checkbox"> <span>发送短信通知</span></label>
+
+                            <label><input type="checkbox"> <span>发送邮件通知</span></label>
+                        </div>
+
                     </div>
                     <div class="content_mid" style="margin-top: 30px">
                         <h4 class="text-left">导入说明</h4>
-                        <p class="text-left">1、每次最多导入500位员工信息</p>
-                        <p class="text-left">2、员工编号、员工姓名、邮箱、手机号码为必填</p>
-                        <p class="text-left">3、员工编号、邮箱、手机号不能重复</p>
+                        <p class="text-left">1、每次最多导入200位员工信息</p>
+                        <p class="text-left">2、员工姓名、邮箱、手机号码为必填，其中邮箱不能重复</p>
                     </div>
                 <div class="control-title">
                     <div>
@@ -35,6 +40,36 @@
                     <div></div>
                 </div>
             </div>
+    </div>
+</div>
+
+
+
+<!--特例--成功模态框-->
+<div class="modal fade" id="modal_success_import" tabindex="-1" aria-labelledby="modal_successLabel" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                <h4 class="modal-title" id="modal_successLabel">加载成功</h4></div>
+            <div class="modal-body">
+                <div class="title-success">
+                    <div class="swal2-icon swal2-success animate"><span class="line tip animate-success-tip"></span>
+                        <span class="line long animate-success-long"></span>
+                        <div class="placeholder"></div>
+                        <div class="fix"></div>
+                    </div>
+                    <div class="wenan-zy">数据导入成功</div>
+                    <div class="details_content"><span>本次导入员工：3人</span></div>
+                </div>
+                <div class="modal-footer" style="text-align:center">
+                    <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">继续导入</button>
+
+                    <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">查看导入结果</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
@@ -56,7 +91,7 @@
 
         setTimeout(function(){
             //-----------success模态框（）
-            jfModelFrame.successModelShow('加载完成', '数据导入成功','本次导入员工：3人');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
+            modelInfo('#modal_success_import')
         },4000)
 
 

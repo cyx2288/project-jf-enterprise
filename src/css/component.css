@@ -1701,6 +1701,7 @@ input[type=file]{
 .selected_file{
     padding-left: 20px;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 /*成功页面与失败页面*/
@@ -1759,6 +1760,10 @@ input[type=file]{
     width: 160px;
     height: 35px;
     display: inline-block
+}
+
+.modal-footer .btn+.btn.btn-primary-zy{
+    margin-left: 50px;
 }
 
 
