@@ -4,7 +4,7 @@
 
 <script>
     //语言验证码
-    document.getElementsByClassName('voice_code')[0].addEventListener('click',function(){
+    $(".voice_code").on("click",function(){
         jfModelFrame.successModelShow('语音验证码','语言验证码已发送，请注意接听。','');//参数一是模态框的标题，参数二是模态框的显示中间文本（成功或者失败），参数三是详细信息
-    },false)
+    })
 </script>
