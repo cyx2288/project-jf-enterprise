@@ -770,7 +770,7 @@ a:hover {
 
 .pay_model_pp>input{
     margin:  0 auto;
-    margin-right: 0;
+   /* margin-right: 0;*/
 }
 
 .pay_model_pp>img{
