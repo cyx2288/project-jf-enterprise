@@ -15,6 +15,7 @@
     padding: 10px;
     float: left;
     margin: 0.833%;
+    margin-bottom: 15px;
     cursor: pointer;
     display: inline-block;
 
@@ -44,6 +45,18 @@
 
     .produce_img{
       height: calc(~"(100vw - 70px)*0.95*0.15 - 22px");
+
+      @media screen and(max-width: 992px) {
+        height: calc(~"(100vw - 70px)*0.22 - 22px");
+      }
+
+      @media screen and(max-width: 768px) {
+        height: calc(~"(100vw - 70px)*0.29 - 22px");
+      }
+
+      @media screen and(max-width: 500px) {
+        height: calc(~"(100vw - 70px)*0.48 - 22px");
+      }
       img{
         width: 100%;
       }
