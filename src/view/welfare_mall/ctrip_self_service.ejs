@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利发放</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>福利商城</h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li ><a href="homepage_cards.html">电子卡券</a></li>
+            <li ><a href="homepage_product.html">实物商品</a></li>
+            <li class="active"><a href="#">携程商旅</a></li>
+        </ul>
+
+        <div class="search_product">
+            <input type="text" class="form-control search_input">
+            <button class="btn btn-primary search_btn">
+                <img src="../../icon/icon_search.png">
+                搜索
+            </button>
+
+        </div>
+    </div>
+
+
+    <!--商品列表页-->
+    <div class="product_list">
+
+        <!--可直接复制列表-->
+
+        <a class="list instructions">
+            <p class="produce_img"><img src="../../icon/enterprise_cards_crip.jpg"></p>
+
+            <p class="ctrip_title">使用说明</p>
+        </a>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+        <%- include('../../component/welfare_mall/product/ctrip.ejs')%>
+
+    </div>
+
+
+    <!--分页-->
+    <%-include('../../component/table/infoPage.ejs')%>
+
+    <!--模态框1-->
+    <div class="modal fade" id="look_details_model" tabindex="-1" aria-labelledby="pay_info_modelLabel" aria-hidden="true" data-backdrop="”static”">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="pay_info_modelLabel">携程商旅使用说明</h4>
+                </div>
+                <!-- body-->
+                    <!--模态框组件-->
+                    <div class="ctrip_model">
+                        <p class="ctrip_model_pp">
+                            1.使用携程商旅购买火车票，携程将收取30元手续费
+                        </p>
+                        <p class="ctrip_model_pp">
+                            2.具体手续费及退款事宜详情请至携程商旅查看
+                        </p>
+                        <p class="ctrip_model_pp">
+                            3.使用公司账户购买将扣减您的企业福利账户余额
+                        </p>
+                        <p class="ctrip_model_pp">
+                            4.购买后请等待授权，结果将以短信形式发送至您的手机
+                        </p>
+                        <p class="ctrip_model_pp">
+                            5.企业余额足够支付订单将自动授权
+                        </p>
+                        <p class="ctrip_model_pp">
+                            6.携程商旅客服：400-980-6666
+                        </p>
+                    </div>
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <span><a class="btn btn-primary btn-md-zy11 pasd-comfirm-btn" data-dismiss="modal">进入携程商旅</a></span>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+
+<script>
+    $('.instructions').on('click', function () {
+
+        modelInfo('#look_details_model'); //参数一：模态框id选择器
+    });
+</script>
+
+</body>
+</html>
