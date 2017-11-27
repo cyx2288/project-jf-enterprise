@@ -22,15 +22,15 @@
     <div class="info_middlebody" style="margin-left: 0">
 
         <div class="success_page_button">
-            <a href="#"><button type="button" class="btn btn-primary" id="pay_modelloadingo">保存</button></a>
+            <a href="#"><button type="button" class="btn btn-primary save_set">保存</button></a>
 
-            <a href="#"><button type="button" class="btn btn-primary" id="pay_modelloadingt">取消</button></a>
+            <a href="#"><button type="button" class="btn btn-primary cancle_set" >取消</button></a>
         </div>
 
     </div>
 
     <!--模态框1-->
-    <div class="modal fade"  id="pay_info_modelone" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal fade"  id="cancle_seting" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,9 +92,37 @@
                     <h2 class="delete_title">权限发生变更，请刷新后操作</h2>
 
                     <!-- footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-primary-zy delete_address">确认</button>
-                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">刷新</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--特例--成功模态框-->
+    <div class="modal fade" id="modal_success_set" tabindex="-1" aria-labelledby="modal_successLabel" aria-hidden="true"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modal_successLabel">添加成功</h4></div>
+                <div class="modal-body">
+                    <div class="title-success">
+                        <div class="swal2-icon swal2-success animate"><span class="line tip animate-success-tip"></span>
+                            <span class="line long animate-success-long"></span>
+                            <div class="placeholder"></div>
+                            <div class="fix"></div>
+                        </div>
+                        <div class="wenan-zy">添加成功</div>
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">确定</button>
+
+                        <button type="button" class="btn btn-primary btn-primary-zy" data-dismiss="modal">继续添加</button>
                     </div>
                 </div>
             </div>
@@ -106,20 +134,21 @@
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/BusinessService.min.js"></script>
 <script>
-    $('#pay_modelloadingo').on('click', function () {
 
-        modelInfo('#pay_info_modelone'); //参数一：模态框id选择器
-    });
+    //取消设置
+    $('.cancle_set').on('click', function () {
 
-    $('#pay_modelloadingt').on('click', function () {
-
-        modelInfo('#pay_info_modeltwo'); //参数一：模态框id选择器
+        modelInfo('#cancle_seting'); //参数一：模态框id选择器
     });
 
 
-    $('button.getmessage').on('click', function () {
-        getmessage(this,60);//参数表示选择的该元素
+    //保存设置
+    $('.save_set').on('click', function () {
+
+        modelInfo('#modal_success_set'); //参数一：模态框id选择器
     });
+
+
 </script>
 
 </body>
