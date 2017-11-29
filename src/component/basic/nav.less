@@ -1,5 +1,5 @@
 .welfare_nav{
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 
   .nav{
     width: 60%;
@@ -10,10 +10,24 @@
 
     }
 
+    @media screen and(min-width: 500px) and (max-width: 780px) {
+      width: 70%;
+    }
+
+    @media screen and(min-width: 1280px) {
+      width: 35%;
+
+    }
+
     li{
-      width: 25%;
+      width: 30%;
       text-align: center;
       font-size: 16px;
+
+      @media screen and(min-width: 1280px) {
+        width: 35%;
+
+      }
 
       @media screen and(max-width: 500px) {
         width: 33%;
