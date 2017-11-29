@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利代卖查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>福利代卖查询
+        <div>
+            <a href="payroll_account_details.html" class="show_details">查看订单明细</a>
+        </div>
+    </h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li><a href="order_sale.html">代卖至银行账户订单</a></li>
+            <li class="active"><a href="#">代卖至工资账户订单</a></li>
+        </ul>
+    </div>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+
+        <div class="info_middlebody" style="margin-left: 0">
+
+
+            <div class="control-title">
+                <div style="width: 100%">
+                    <span>卖出提交时间：</span>
+                    <span>
+                     <input size="16" type="text"  value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                    至
+                    <input size="16" type="text" value="2016-06-18"  readonly class="form_datetime form-control form-control-zy1" >
+                </span>
+                </div>
+                <div></div>
+            </div>
+
+
+            <div class="control-title">
+                <div>
+                    <span>卖出订单号：</span>
+                    <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入卖出订单号" >
+                </span>
+                </div>
+                <div>
+                    <span>订单状态：</span>
+                    <span>
+                    <select class="form-control  form-control-zy ">
+                        <option value="待处理" selected="selected">请选择订单状态</option>
+                        <option value="待处理">待支付</option>
+                        <option value="待处理">处理中</option>
+                        <option value="待处理">处理成功</option>
+                        <option value="待处理">处理失败</option>
+                        <option value="待处理">已退款</option>
+                    </select>
+                </span>
+                </div>
+            </div>
+
+            <!-- 一排多个组件-->
+            <div class="control-title">
+                <div>
+                    <span>批次号：</span>
+                    <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入批次号" >
+                </span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="control-title">
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <span ></span>
+                    <span>
+                        <button type="submit" class="btn btn-primary btn-zyone ">查询</button>
+                </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 表格-->
+        <div class="table-responsive info_table">
+            <table class="table table-striped">
+                <thead>
+                <tr class="tr-zy">
+                    <th>批次号</th>
+                    <th>卖出订单号</th>
+                    <th>卖出提交时间</th>
+                    <th>员工数</th>
+                    <th>代卖福利总额</th>
+                    <th>卖出单价</th>
+                    <th>卖出总价</th>
+                    <th>服务费（元）</th>
+                    <th>优惠（元）</th>
+                    <th>工资账户到账总额（元）</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                    <td><a href="payroll_account_details.html">123456</a></td>
+                    <td>56789</td>
+                    <td>2017-11-12 18:03:36</td>
+                    <td>5</td>
+                    <td>1000</td>
+                    <td>0.998</td>
+                    <td>1000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>998</td>
+                    <td>待支付</td>
+                    <td><span class="look">导出详情</span></td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_account_details.html">123456</a></td>
+                    <td>56789</td>
+                    <td>2017-11-12 18:03:36</td>
+                    <td>5</td>
+                    <td>1000</td>
+                    <td>0.998</td>
+                    <td>1000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>998</td>
+                    <td>处理中</td>
+                    <td><span class="look">导出详情</span></td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_account_details.html">123456</a></td>
+                    <td>56789</td>
+                    <td>2017-11-12 18:03:36</td>
+                    <td>5</td>
+                    <td>1000</td>
+                    <td>0.998</td>
+                    <td>1000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>998</td>
+                    <td>处理成功</td>
+                    <td><span class="look">导出详情</span></td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_account_details.html">123456</a></td>
+                    <td>56789</td>
+                    <td>2017-11-12 18:03:36</td>
+                    <td>5</td>
+                    <td>1000</td>
+                    <td>0.998</td>
+                    <td>1000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>998</td>
+                    <td>处理失败</td>
+                    <td><span class="look">导出详情</span></td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_account_details.html">123456</a></td>
+                    <td>56789</td>
+                    <td>2017-11-12 18:03:36</td>
+                    <td>5</td>
+                    <td>1000</td>
+                    <td>0.998</td>
+                    <td>1000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>998</td>
+                    <td>已退款</td>
+                    <td><span class="cancle_set">重新卖出</span><span class="cancle_buy">导出详情</span></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info_page">
+            <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+            <ul class="pagination" style="margin-top:0px; float:right;">
+                <li class="go"><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li class="active"><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">30</a></li>
+                <li class="go"><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--确认重新卖出-->
+    <div class="modal fade"  id="cancle_seting" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">重新卖出</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+
+                    <h2 class="delete_title">确认重新卖出？</h2>
+
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy delete_address">确认</button>
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--重新卖出-->
+    <div class="modal fade"  id="sale_application_model" tabindex="-1" aria-labelledby="modify_addressLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="modify_addressLabel">重新卖出</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+
+                    <h2 class="delete_title">重新卖出提交成功，订单处理中。。。</h2>
+
+                    <!-- footer -->
+                    <div class="details_modal_footer">
+                        <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+    //确认重新卖出
+    $('.cancle_set').on('click', function () {
+
+        modelInfo('#cancle_seting'); //参数一：模态框id选择器
+    });
+
+</script>
+</body>
+</html>

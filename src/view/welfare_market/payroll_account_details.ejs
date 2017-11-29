@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>福利代卖查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>福利代卖查询
+        <div>
+            <a href="payroll_account_record.html" class="show_details">返回订单记录</a>
+        </div>
+    </h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li><a href="#">代卖至银行账户订单</a></li>
+            <li class="active"><a href="#">代卖至工资账户订单</a></li>
+        </ul>
+    </div>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+
+
+        <div class="control-title">
+            <div>
+                <span>批次号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="请输入批次号" >
+                </span>
+            </div>
+            <div>
+                <span>员工姓名：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="请输入员工姓名" >
+                </span>
+            </div>
+        </div>
+
+
+        <div class="control-title">
+            <div>
+                <span>员工邮箱：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="请输入员工邮箱" >
+                </span>
+            </div>
+            <div>
+                <span>订单状态：</span>
+                <span>
+                    <select class="form-control  form-control-zy ">
+                        <option value="待处理" selected="selected">请选择订单状态</option>
+                        <option value="待处理">待支付</option>
+                        <option value="待处理">处理中</option>
+                        <option value="待处理">处理成功</option>
+                        <option value="待处理">处理失败</option>
+                        <option value="待处理">已退款</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+
+        <!-- 一排多个组件-->
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span ></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zyone ">查询</button>
+                </span>
+            </div>
+        </div>
+
+        <!-- 表格-->
+        <div class="table-responsive info_table">
+            <table class="table table-striped">
+                <thead>
+                <tr class="tr-zy">
+                    <th>批次号</th>
+                    <th>员工姓名</th>
+                    <th>员工邮箱</th>
+                    <th>代卖福利额度</th>
+                    <th>卖出单价</th>
+                    <th>卖出总价</th>
+                    <th>工资账户到账（元）</th>
+                    <th>服务费（元）</th>
+                    <th>优惠（元）</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                    <td>123456</td>
+                    <td>小明</td>
+                    <td>123@jiafu.com</td>
+                    <td>200</td>
+                    <td>0.998</td>
+                    <td>200</td>
+                    <td>199.6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>已退款</td>
+                    <td><a class="cancle_set">修改邮箱</a></td>
+                </tr>
+                <tr align="center">
+                    <td>123456</td>
+                    <td>小明</td>
+                    <td>123@jiafu.com</td>
+                    <td>200</td>
+                    <td>0.998</td>
+                    <td>200</td>
+                    <td>199.6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>已退款</td>
+                    <td><a class="cancle_set">修改邮箱</a></td>
+                </tr>
+                <tr align="center">
+                    <td>123456</td>
+                    <td>小明</td>
+                    <td>123@jiafu.com</td>
+                    <td>200</td>
+                    <td>0.998</td>
+                    <td>200</td>
+                    <td>199.6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>已退款</td>
+                    <td><a class="cancle_set">修改邮箱</a></td>
+                </tr>
+                <tr align="center">
+                    <td>123456</td>
+                    <td>小明</td>
+                    <td>123@jiafu.com</td>
+                    <td>200</td>
+                    <td>0.998</td>
+                    <td>200</td>
+                    <td>199.6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>已退款</td>
+                    <td><a class="cancle_set">修改邮箱</a></td>
+                </tr>
+                <tr align="center">
+                    <td>123456</td>
+                    <td>小明</td>
+                    <td>123@jiafu.com</td>
+                    <td>200</td>
+                    <td>0.998</td>
+                    <td>200</td>
+                    <td>199.6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>已退款</td>
+                    <td><a class="cancle_set">修改邮箱</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info_page">
+            <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+            <ul class="pagination" style="margin-top:0px; float:right;">
+                <li class="go"><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li class="active"><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">30</a></li>
+                <li class="go"><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--确认重新卖出-->
+    <div class="modal fade" id="cancle_seting" tabindex="-1" aria-labelledby="account_pasdxiugaiLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="account_pasdxiugaiLabel">修改邮箱</h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+
+                    <!--模态框组件-->
+                    <%- include('../../component/input/normalOneInput.ejs',{
+                    "title":"员工邮箱",
+                    "placeholder":"请输入员工邮箱",
+                    })%>
+
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1 savecards">修改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+    //修改邮箱
+    $('.cancle_set').on('click', function () {
+
+        modelInfo('#cancle_seting'); //参数一：模态框id选择器
+    });
+
+</script>
+</body>
+</html>

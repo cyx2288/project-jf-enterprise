@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>确认代卖申请页面</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <h2>确认代卖申请
+        <img src="../../icon/welfare_explain.png" class="welfare_help showTips" data-toggle="tooltip" data-placement="right" title="员工工资账户实际到账金额=代卖福利额度*卖出单价*（1+平台服务费），卖出福利额度的0.2%将返给员工京东立减券，即时到账，可用于京东商城所有品类商品购物抵现">
+    </h2>
+
+    <div class="info_middlebody">
+
+
+        <!--进度条-->
+        <%- include('../../component/basic/progress_bar.ejs',{
+
+        "options":[
+        {"text":"1.提交代卖申请"},
+        {"text":"2.确认代卖信息"},
+        {"text":"3.完成"},
+        ],
+        "j":"1"
+        })%>
+
+        <div class="all_mid_text">
+
+            <%- include('../../component/basic/info.ejs',{
+            "title":"代卖福利总额：",
+            "basicinfo":"1000"
+            })%>
+
+            <%- include('../../component/basic/info.ejs',{
+            "title":"卖出单价：",
+            "basicinfo":"￥0.998"
+            })%>
+
+            <%- include('../../component/basic/info.ejs',{
+            "title":"员工人数：",
+            "basicinfo":"10"
+            })%>
+
+
+
+            <%- include('../../component/basic/info.ejs',{
+            "title":"服务费：",
+            "basicinfo":"￥0.00"
+            })%>
+            <%- include('../../component/basic/info.ejs',{
+            "title":"预计工资账户到账总额：",
+            "basicinfo":"998元"
+            })%>
+        </div>
+
+        <a class="check_sale_font">
+            <p>查看代卖明细>></p>
+        </a>
+
+        <div class="success_page_button">
+            <a href="application_success.html"><button type="button" class="btn btn-primary">确认代卖申请</button></a>
+
+            <a onclick="window.history.go(-1)"><button type="button" class="btn btn-primary">取消</button></a>
+        </div>
+
+    </div>
+
+    <!--模态框1-->
+    <div class="modal fade"  id="sale_application_model" tabindex="-1" aria-labelledby="info_modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span></span></button>
+                    <h4 class="modal-title" id="info_modalLabel"> 查看明细 </h4>
+                </div>
+                <!-- body-->
+                <div class="modal-body">
+                    <!-- 模态框中的表格-->
+                    <div class="table-responsive info_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="tr-zy">
+                                <th>员工姓名</th>
+                                <th>员工邮箱</th>
+                                <th>代卖福利额度</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            <tr align="center">
+                                <td>小李</td>
+                                <td>2365498546@163.com</td>
+                                <td>1000.00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="details_modal_footer">
+                    <button type="button" class="btn btn-primary btn-primary-zy model-change1" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    $('.check_sale_font').on('click', function () {
+
+        modelInfo('#sale_application_model'); //参数一：模态框id选择器
+    });
+
+    $(".showTips").tooltip();
+
+</script>
+
+</body>
+</html>
