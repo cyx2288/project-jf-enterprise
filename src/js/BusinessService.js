@@ -1325,3 +1325,146 @@ function calcNum(e){
 
     }
 }
+
+
+/*子管理员页面--权限设置*/
+var checkBoxFn={
+
+    init:function(){
+
+        var allCheck=document.getElementsByClassName('all_check')[0];//选择所有
+
+        var partCheck=document.getElementsByClassName('part_check');//选择部分
+
+        var singelCheck=document.getElementsByClassName('singal_check');//单个选择
+
+        var allBoxs=document.getElementsByClassName('administrator_radio')
+
+        allCheck.addEventListener('click',function(){
+
+            if(this.checked){
+
+                checkBoxFn.boxShow(allBoxs,true)
+
+            }else {
+                checkBoxFn.boxShow(allBoxs,false)
+            }
+
+        },false);
+
+        for(var j=0;j<partCheck.length;j++){
+
+            partCheck[j].addEventListener('click',function(){
+
+                var balanceCheck=checkBoxFn.getBanlanceBox(partCheck)
+
+                if(this.checked){
+
+                    checkBoxFn.getRightParent(this,true,'administrator_radio');
+
+                    if(balanceCheck){
+                        allCheck.checked=true
+                    }
+
+                }else {
+                    checkBoxFn.getRightParent(this,false,'administrator_radio')
+
+                    allCheck.checked=false
+                }
+            },false)
+
+        }
+
+        for(var j=0;j<singelCheck.length;j++){
+
+            singelCheck[j].addEventListener('click',function(){
+
+                if(this.checked){
+
+                    var thisParentsEle=this.parentNode.parentNode;
+
+                    var thisSingelBox=thisParentsEle.getElementsByClassName('singal_check');
+
+                    var singalbalanceCheck=checkBoxFn.getBanlanceBox(thisSingelBox)
+
+                    if(singalbalanceCheck){
+                        checkBoxFn.getRightParent(this,true,'part_check');
+
+                        var partbalanceCheck=checkBoxFn.getBanlanceBox(partCheck);
+
+                        if(partbalanceCheck){
+                            allCheck.checked=true
+                        }
+                    }
+
+                }else {
+                    checkBoxFn.getRightParent(this,false,'part_check');
+
+                    allCheck.checked=false
+                }
+
+            },false)
+
+        }
+
+    },
+
+
+    //判断box有没有被选中
+    boxShow:function(ele,result){
+
+        for(var i=0;i<ele.length;i++){
+
+            if(result){
+                ele[i].checked=true;
+            }else {
+                ele[i].checked=false;
+            }
+
+
+        }
+
+    },
+
+    getBanlanceBox:function(ele){//判断剩下的盒子
+
+        for(var i=0;i<ele.length;i++){
+
+            if(!ele[i].checked){
+
+                return false
+            }
+
+        }
+        return true//剩下的盒子全部被选中
+
+
+    },
+
+    getRightParent:function(ele,result,checkBoxClass) {//获取正确的input
+
+        var thisParentEle=ele.parentNode;
+
+        for(var i=0;i<100;i++){
+
+            if(thisParentEle.className.indexOf('blue_black')>-1){
+
+                var allchoosedBox=thisParentEle.getElementsByClassName(checkBoxClass);
+
+                checkBoxFn.boxShow(allchoosedBox,result)
+
+                return
+
+            }else {
+
+                thisParentEle=thisParentEle.parentNode;
+
+            }
+        }
+
+
+
+    },
+
+
+}

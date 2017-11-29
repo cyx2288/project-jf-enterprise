@@ -18,7 +18,15 @@ function jsDist() {
 
         .pipe(gulp.dest('dist/js'));
 
-    gulp.src(['build/js/*.js','!build/js/BusinessService.js'])
+    gulp.src(['build/js/main.js'])
+
+        .pipe(uglify())
+
+        .pipe(rename({suffix: '.min'}))
+
+        .pipe(gulp.dest('dist/js'));
+
+    gulp.src(['build/js/*.js','!build/js/BusinessService.js','!build/js/main.js'])
 
         .pipe(gulp.dest('dist/js'));
 
