@@ -66,7 +66,7 @@ $(document).ready(function(){
 
     var thispagenum=$(obj).text();
 
-    var thisactivediv=$('.active');
+    var thisactivediv=$('.pagination').find('.active');
 
     var thispagediv=$('.pagination');
 
