@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>批量导入</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>福利代卖</h2>
+
+    <!--导航-->
+    <div class="welfare_nav">
+        <ul class="nav nav-tabs ">
+            <li><a href="sale_import.html">代卖至银行账户</a></li>
+            <li class="active"><a href="#">代卖至工资账户</a></li>
+        </ul>
+    </div>
+
+    <div class="info_middlebody">
+        <div class="import_content" style="display: block">
+            <div>
+                <div class="content_top">
+                    <h4 class="text-left">信息导入</h4>
+                    <p class="text-left">1、根据模板中的批注，填写需代卖的员工信息<button  class="sale_release_downbtn">下载模板</button></p>
+                    <p class="text-left">2、上传填写后的数据文件<a href="#" class="file"><input type="file" class="welfare_release_upbtn" >上传文件</a></p>
+                </div>
+                <div class="content_mid">
+                    <h4 class="text-left">导入说明</h4>
+                    <p class="text-left">1、单次最多提交500笔</p>
+                    <p class="text-left">2、单笔金额必须介于1.00元（含）到30,000.00元（含）之间</p>
+                    <p class="text-left">3、手续费：0%</p>
+                </div>
+            </div>
+            <div class="control-title">
+                <div><span><a href="sale_application.html"><button type="submit" class="btn btn-primary btn-zy btn-modeltwo">开始导入</button></a></span>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+
+    //判断当前有没有上传文件
+    addEventListener('load',function(){
+        var selectThisfile=$('.selected_file').html();
+
+        if(selectThisfile){
+            $('#import_modelloading').attr('disabled',false)
+        }
+    },false)
+</script>
+</body>
+</html>
