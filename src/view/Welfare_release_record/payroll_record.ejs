@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <title>工资发放记录</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/component.min.css">
+    <style>
+    </style>
+</head>
+<body class="ovfHiden qiao">
+
+<div class="panel-body panel-body-shodow">
+    <!--title-->
+    <h2>工资发放记录
+        <div>
+            <a href="payroll_details.html" class="show_details">查看发放明细</a>
+        </div>
+    </h2>
+
+    <!--内容111-->
+    <div class="info_middlebody" style="margin-left: 0">
+        <!-- 一排多个组件-->
+
+        <div class="control-title">
+            <div style="width: 100%">
+                <span>发放时间：</span>
+                <span>
+                     <input size="16" type="text"  value="2016-06-15" readonly class="form_datetime form-control form-control-zy1" >
+                    至
+                    <input size="16" type="text" value="2016-06-18"  readonly class="form_datetime form-control form-control-zy1" >
+                </span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span>批次号：</span>
+                <span>
+                    <input type="text" class="form-control form-control-zy"placeholder="输入批次号" >
+                </span>
+            </div>
+            <div>
+                <span>提交状态：</span>
+                <span>
+                    <select class="form-control  form-control-zy ">
+                        <option value="待处理" selected="selected">请选择提交状态</option>
+                        <option value="待处理">全部</option>
+                        <option value="待处理">提交中</option>
+                        <option value="待处理">提交成功</option>
+                        <option value="待处理">提交失败</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+
+        <div class="control-title">
+            <div>
+                <span></span>
+                <span>
+                        <button type="submit" class="btn btn-primary btn-zyone btn-modeltwo">导出数据</button>
+                </span>
+            </div>
+
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="control-title">
+
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span>
+                        <a href="../error/403.html"><button type="submit" class="btn btn-primary btn-zyone btn-modeltwo">查询</button></a>
+                </span>
+            </div>
+
+        </div>
+
+        <!-- 表格-->
+        <div class="table-responsive info_table">
+            <table class="table table-striped">
+                <thead>
+                <tr class="tr-zy">
+                    <th>批次号</th>
+                    <th>提交时间</th>
+                    <th>总笔数</th>
+                    <th>发放总金额（元）</th>
+                    <th>总手续费（元）</th>
+                    <th>总优惠（元）</th>
+                    <th>付款总额（元）</th>
+                    <th>提交状态</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                    <td><a href="payroll_details.html">123456</a></td>
+                    <td>2017-12-15 15:08</td>
+                    <td>5</td>
+                    <td>1500.00</td>
+                    <td>25.00</td>
+                    <td>0.00</td>
+                    <td>1525.00</td>
+                    <td>提交中</td>
+                    <td>工资代发</td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_details.html">123456</a></td>
+                    <td>2017-12-15 15:08</td>
+                    <td>5</td>
+                    <td>1500.00</td>
+                    <td>25.00</td>
+                    <td>0.00</td>
+                    <td>1525.00</td>
+                    <td>提交成功</td>
+                    <td>工资代发</td>
+                </tr>
+                <tr align="center">
+                    <td><a href="payroll_details.html">123456</a></td>
+                    <td>2017-12-15 15:08</td>
+                    <td>5</td>
+                    <td>1500.00</td>
+                    <td>25.00</td>
+                    <td>0.00</td>
+                    <td>1525.00</td>
+                    <td>提交失败</td>
+                    <td>工资代发</td>
+                </tr>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info_page">
+            <span class="skip">跳转到 <input class="skip-num form-control">页  <span class="btn btn-skip">跳转</span></span>
+            <ul class="pagination" style="margin-top:0px; float:right;">
+                <li class="go"><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li class="active"><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li>&nbsp;...&nbsp;</li>
+                <li><a href="#">30</a></li>
+                <li class="go"><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/BusinessService.min.js"></script>
+<script>
+    $('input.form_datetime').each(function(){//------------------日历插件
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose :true,
+            todayBtn :true,
+            minView :2,
+            weekStart :1,
+            linked :true
+        });
+    });
+    //分页点击
+    $('ul.pagination').find('li:not(.go)').each(function(){
+
+        $(this).click(function(){
+
+            jfpagechange(this);//参数为选择的当前元素
+        })
+    })
+    //确认重新卖出
+    $('.cancle_set').on('click', function () {
+
+        modelInfo('#cancle_seting'); //参数一：模态框id选择器
+    });
+
+</script>
+</body>
+</html>
